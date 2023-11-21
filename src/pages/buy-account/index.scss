@@ -1,166 +1,81 @@
 .main {
-  margin-top: -239px;
+  margin-top: -152px;
+  margin-bottom: 80px;
 }
 
-.teams {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-
+.buy-account {
   &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 16px;
-
-    > h1 {
-      font-family: var(--font-family-primary);
-      font-size: 48px;
-      text-transform: uppercase;
-      font-weight: 400;
-      font-style: italic;
-      line-height: 56px;
-      color: var(--white);
-    }
-  }
-
-  &__description > p {
-    font: var(--font-text-primary);
-    color: var(--purple);
+    margin-bottom: 120px;
   }
 
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 30px;
-    row-gap: 28px;
-    padding: 0;
-    margin: 0 0 80px;
-  }
-
-  &__item {
-    list-style: none;
+    gap: 28px 30px;
   }
 }
 
-.team-member {
+.account-preview {
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 24px;
-  opacity: 1;
 
   &__header {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    position: relative;
+    margin-left: 40px;
+
+    > img {
+      display: block;
+      width: 261px;
+      height: 146px;
+      padding: 1px;
+      border-radius: var(--border-radius);
+      background-color: var(--background-3);
+    }
   }
 
-  &__info {
-    display: flex;
-    gap: 12px;
-  }
-
-  &__info-fio {
+  &__price {
+    position: absolute;
+    bottom: 8px;
+    left: -40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    align-items: start;
+    justify-content: space-between;
+    border-radius: var(--border-radius);
+    min-width: 131px;
+    padding: 4px 8px;
+    background-color: var(--primary);
 
-    > p {
-      font: var(--font-text-primary);
-      font-weight: 600;
-      font-style: italic;
-      color: var(--primary);
+    > p:last-child {
+      font-family: var(--font-text-secondary);
+      font-weight: 500;
+      font-size: 27px;
+      color: var(--white);
       margin: 0;
     }
-
-    > span {
-      font: var(--font-text-secondary);
-      font-weight: 400;
-      color: var(--purple);
-    }
   }
 
-  &__avatar {
-    min-width: 64px;
-    min-height: 64px;
-    max-width: 64px;
-    max-height: 64px;
-    border-radius: 100%;
-    background-color: var(--background-3);
-  }
-
-  &__rank {
-    width: 52px;
-    height: 52px;
-    object-fit: cover;
+  &__old-price {
+    font-family: var(--font-text-secondary-regular);
+    font-weight: 500;
+    text-decoration-line: line-through;
+    opacity: .8;
+    color: var(--white);
+    margin: 0;
   }
 
   &__stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  &__stat {
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 
-    > p {
-      font: var(--font-text-primary);
-      font-weight: 600;
-      text-align: center;
-      color: var(--black);
-      margin: 0;
+    > img {
+      display: block;
+      width: 44px;
+      height: 44px;
+      padding: 1px;
     }
-
-    > span {
-      font: var(--font-text-secondary);
-      font-weight: 400;
-      text-align: center;
-      color: var(--purple);
-    }
-  }
-
-  &__show-profile {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    a {
-      font: var(--font-text-secondary);
-      font-style: italic;
-      font-weight: 500;
-      text-decoration: none;
-      color: var(--primary);
-      transition: all .4s;
-    }
-
-    path:nth-child(1),
-    path:nth-child(2) {
-      stroke: var(--primary);
-      transition: stroke .4s;
-    }
-
-    path:nth-child(3) {
-      fill: var(--primary);
-      transition: fill .4s;
-    }
-
-    a:hover {
-      color: var(--purple);
-
-      & + svg {
-        path:nth-child(1), path:nth-child(2) {
-          stroke: var(--purple);
-        }
-
-        path:nth-child(3) {
-          fill: var(--purple);
-        }
-      }
-    }
-
   }
 }
