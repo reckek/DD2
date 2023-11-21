@@ -1,0 +1,145 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 324px;
+  padding: 36px;
+  margin: 23px;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  background: radial-gradient(243.79% 141.42% at 100% 100%, rgba(62, 37, 216, 1) 0%, rgba(37, 183, 216, 0.57) 53.13%, rgba(101, 61, 153, 1) 100%);
+
+  .navbar-toggler svg {
+    stroke: var(--white);
+  }
+
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-start;
+    align-items: center;
+    width: 100%;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    & a.accent {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+      font: var(--font-button);
+      padding: 8px 12px;
+      border: none;
+      border-radius: 45px;
+
+      text-decoration: none;
+
+      color: var(--primary);
+      background-color: var(--white);
+      transition: all .2s ease-out;
+      outline: solid 0px;
+
+      &:hover {
+        outline: solid 3px;
+      }
+    }
+
+    & .profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font: var(--font-button);
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      transition: all .2s;
+
+      > img {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        object-fit: cover;
+        object-position: center;
+        background-color: var(--white);
+      }
+    }
+  }
+}
+
+.setting-language {
+  position: relative;
+
+  .setting-language__toggler {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    border: unset;
+    border-radius: var(--border-radius);
+    background-color: rgb(255, 255, 255, 0);
+    transition: background .2s;
+    padding: 10px;
+
+    &:hover, &.active {
+      background-color: var(--background-hover);
+    }
+  }
+
+  .setting-language__box {
+    position: absolute;
+    top: 60px;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    width: 180px;
+
+    padding: 14px 16px;
+
+    border: var(--border);
+    border-radius: var(--border-radius);
+    background-color: var(--background-2);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: bottom .4s, opacity .2s;
+
+    > ul {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+    }
+
+    & li {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+      padding: 12px 0;
+      justify-content: end;
+      cursor: pointer;
+
+      > label {
+        cursor: pointer;
+      }
+    }
+
+    &.active {
+      top: 43px;
+      opacity: 100%;
+      pointer-events: all;
+    }
+  }
+}
+
+.header__placeholder {
+  height: 40px;
+}

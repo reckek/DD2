@@ -1,0 +1,143 @@
+.history__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &__title {
+    font-family: var(--font-primary);
+    font-size: 27px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-style: italic;
+    color: var(--black);
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 20px;
+  }
+}
+
+.history-item {
+  display: grid;
+  grid-template-columns: 3fr repeat(3, 1fr) repeat(2, 0.4fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: stretch;
+  text-decoration: none;
+  padding: 16px 20px;
+  border-radius: var(--border-radius);
+  background-color: var(--background);
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    > img {
+      padding: 1px;
+      width: 88px;
+      height: 52px;
+    }
+  }
+
+  &__role {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    > span {
+      font-family: var(--font-primary);
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    > p {
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 600;
+      margin: 0;
+      color: var(--black);
+    }
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: center;
+    // gap: 8px;
+
+    > div {
+      width: 64px;
+    }
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    > * {
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font: var(--font-primary);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--purple);
+  }
+
+  &__description {
+    font: var(--font-text-primary);
+
+    font-weight: 500;
+  }
+
+  &__success,
+  &__error {
+    font-family: Rubik;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  &__success {
+    color: var(--primary);
+  }
+  &__error {
+    color: var(--red);
+  }
+
+  &__btn {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    &:not(.show) {
+      transform: translateX(20px);
+      opacity: 0;
+      transition: all .2s;
+    }
+  }
+
+  &:hover > &__btn:not(.show) {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}

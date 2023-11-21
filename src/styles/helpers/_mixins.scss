@@ -1,0 +1,48 @@
+// Usege:
+// ╔════════╦══════════╗ 
+// ║Данные  ║ Значения ║
+// ╠════════╬══════════╣ 
+// ║ sm     ║ <=576px  ║
+// ╠════════╬══════════╣ 
+// ║ xs     ║ >=576px  ║
+// ╠════════╬══════════╣ 
+// ║ md     ║ >=768px  ║
+// ╠════════╬══════════╣ 
+// ║ lg     ║ >=992px  ║
+// ╠════════╬══════════╣ 
+// ║ xl     ║ >=1200px ║
+// ╠════════╬══════════╣ 
+// ║ xxl    ║ >=1400px ║
+// ╚════════╩══════════╝
+// ╔═════════════════════════════════════════════════════╗
+// ║                Использованеие                       ║
+// ╠═════════════════════════════════════════════════════╣
+// ║ @include container(BrackePoint) using ($type) {...} ║
+// ╚═════════════════════════════════════════════════════╝
+@mixin container($braeckpoint, $conent...) {
+  $value: check-braeckpoint($braeckpoint);
+  @if $is-mobile-first == true {
+    @if $braeckpoint != sm {
+      @media (min-width: $value) {
+        @content ($conent);
+      }
+    }
+    @if $braeckpoint == sm {
+      @media (max-width: $value) {
+        @content ($conent);
+      }
+    }
+  }
+  @if $is-mobile-first == false {
+    @if $braeckpoint != sm {
+      @media (max-width: $value) {
+        @content ($conent);
+      }
+    }
+    @if $braeckpoint == sm {
+      @media (min-width: $value) {
+        @content ($conent);
+      }
+    }
+  }
+}

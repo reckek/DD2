@@ -1,0 +1,35 @@
+include ../../components/head/head.pug
+include ../../components/header/header.pug
+include ../../components/footer/footer.pug
+
+doctype html
+html(lang="ru")
+  +head('buy account')
+  body
+    +header
+    main.main.container.container-custom
+      section.buy-account
+        header.buy-account__header
+          h1.section-title Купить аккаунт Dota 2
+        .buy-account__list
+          .account-preview
+            .account-preview__header
+              .account-preview__price
+                p.account-preview__old-price 15 000 ₽
+                p 15 000 ₽
+              img(src="=0", alt="account preview")
+            .separator
+            .account-preview__stats
+              img(src="../../public/rank-1.png", alt="1 ранг")
+              .stat
+                p 13 377
+                span MMR
+              .stat
+                p 15 000
+                span Порядочность
+              .stat
+                p 8 726
+                span Матчей
+
+            .separator
+    +footer

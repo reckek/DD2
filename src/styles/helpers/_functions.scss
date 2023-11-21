@@ -1,0 +1,37 @@
+@function check-braeckpoint($braeckpoint) {
+  $value: $braeckpoint;
+  // ╔════════╦══════════╗
+  // ║Данные  ║ Значения ║
+  // ╠════════╬══════════╣
+  // ║ sm     ║ <=576px  ║
+  // ╠════════╬══════════╣
+  // ║ xs     ║ >=576px  ║
+  // ╠════════╬══════════╣
+  // ║ md     ║ >=768px  ║
+  // ╠════════╬══════════╣
+  // ║ lg     ║ >=992px  ║
+  // ╠════════╬══════════╣
+  // ║ xl     ║ >=1200px ║
+  // ╠════════╬══════════╣
+  // ║ xxl    ║ >=1400px ║
+  // ╚════════╩══════════╝
+  @if $braeckpoint == sm {
+    $value: 576px;
+  }
+  @if $braeckpoint == xs {
+    $value: 576px;
+  }
+  @if $braeckpoint == md {
+    $value: 768px;
+  }
+  @if $braeckpoint == lg {
+    $value: 992px;
+  }
+  @if $braeckpoint == xl {
+    $value: 1200px;
+  }
+  @if $braeckpoint == xxl {
+    $value: 1400px;
+  }
+  @return $value;
+}
