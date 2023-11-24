@@ -33,7 +33,7 @@ html(lang="ru")
                 span 3% #{" "}
                 | Скидка
 
-            li.discount__item.discount__item--active
+            li.discount__item.discount__item--inactive
               img(src="../../public/images/loyalty-system/phase-boots.png" alt="phase-boots")
               h2 Phase Boots
 
@@ -44,7 +44,7 @@ html(lang="ru")
                 span 3% #{" "}
                 | Скидка
 
-            li.discount__item
+            li.discount__item.discount__item--active
               img(src="../../public/images/loyalty-system/glimmer-gape.png" alt="glimmer-gap")
               h2 Glimmer Cape
 
@@ -66,13 +66,13 @@ html(lang="ru")
                 span 3% #{" "}
                 | Скидка
 
-
           .discount__progress-bar
-            .discount__progress-bar-lain-progress(style="width: 50%;")
-            .discount__progress-bar-item(style="left: 50%;")
-            .discount__progress-bar-lain
-
-
+            .discount__progress-bar-before
+            .discount__progress-bar-box
+              .discount__progress-bar-lain-progress(style="width: 75%;")
+              .discount__progress-bar-item(style="left: 75%;")
+              .discount__progress-bar-lain
+            .discount__progress-bar-after
 
         button.discount__button Сделать заказ
 

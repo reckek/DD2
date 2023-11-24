@@ -51,7 +51,7 @@
       margin-top: 20px;
 
       font-family: var(--font-primary);
-      font-size: 15px;
+      font-size: 13px;
       font-style: italic;
       font-weight: 600;
       text-transform: uppercase;
@@ -59,7 +59,7 @@
 
     > small {
       font-family: var(--font-primary);
-      font-size: 10px;
+      font-size: 8px;
       font-style: normal;
       font-weight: 400;
     }
@@ -68,7 +68,7 @@
       margin-top: 0;
 
       font-family: var(--font-primary);
-      font-size: 13px;
+      font-size: 10px;
       font-style: normal;
       font-weight: 500;
     }
@@ -118,12 +118,32 @@
   }
 
   &__progress-bar {
-    position: relative;
-    width: 770px;
-    height: 24px;
+    display: flex;
 
-    margin-left: auto;
-    margin-right: auto;
+    &-after {
+      width: 5%;
+      height: 2px;
+
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &-before {
+      width: 5%;
+      height: 2px;
+
+      transform: rotate(180deg);
+      background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &-box {
+      position: relative;
+
+      height: 24px;
+      width: 90%;
+
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     &-item {
       position: absolute;
@@ -137,9 +157,7 @@
       width: 16px;
       height: 24px;
 
-      background: blue;
-      border-radius: 10px;
-      border: solid 2px white;
+      background-image: url("../../public/images/loyalty-system/discount__progress-bar-item.svg");
     }
 
     &-lain-progress {
