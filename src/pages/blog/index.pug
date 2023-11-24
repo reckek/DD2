@@ -1,15 +1,23 @@
 include ../../components/head/head.pug
 include ../../components/header/header.pug
+include ../../components/sectionHeader/sectionHeader.pug
 include ../../components/footer/footer.pug
 
 doctype html
 html(lang="ru")
   +head('Blog')
   body
-    main.main.container.container-custom
+    +header
+    main.main
+      +sectionHeader
+        .post-header.container.container-custom
+          h1 Лучшие герои для поднятия ПТС в патче 7.34
+          img(src="../../public/images/blog/hader-img.png", alt="")
 
+      section.post-info.container.container-custom
+        div ...
 
-      section.post
+      section.post.container.container-custom
         h2 Список важных изменений патча 7.34
 
         ul

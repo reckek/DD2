@@ -1,0 +1,10 @@
+.section-header {
+  display: flex;
+  align-items: center;
+  margin: 32px;
+  padding: 36px;
+  min-height: 324px;
+  padding-top: calc(36px + 48px + 39px);
+  border-radius: var(--border-radius);
+  background: radial-gradient(243.79% 141.42% at 100% 100%, rgba(62, 37, 216, 0.50) 0%, rgba(37, 183, 216, 0.29) 53.13%, rgba(101, 61, 153, 0.50) 100%), #21212D;
+}

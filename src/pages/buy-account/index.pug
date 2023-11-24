@@ -1,5 +1,6 @@
 include ../../components/head/head.pug
 include ../../components/header/header.pug
+include ../../components/sectionHeader/sectionHeader.pug
 include ../../components/footer/footer.pug
 
 doctype html
@@ -7,11 +8,12 @@ html(lang="ru")
   +head('buy account')
   body
     +header
-    main.main.container.container-custom
+    main.main
       section.buy-account
-        header.buy-account__header
-          h1.section-title Купить аккаунт Dota 2
-        .buy-account__list
+        +sectionHeader
+          header.buy-account__header.container.container-custom
+            h1.section-title Купить аккаунт Dota 2
+        .buy-account__list.container.container-custom
           .account-preview.border-clip-1
             .account-preview__header
               .account-preview__price

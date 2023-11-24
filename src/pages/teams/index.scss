@@ -1,18 +1,16 @@
-.main {
-  margin-top: -239px;
+@import "../../components/sectionHeader/sectionHeader.scss";
+
+.section-header {
+  padding-bottom: 0;
 }
 
 .teams {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
 
     > h1 {
       font-family: var(--font-primary);
@@ -25,9 +23,19 @@
     }
   }
 
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
   &__description > p {
     font: var(--font-text-primary);
     color: var(--purple);
+
+    &:not(:first-child) {
+      margin-top: 6px;
+    }
   }
 
   &__list {
