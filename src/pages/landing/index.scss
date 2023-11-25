@@ -5,7 +5,7 @@
 @import "../../components/blogPreview/blogPreview.scss";
 @import "../../components/teamPreview/teamPreview.scss";
 
-.first-screen-wrapper.section-header {
+.first-screen-wrappers.section-header {
   display: flex;
   align-items: center;
   height: 666px;
@@ -359,17 +359,21 @@
     font-size: 27px;
     font-style: italic;
     font-weight: 600;
+    text-align: center;
     color: var(--black);
   }
 
   &__description {
+    margin: 0 auto;
     margin-top: 24px;
+    max-width: 920px;
 
     p {
       font-family: var(--font-primary);
       font-size: 15px;
       font-style: normal;
       font-weight: 400;
+      text-align: center;
 
       &:not(:first-child) {
         padding-top: 6px;
@@ -438,16 +442,6 @@
     grid-template-columns: repeat(2, 1fr);
     grid-auto-flow: dense;
     gap: 28px 30px;
-
-    > .accordion-item {
-      padding: 28px 24px;
-      border-radius: var(--border-radius);
-      background-color: var(--background-2);
-
-      > .accordion-header button {
-        background-color: var(--background-2);
-      }
-    }
   }
 }
 
@@ -510,6 +504,7 @@
 
     &::before,
     &::after {
+      clip-path: polygon(4% 0%, 100% 0%, 100% 88%, 96% 100%, 0% 100%, 0% 12%);
       background-color: var(--primary);
     }
   }
