@@ -5,6 +5,7 @@ include ../../components/card/card.pug
 include ../../components/teamPreview/teamPreview.pug
 include ../../components/accordion/accordion.pug
 include ../../components/blogPreview/blogPreview.pug
+include ../../components/review/review.pug
 include ../../components/footer/footer.pug
 
 doctype html
@@ -366,6 +367,10 @@ html(lang="ru")
         .product__list
           +card("11080", "Буст рейтинга", "3 377", "13 377", 50)
           +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
+          +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
+          +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
+          +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
+          +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
         a.button.active-button.invert-button.remove-link-style(href="=0") Посмотреть все
 
       section.reviews
@@ -381,7 +386,9 @@ html(lang="ru")
               span вы можете ознакомиться на отдельной странице, кликнув по кнопке ниже.
             button.button.border-clip Стать клиентом MMR.ru
           .reviews__list
-            //- TODO: Add reviews
+            +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            +review("11080", "Буст рейтинга", "danielvfrcbv:")
             a.reviews__link.button.invert-button.remove-link-style.border-clip(href="=0") Посмотреть все
 
       section.teams.container.container-custom
@@ -391,6 +398,10 @@ html(lang="ru")
           p По итогу в нашей команде находятся только настоящие профессионалы своего дела с рейтингом вплоть до ТОП-200 европы. Молодые, открытые и приятные в общении ребята, готовые выполнить заказ любой сложности в любое время.
           p Мы просим наших бустеров написать немного о себе, а так же записываем их статистику после каждой игры. Ознакомиться с профилями наших бустеров можно, кликнув по кнопке ниже.
         .teams__list
+          +teamPreview(true)
+          +teamPreview(true)
+          +teamPreview(true)
+          +teamPreview(true)
           +teamPreview(true)
           +teamPreview(true)
           +teamPreview(true)

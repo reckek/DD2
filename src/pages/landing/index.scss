@@ -1,6 +1,8 @@
 @import "../../components/card/card.scss";
 @import "../../components/sectionHeader/sectionHeader.scss";
+@import "../../components/review/review.scss";
 @import "../../components/accordion/accordion.scss";
+@import "../../components/blogPreview/blogPreview.scss";
 @import "../../components/teamPreview/teamPreview.scss";
 
 .first-screen-wrapper.section-header {
@@ -339,6 +341,9 @@
   }
 
   &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     width: 100%;
 
     a {
@@ -473,6 +478,7 @@
   &__list {
     display: flex;
     justify-content: space-between;
+    gap: 30px;
     margin-top: 40px;
   }
 }

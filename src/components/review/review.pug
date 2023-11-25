@@ -1,0 +1,33 @@
+mixin review(reviewId, reviewType, author)
+  .review.border-clip-2
+    .review__rank.border-clip-2
+      img(src="../../public/images/rank-1.png", alt="")
+      .review__rank-level
+        .review__rank-current 12 000
+        svg(width="35" height="18" viewBox="0 0 35 18" fill="none")
+          path(d="M1 9.00002H32.9981M32.9981 9.00002L24.9981 17M32.9981 9.00002L24.9981 1.00004" stroke="#D2D0DD" stroke-width="2" stroke-linecap="round")
+        .review__rank-next 120 000
+    .review__info
+      .review__header
+        .review__info-box
+          .review__id= reviewId
+          .review__type Тип:#{" "}
+            b= reviewType
+        .review__status
+          svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
+            path(d="M8 14L12 10L8 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          | Выполнен
+      .review__body
+        .review__author= author
+        .review__stars
+          svg.review__star(width="16" height="15" viewBox="0 0 16 15" fill="none")
+            path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+          svg.review__star(width="16" height="15" viewBox="0 0 16 15" fill="none")
+            path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+          svg.review__star(width="16" height="15" viewBox="0 0 16 15" fill="none")
+            path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+          svg.review__star(width="16" height="15" viewBox="0 0 16 15" fill="none")
+            path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+          svg.review__star.review__star--inactive(width="16" height="15" viewBox="0 0 16 15" fill="none")
+            path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+      .review__message Классный бустер сделал все быстро без лишних вопросов ))) спасибо Классный бустер сделал все быстро без лишних вопросов ))) Классный бустер сделал все быстро без лишних вопросов )))
