@@ -1,0 +1,40 @@
+@import "../../components/sectionHeader/sectionHeader.scss";
+@import "../../components/blogPreview/blogPreview.scss";
+
+
+.section-header {
+  padding-bottom: 0;
+}
+
+.blogs {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__description > p {
+    font: var(--font-text-primary);
+    color: var(--purple);
+
+    &:not(:first-child) {
+      margin-top: 6px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 28px;
+    padding: 0;
+    margin: 0 0 80px;
+  }
+}
