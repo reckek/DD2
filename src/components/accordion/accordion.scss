@@ -1,0 +1,9 @@
+.accordion-item {
+  height: max-content;
+  padding: 28px 24px;
+  border-radius: var(--border-radius);
+  background-color: var(--background-2);
+  > .accordion-header button {
+    background-color: var(--background-2);;
+  }
+}
