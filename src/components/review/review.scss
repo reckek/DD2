@@ -1,6 +1,142 @@
-.card {
+.review {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-content: stretch;
+  align-items: stretch;
+
+  &::before {
+    background-color: transparent;
+  }
+
+  &::after {
+    clip-rule: evenodd;
+    clip-path: polygon(20% 0%, 100% 0%, 100% 88%, 96% 100%, 0% 100%, 0% 14%);
+    background-color: var(--primary);
+  }
+
+  &__rank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 32px 24px;
+
+    &-level {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &-current {
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-style: italic;
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--black);
+    }
+
+    &-next {
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-style: italic;
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--primary);
+    }
+
+    img {
+      display: block;
+      width: 104px;
+      height: 104px;
+      padding: 1px;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__info-box {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__id {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--white);
+    opacity: 0.8;
+  }
+
+  &__type {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    color: rgb(255 255 255 / 0.8);
+
+    b {
+      margin-left: 8px;
+      color: rgb(255 255 255);
+    }
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: right;
+    color: rgb(255 255 255 / 0.8);
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    color: rgb(255 255 255 / 0.8);
+  }
+
+  &__star {
+    path {
+      fill: var(--white);
+    }
+
+    &--inactive path {
+      opacity: 0.8;
+      fill: none;
+      stroke: var(--white);
+    }
+  }
+
+  &__message {
+    margin-top: 4px;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    overflow-y: auto;
+    color: var(--white);
+  }
 }

@@ -1,0 +1,466 @@
+include ../../components/head/head.pug
+include ../../components/header/header.pug
+include ../../components/sectionHeader/sectionHeader.pug
+include ../../components/card/card.pug
+include ../../components/teamPreview/teamPreview.pug
+include ../../components/accordion/accordion.pug
+include ../../components/blogPreview/blogPreview.pug
+include ../../components/review/review.pug
+include ../../components/footer/footer.pug
+
+doctype html
+html(lang="ru")
+  +head('Главная')
+  body
+    +header(true)
+    main.main
+      +sectionHeader(class="first-screen-wrappers")
+        section.first-screen.container.container-custom
+          div#carouselExampleSlidesOnly.carousel.slide(data-bs-ride="carousel")
+            div.carousel-inner
+              div.first-screen__layout.carousel-item.active
+                .first-screen__info
+                  h1.first-screen__title калибровка аккаунта
+                  p.first-screen__description
+                    span Калибровка и перекалибровка аккаунта.
+                    span Средний винрейт ~92%. Быстро и безопасно.
+                  a.first-screen__call-to-action.remove-link-style
+                    .first-screen__button.button.border-clip(href="=0") Заказать калибровку
+                    span.border-clip -20%
+                img(src="../../public/images/firstScreen-1.png", alt="")
+              //- div.carousel-item
+              //-   1234 1234
+              //- div.carousel-item
+              //-   1235 1235
+              //- div.carousel-item
+              //-   1236 1236
+            div.carousel-indicators
+              button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1")
+              button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2")
+              button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3")
+              button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4")
+
+      +sectionHeader(class="raffle-wrapper")
+        .raffle-img
+          section.raffle.container.container-custom
+            .raffle__info
+              h2 В честь открытия розыгрыш на 10 аркан
+              button.button.border-clip Принять участие
+
+      section.stats.container.container-custom
+        header.stats__header
+          h2
+            span СТАТИСТИКА#{' '}
+            | за последние 30 дней
+        .stats__list
+          .stat
+            p 377
+            span Заказов выполнено
+          .stat
+            p 5 228
+            span Игр сыграно
+          .stat
+            p 113
+            span Положительных отзывов
+          .stat
+            p 118 758
+            span Рейтинга прокачано
+
+      .separator-land.container.container-custom
+        svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+          path(fill-rule="evenodd" clip-rule="evenodd" d="M0 23L1 18L0 15V12L1 13L0 7L1 3L0 0H6L9 1L11 0L13 1H16L17 0L21 1L24 0L23 5L24 8L23 9.5L23.5 11L23 14L24 15V23L22 22L18 23L10 24L5 23H0ZM2 4L4 3L22 15L20 20H17L2 4ZM19 9L14 5L18 4L20 5L19 9ZM3 18L4 14L9 19L6 21L3 18Z" fill="#C4C1D2")
+
+      .necessary.container.container-custom
+        .necessary__info
+          h2.necessary__title
+            | Зачем нужен буст рейтинга в#{" "}
+            b Dota 2
+
+          ul.necessary__list
+           li.necessary__item
+            svg(
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 82 82"
+              height="82"
+              width="82"
+              )
+              rect(
+                stroke-width="2"
+                stroke="#3E25D8"
+                rx="4"
+                height="42"
+                width="64"
+                y="25"
+                x="9"
+                )
+              rect(
+                stroke-width="2"
+                stroke="#3E25D8"
+                rx="4"
+                height="34"
+                width="56"
+                y="29"
+                x="13"
+                )
+              path(
+                stroke-width="2"
+                stroke="#3E25D8"
+                fill="#E4E2F1"
+                d="M45.8973 44H36.1016C35.1695 44 34.3579 43.3549 34.1526 42.4457C31.1561 29.1793 29.6516 18.5896 41 8C52.3485 18.5897 50.8439 29.1793 47.8474 42.4457C47.6421 43.3549 46.8294 44 45.8973 44Z"
+                )
+              path(
+                stroke-width="2"
+                stroke="#3E25D8"
+                fill="#E4E2F1"
+                d="M50.7371 45.3686L48 44L50.5 33C53.23 35.4266 54.2511 39.2467 53.0961 42.7118L52.4465 44.6605C52.2108 45.3675 51.4037 45.7018 50.7371 45.3686Z"
+                )
+              path(
+                stroke-width="2"
+                stroke="#3E25D8"
+                fill="#E4E2F1"
+                d="M31.2629 45.3686L34 44L31.5 33C28.77 35.4266 27.7489 39.2467 28.9039 42.7118L29.5535 44.6605C29.7892 45.3675 30.5963 45.7018 31.2629 45.3686Z"
+                )
+              circle(
+                stroke-width="2"
+                stroke="#3E25D8"
+                fill="#E4E2F1"
+                r="4"
+                cy="27"
+                cx="41"
+                )
+              path(
+                stroke-linecap="round"
+                stroke-width="2"
+                stroke="#3E25D8"
+                d="M36 47V53"
+                )
+              path(
+                stroke-linecap="round"
+                stroke-width="2"
+                stroke="#3E25D8"
+                d="M41 47V59"
+                )
+              path(
+                stroke-linecap="round"
+                stroke-width="2"
+                stroke="#3E25D8"
+                d="M46 47V53"
+                )
+              path(
+                stroke-width="2"
+                stroke="#3E25D8"
+                d="M5 70H77V70C77 72.2091 75.2091 74 73 74H9C6.79086 74 5 72.2091 5 70V70Z"
+                )
+              g(opacity="0.3")
+                mask(
+                  height="21"
+                  width="28"
+                  y="45"
+                  x="47"
+                  maskUnits="userSpaceOnUse"
+                  style="mask-type:alpha"
+                  id="mask0_101_1540"
+                  )
+                  path(
+                    fill="#E4E2F1"
+                    d="M68.4406 60.7465C71.6421 59.8913 74 56.971 74 53.5C74 49.3579 70.6421 46 66.5 46C63.029 46 60.1087 48.3579 59.2535 51.5594C57.8367 52.1643 56.6601 53.223 55.9062 54.5529C55.1794 54.1987 54.3629 54 53.5 54C50.4624 54 48 56.4624 48 59.5C48 62.5376 50.4624 65 53.5 65C55.0521 65 56.454 64.3571 57.454 63.3231C58.6771 64.3686 60.2648 65 62 65C64.8911 65 67.3728 63.2473 68.4406 60.7465Z"
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                    )
+                  path(
+                    fill="#3E25D8"
+                    d="M68.4406 60.7465L68.1826 59.7804L67.7122 59.906L67.521 60.3538L68.4406 60.7465ZM59.2535 51.5594L59.6462 52.479L60.094 52.2878L60.2196 51.8174L59.2535 51.5594ZM55.9062 54.5529L55.4681 55.4518L56.3128 55.8634L56.7761 55.046L55.9062 54.5529ZM57.454 63.3231L58.1037 62.563L57.3889 61.9519L56.7351 62.6279L57.454 63.3231ZM73 53.5C73 56.5068 70.9575 59.0391 68.1826 59.7804L68.6987 61.7126C72.3267 60.7435 75 57.4352 75 53.5H73ZM66.5 47C70.0899 47 73 49.9101 73 53.5H75C75 48.8056 71.1944 45 66.5 45V47ZM60.2196 51.8174C60.9609 49.0425 63.4932 47 66.5 47V45C62.5648 45 59.2565 47.6733 58.2874 51.3013L60.2196 51.8174ZM58.8608 50.6397C57.2411 51.3313 55.8974 52.5406 55.0363 54.0597L56.7761 55.046C57.4228 53.9054 58.4324 52.9973 59.6462 52.479L58.8608 50.6397ZM56.3442 53.6539C55.484 53.2347 54.518 53 53.5 53V55C54.2078 55 54.8748 55.1627 55.4681 55.4518L56.3442 53.6539ZM53.5 53C49.9101 53 47 55.9101 47 59.5H49C49 57.0147 51.0147 55 53.5 55V53ZM47 59.5C47 63.0898 49.9101 66 53.5 66V64C51.0147 64 49 61.9853 49 59.5H47ZM53.5 66C55.3341 66 56.9922 65.239 58.1728 64.0183L56.7351 62.6279C55.9158 63.4752 54.77 64 53.5 64V66ZM56.8042 64.0832C58.2015 65.2777 60.0177 66 62 66V64C60.5119 64 59.1526 63.4596 58.1037 62.563L56.8042 64.0832ZM62 66C65.3057 66 68.1408 63.9952 69.3603 61.1392L67.521 60.3538C66.6049 62.4994 64.4765 64 62 64V66Z"
+                    )
+                g(mask="url(#mask0_101_1540)")
+                  rect(
+                    stroke-width="2"
+                    stroke="#3E25D8"
+                    fill="#3E25D8"
+                    rx="4"
+                    height="34"
+                    width="56"
+                    y="29"
+                    x="13"
+                    )
+              g(opacity="0.3")
+                mask(
+                  height="21"
+                  width="28"
+                  y="45"
+                  x="7"
+                  maskUnits="userSpaceOnUse"
+                  style="mask-type:alpha"
+                  id="mask1_101_1540"
+                  )
+                  path(
+                    fill="#E4E2F1"
+                    d="M13.5594 60.7465C10.3579 59.8913 8 56.971 8 53.5C8 49.3579 11.3579 46 15.5 46C18.971 46 21.8913 48.3579 22.7465 51.5594C24.1633 52.1643 25.3399 53.223 26.0938 54.5529C26.8206 54.1987 27.6371 54 28.5 54C31.5376 54 34 56.4624 34 59.5C34 62.5376 31.5376 65 28.5 65C26.9479 65 25.546 64.3571 24.546 63.3231C23.3229 64.3686 21.7352 65 20 65C17.1089 65 14.6272 63.2473 13.5594 60.7465Z"
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                    )
+                  path(
+                    fill="#3E25D8"
+                    d="M13.5594 60.7465L13.8174 59.7804L14.2878 59.906L14.479 60.3538L13.5594 60.7465ZM22.7465 51.5594L22.3538 52.479L21.906 52.2878L21.7804 51.8174L22.7465 51.5594ZM26.0938 54.5529L26.5319 55.4518L25.6872 55.8634L25.2239 55.046L26.0938 54.5529ZM24.546 63.3231L23.8963 62.563L24.6111 61.9519L25.2649 62.6279L24.546 63.3231ZM9 53.5C9 56.5068 11.0425 59.0391 13.8174 59.7804L13.3013 61.7126C9.67331 60.7435 7 57.4352 7 53.5H9ZM15.5 47C11.9101 47 9 49.9101 9 53.5H7C7 48.8056 10.8056 45 15.5 45V47ZM21.7804 51.8174C21.0391 49.0425 18.5068 47 15.5 47V45C19.4352 45 22.7435 47.6733 23.7126 51.3013L21.7804 51.8174ZM23.1392 50.6397C24.7589 51.3313 26.1026 52.5406 26.9637 54.0597L25.2239 55.046C24.5772 53.9054 23.5676 52.9973 22.3538 52.479L23.1392 50.6397ZM25.6558 53.6539C26.516 53.2347 27.482 53 28.5 53V55C27.7922 55 27.1252 55.1627 26.5319 55.4518L25.6558 53.6539ZM28.5 53C32.0899 53 35 55.9101 35 59.5H33C33 57.0147 30.9853 55 28.5 55V53ZM35 59.5C35 63.0898 32.0899 66 28.5 66V64C30.9853 64 33 61.9853 33 59.5H35ZM28.5 66C26.6659 66 25.0078 65.239 23.8272 64.0183L25.2649 62.6279C26.0842 63.4752 27.23 64 28.5 64V66ZM25.1958 64.0832C23.7985 65.2777 21.9823 66 20 66V64C21.4881 64 22.8474 63.4596 23.8963 62.563L25.1958 64.0832ZM20 66C16.6943 66 13.8592 63.9952 12.6397 61.1392L14.479 60.3538C15.3951 62.4994 17.5235 64 20 64V66Z"
+                    )
+                g(mask="url(#mask1_101_1540)")
+                  rect(
+                    stroke-width="2"
+                    stroke="#3E25D8"
+                    fill="#3E25D8"
+                    rx="4"
+                    height="34"
+                    width="56"
+                    y="29"
+                    x="13"
+                    )
+            .necessary__item-info
+              h3.necessary__item-title Это поможет тебе
+              ul
+                li Играть с адекватными союзниками
+                li Повысить статистику аккаунта
+                li Получать удовольствие от игры
+           li.necessary__item
+            svg(
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 82 82"
+              height="82"
+              width="82"
+              )
+              path(
+                stroke-linecap="round"
+                stroke-width="2"
+                stroke="#3E25D8"
+                d="M50 32H66"
+                )
+              path(
+                stroke-linecap="round"
+                stroke-width="2"
+                stroke="#3E25D8"
+                d="M50 36H61"
+                )
+              path(
+                stroke-linecap="round"
+                stroke-width="2"
+                stroke="#3E25D8"
+                d="M50 40H66"
+                )
+              path(
+                stroke-linecap="round"
+                stroke-width="2"
+                stroke="#3E25D8"
+                d="M50 44H58"
+                )
+              rect(
+                stroke-width="2"
+                stroke="#3E25D8"
+                rx="4"
+                height="52"
+                width="64"
+                y="15"
+                x="9"
+                )
+              path(
+                stroke-linecap="round"
+                stroke-width="2"
+                stroke="#3E25D8"
+                d="M9 27H73"
+                )
+              circle(
+                fill="#3E25D8"
+                r="2"
+                cy="21"
+                cx="15"
+                )
+              circle(
+                fill="#3E25D8"
+                r="2"
+                cy="21"
+                cx="20"
+                )
+              circle(
+                fill="#3E25D8"
+                r="2"
+                cy="21"
+                cx="25"
+                )
+              circle(
+                fill="#3E25D8"
+                r="2"
+                cy="21"
+                cx="30"
+                )
+              path(
+                stroke-linecap="round"
+                stroke-width="2"
+                stroke="#3E25D8"
+                d="M36.5 21H66"
+                )
+              path(
+                fill="#3E25D8"
+                d="M34.4772 50.3789C38.2858 48.9663 41 45.3001 41 41C41 35.4772 36.5228 31 31 31C25.4772 31 21 35.4772 21 41C21 45.3001 23.7142 48.9663 27.5228 50.3789C20.3582 51.9666 15 58.3576 15 66H47C47 58.3576 41.6418 51.9666 34.4772 50.3789Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+                opacity="0.3"
+                )
+              circle(
+                stroke-linecap="round"
+                stroke-width="2"
+                stroke="#3E25D8"
+                r="5"
+                cy="55"
+                cx="55"
+                )
+            .necessary__item-info
+              h3.necessary__item-title Это безопасно
+              ul
+                li Все бустеры прошли проверку
+                li Работаем анонимно
+                li Используем VPN и функцию "Family view"
+           li.necessary__item
+            svg(
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 82 82"
+              height="82"
+              width="82"
+              )
+              path(
+                stroke-width="2"
+                stroke="#3E25D8"
+                d="M67.7964 19.4162C57.0773 18.2097 46.0925 10.1119 42.3455 7.11364C41.5617 6.4864 40.4383 6.4864 39.6545 7.11364C35.9075 10.1119 24.9227 18.2097 14.2036 19.4162C13.2238 19.5265 12.4094 20.2948 12.3192 21.2766C8.78966 59.688 35.5958 73.5694 40.302 75.7C40.7571 75.906 41.2429 75.906 41.698 75.7C46.4042 73.5694 73.2103 59.688 69.6808 21.2766C69.5906 20.2948 68.7762 19.5265 67.7964 19.4162Z"
+                )
+              path(
+                stroke-width="2"
+                stroke="#3E25D8"
+                d="M60.916 24.2979C53.2238 23.2508 45.4375 17.5924 42.366 15.1375C41.5719 14.5028 40.4281 14.5028 39.634 15.1375C36.5625 17.5924 28.7762 23.2508 21.084 24.2979C20.1061 24.4311 19.2905 25.1938 19.2079 26.1772C16.7835 55.0448 36.2805 65.7899 40.2885 67.6837C40.7473 67.9005 41.2527 67.9005 41.7115 67.6837C45.7195 65.7899 65.2165 55.0448 62.7921 26.1772C62.7095 25.1938 61.8939 24.4311 60.916 24.2979Z"
+                )
+              path(
+                fill="#3E25D8"
+                d="M43.9284 40.3599C46.3319 39.2514 48 36.8205 48 34C48 30.134 44.866 27 41 27C37.134 27 34 30.134 34 34C34 36.8205 35.6681 39.2513 38.0716 40.3599C34.1359 41.3469 30.9713 44.2776 29.6575 48.0724C28.9347 50.16 30.7908 52 33 52H49C51.2091 52 53.0652 50.16 52.3425 48.0724C51.0286 44.2776 47.8641 41.3469 43.9284 40.3599Z"
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+                opacity="0.3"
+                )
+            .necessary__item-info
+              h3.necessary__item-title Почему мы?
+              ul
+                li Работаем с 2015 года
+                li Команда ТОП-500 Бустеров
+                li Онлайн контроль и чат на заказе
+
+      .separator-land
+        svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+          path(fill-rule="evenodd" clip-rule="evenodd" d="M0 23L1 18L0 15V12L1 13L0 7L1 3L0 0H6L9 1L11 0L13 1H16L17 0L21 1L24 0L23 5L24 8L23 9.5L23.5 11L23 14L24 15V23L22 22L18 23L10 24L5 23H0ZM2 4L4 3L22 15L20 20H17L2 4ZM19 9L14 5L18 4L20 5L19 9ZM3 18L4 14L9 19L6 21L3 18Z" fill="#C4C1D2")
+
+      section.product.container.container-custom
+        header.product__header
+          h2
+            | Самый#{" "}
+            b прозрачный#{" "}
+            | сервис
+          .product__header-description
+            p Мы реализовали подгрузку матчей с наших заказов прямо на сайт с помощью официального Steam API. Благодаря этому, вы можете зайти абсолютно в любой заказ на сайте и посмотреть нашу работу и ход выполнения заказа.
+            p В разделе активные заказы вы сможете посмотреть все наши текущие заказы по бустингу в Доте 2, которые находятся в работе, последние 50 игр на наших заказах с детальной статистикой по каждому матчу и последние 25 завершенных заказов.
+            p Также в завершенных заказах вы сможете увидеть отзыв клиента, если он его оставил.
+        .product__list
+          +card("11080", "Буст рейтинга", "3 377", "13 377", 50)
+          +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
+          +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
+          +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
+          +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
+          +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
+        a.button.active-button.invert-button.remove-link-style(href="=0") Посмотреть все
+
+      section.reviews
+        .reviews__container.container.container-custom
+          .reviews__info
+            h2.reviews__title
+              | ОТЗЫВЫ#{" "}
+              b НАШИХ#{" "}
+              | КЛИЕНТОВ
+            p.reviews__description
+              span После выполнения каждого заказа, вам приходит уведомление, информирующее о закрытии заказа, а так же с просьбой оставить нам отзыв о нашей работе.
+              span Через любой отзыв вы можете перейти к заказу, в котором был оставлен данный отзыв и посмотреть полную информацию по этому заказу.
+              span вы можете ознакомиться на отдельной странице, кликнув по кнопке ниже.
+            button.button.border-clip Стать клиентом MMR.ru
+          .reviews__list
+            +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            a.reviews__link.button.invert-button.remove-link-style.border-clip(href="=0") Посмотреть все
+
+      section.teams.container.container-custom
+        h1.teams__title НАША КОМАНДА
+        .teams__description
+          p Мы тщательно отбираем бустеров и тренеров в команду BoostMMR.ru. Проверяем ребят на адекватность, стрессоустойчивость и скилл. Также обязательным пунктом работы на нашем сайте является предоставление паспортных данных.
+          p По итогу в нашей команде находятся только настоящие профессионалы своего дела с рейтингом вплоть до ТОП-200 европы. Молодые, открытые и приятные в общении ребята, готовые выполнить заказ любой сложности в любое время.
+          p Мы просим наших бустеров написать немного о себе, а так же записываем их статистику после каждой игры. Ознакомиться с профилями наших бустеров можно, кликнув по кнопке ниже.
+        .teams__list
+          +teamPreview(true)
+          +teamPreview(true)
+          +teamPreview(true)
+          +teamPreview(true)
+          +teamPreview(true)
+          +teamPreview(true)
+          +teamPreview(true)
+          +teamPreview(true)
+          +teamPreview(true)
+        a.button.invert-button.remove-link-style.border-clip(href="=0") Посмотреть все
+
+      .separator-land
+        svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+          path(fill-rule="evenodd" clip-rule="evenodd" d="M0 23L1 18L0 15V12L1 13L0 7L1 3L0 0H6L9 1L11 0L13 1H16L17 0L21 1L24 0L23 5L24 8L23 9.5L23.5 11L23 14L24 15V23L22 22L18 23L10 24L5 23H0ZM2 4L4 3L22 15L20 20H17L2 4ZM19 9L14 5L18 4L20 5L19 9ZM3 18L4 14L9 19L6 21L3 18Z" fill="#C4C1D2")
+
+      section.questions.container.container-custom
+        header.questions__header
+          h2
+            | Часто задаваемые#{" "}
+            b вопросы
+          .questions__description
+            p Специально для Вас мы собрали 5 самых популярных вопросов.
+            p Также Вы можете задать свой вопрос напрямую нашей службе онлайн-поддержки.
+            p Мы работаем с 7:00 до 23:00 по МСК. Кнопка онлайн-чата находится справа внизу.
+            button.button.border-clip
+              svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
+                path(id="Vector 4" d="M9 19H11.8902C12.6064 19 13.2989 18.7438 13.8426 18.2778L15.9524 16.4694C16.6173 15.8994 17 15.0674 17 14.1916V11" stroke="white" stroke-linecap="round" stroke-linejoin="round")
+                rect(id="Rectangle 10" x="16" y="7" width="4" height="7" rx="2" fill="white")
+                rect(id="Rectangle 11" y="7" width="4" height="7" rx="2" fill="white")
+                path(id="Ellipse 5" d="M17 8C17 4.13401 13.866 1 10 1C6.13401 1 3 4.13401 3 8" stroke="white" stroke-width="2" stroke-linecap="square")
+                rect(id="Rectangle 135" x="8" y="18" width="4" height="2" rx="1" fill="white")
+              | Связь с поддержкой
+        #accordionActiveItem.accordion.accordion-flush.questions__layout
+          +accordion("Как работает mmr.ru?", "how-to-work-mmr1", "#accordionActiveItem")
+            p Вы платите нам за улучшение Ваших результатов в рейтинговых играх (матчмейкинг). Вы предоставляете нам логин и пароль от Вашего стим аккаунта, после чего мы приступаем к повышению рейтинга (если Вы выбрали услугу "Дуо бустинг", то нам потребуется только Ваш ник в стиме).
+          +accordion("Как работает mmr.ru?", "how-to-work-mmr2", "#accordionActiveItem")
+            p Вы платите нам за улучшение Ваших результатов в рейтинговых играх (матчмейкинг). Вы предоставляете нам логин и пароль от Вашего стим аккаунта, после чего мы приступаем к повышению рейтинга (если Вы выбрали услугу "Дуо бустинг", то нам потребуется только Ваш ник в стиме).
+          +accordion("Как работает mmr.ru?", "how-to-work-mmr3", "#accordionActiveItem")
+            p Вы платите нам за улучшение Ваших результатов в рейтинговых играх (матчмейкинг). Вы предоставляете нам логин и пароль от Вашего стим аккаунта, после чего мы приступаем к повышению рейтинга (если Вы выбрали услугу "Дуо бустинг", то нам потребуется только Ваш ник в стиме).
+          +accordion("Как работает mmr.ru?", "how-to-work-mmr4", "#accordionActiveItem")
+            p Вы платите нам за улучшение Ваших результатов в рейтинговых играх (матчмейкинг). Вы предоставляете нам логин и пароль от Вашего стим аккаунта, после чего мы приступаем к повышению рейтинга (если Вы выбрали услугу "Дуо бустинг", то нам потребуется только Ваш ник в стиме).
+          +accordion("Как работает mmr.ru?", "how-to-work-mmr5", "#accordionActiveItem")
+            p Вы платите нам за улучшение Ваших результатов в рейтинговых играх (матчмейкинг). Вы предоставляете нам логин и пароль от Вашего стим аккаунта, после чего мы приступаем к повышению рейтинга (если Вы выбрали услугу "Дуо бустинг", то нам потребуется только Ваш ник в стиме).
+          +accordion("Как работает mmr.ru?", "how-to-work-mmr6", "#accordionActiveItem")
+            p Вы платите нам за улучшение Ваших результатов в рейтинговых играх (матчмейкинг). Вы предоставляете нам логин и пароль от Вашего стим аккаунта, после чего мы приступаем к повышению рейтинга (если Вы выбрали услугу "Дуо бустинг", то нам потребуется только Ваш ник в стиме).
+          +accordion("Как работает mmr.ru?", "how-to-work-mmr7", "#accordionActiveItem")
+            p Вы платите нам за улучшение Ваших результатов в рейтинговых играх (матчмейкинг). Вы предоставляете нам логин и пароль от Вашего стим аккаунта, после чего мы приступаем к повышению рейтинга (если Вы выбрали услугу "Дуо бустинг", то нам потребуется только Ваш ник в стиме).
+
+      section.blogs
+        .blogs__container.container.container-custom
+          header.blogs__header
+            h2 БЛОГ
+            a.button.invert-button.remove-link-style.border-clip(href="=0") Смотреть все
+          .blogs__list
+            +blogPreview
+            +blogPreview
+            +blogPreview
+
+      section.join
+        .join__container.container.container-custom.border-clip-2
+          .join__info
+            h2 Стань частью Команды#{" "}
+              b MMR
+            button.button.invert-button.border-clip Подать заявку
+          img(src="../../public/images/landing/Nice.png", alt="")
+    +footer

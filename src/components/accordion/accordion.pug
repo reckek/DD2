@@ -1,0 +1,13 @@
+mixin accordion(title, id, parent)
+  .accordion-item
+    h3.accordion-header
+      button.accordion-button.collapsed(
+        aria-controls= id
+        aria-expanded="false"
+        data-bs-target= `#${id}`
+        data-bs-toggle="collapse"
+        type="button"
+        )= title
+    .accordion-collapse.collapse(data-bs-parent="#accordionFlushExample", id= id)
+      .accordion-body
+        block

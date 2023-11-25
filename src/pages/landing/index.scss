@@ -1,0 +1,550 @@
+@import "../../components/card/card.scss";
+@import "../../components/sectionHeader/sectionHeader.scss";
+@import "../../components/review/review.scss";
+@import "../../components/accordion/accordion.scss";
+@import "../../components/blogPreview/blogPreview.scss";
+@import "../../components/teamPreview/teamPreview.scss";
+
+.first-screen-wrapper.section-header {
+  display: flex;
+  align-items: center;
+  height: 666px;
+}
+
+.separator-land {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 80px auto;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 47%;
+    height: 1px;
+  }
+
+  &::before {
+    left: 0%;
+    background: linear-gradient(90deg, #c4c1d200, #c4c1d2);
+  }
+
+  &::after {
+    right: 0%;
+    background: linear-gradient(270deg, #c4c1d200, #c4c1d2);
+  }
+}
+
+.first-screen {
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../../public/images/landing/Dota-logo.png");
+
+  & .carousel-indicators {
+    margin-bottom: -77px;
+  }
+
+  &__layout {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+  }
+
+  &__title {
+    margin: 0;
+    max-width: 405px;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 48px;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin-top: 20px;
+    max-width: 540px;
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 20px;
+    opacity: 0.7;
+
+    > span {
+      display: inline-block;
+    }
+  }
+
+  &__call-to-action {
+    display: flex;
+    margin-top: 48px;
+
+    .border-clip:last-child {
+      display: flex;
+      align-items: center;
+      margin-left: -10px;
+      padding: 16px 9px;
+      font-family: "Inter", var(--font-primary);
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 24px; /* 120% */
+      text-transform: uppercase;
+      color: var(--white);
+      background-color: var(--red-2);
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+  }
+}
+
+.raffle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-wrapper {
+    padding: 0;
+    background: radial-gradient(
+        243.79% 141.42% at 100% 100%,
+        rgba(62, 37, 216, 0.5) 0%,
+        rgba(37, 183, 216, 0.29) 53.13%,
+        rgba(101, 61, 153, 0.5) 100%
+      ),
+      #21212d;
+  }
+
+  &-img {
+    width: 100%;
+    padding: 64px 0;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-image: url("../../public/images/landing/heros.png");
+  }
+
+  &__info {
+    max-width: 500px;
+
+    > h2 {
+      font-family: var(--font-primary);
+      font-size: 48px;
+      font-style: italic;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+  }
+}
+
+.stats {
+  &__header > h2 {
+    margin-bottom: 40px;
+    font-family: var(--font-primary);
+    font-size: 27px;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--black);
+    text-align: center;
+    margin: 0;
+
+    span {
+      color: var(--primary);
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    margin-top: 40px;
+
+    p {
+      font-family: var(--font-primary);
+      font-size: 64px;
+      font-style: italic;
+      font-weight: 600;
+      text-align: center;
+      color: var(--primary);
+    }
+
+    span {
+      font: var(--font-text-primary);
+      margin-top: 8px;
+    }
+  }
+}
+
+.necessary {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+
+  background-origin: border-box;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-image: url("../../public/images/landing/necessary.png");
+
+  &__info {
+    max-width: 445px;
+  }
+
+  &__title {
+    font-family: var(--font-primary);
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+
+    > b {
+      color: var(--primary);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin: 40px 0 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 32px;
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &-title {
+      margin: 0;
+      font-weight: var(--font-primary);
+      font-size: 27px;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--black);
+    }
+
+    & > ul {
+      padding: 0;
+    }
+
+    & li {
+      list-style: initial;
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      color: var(--purple);
+    }
+  }
+}
+
+.product {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      max-width: 350px;
+      font-family: var(--font-primary);
+      font-size: 48px;
+      font-style: italic;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--black);
+
+      b {
+        color: var(--primary);
+      }
+    }
+
+    &-description {
+      margin-left: 60px;
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      color: var(--purple);
+    }
+  }
+
+  &__list {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 30px;
+  }
+
+  .active-button {
+    margin-top: 24px;
+    border-radius: var(--border-radius);
+  }
+}
+
+.reviews {
+  margin: 80px 0;
+  padding: 80px 0;
+  background-color: rgb(255 255 255 / 30%);
+
+  &__container {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__info {
+    max-width: 350px;
+
+    button {
+      margin-top: 40px;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-primary);
+    font-size: 27px;
+    font-style: italic;
+    font-weight: 600;
+    margin: 0;
+    color: var(--black);
+
+    b {
+      color: var(--primary);
+    }
+  }
+
+  &__description {
+    margin: 24px 0 0;
+
+    span {
+      display: block;
+      margin: 4px 0;
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+
+    a {
+      width: 100%;
+      background-color: var(--background-2);
+    }
+  }
+}
+
+.teams {
+  &__title {
+    font-family: var(--font-primary);
+    font-size: 27px;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--black);
+  }
+
+  &__description {
+    margin-top: 24px;
+
+    p {
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+
+      &:not(:first-child) {
+        padding-top: 6px;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 30px;
+    margin-top: 40px;
+  }
+
+  a {
+    margin-top: 24px;
+  }
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      max-width: 350px;
+
+      font-size: 48px;
+      font-style: italic;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--black);
+
+      b {
+        color: var(--primary);
+      }
+    }
+  }
+
+  &__description {
+    p {
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+
+      &:not(:first-child) {
+        padding-top: 6px;
+      }
+    }
+
+    button {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+    gap: 28px 30px;
+
+    > .accordion-item {
+      padding: 28px 24px;
+      border-radius: var(--border-radius);
+      background-color: var(--background-2);
+
+      > .accordion-header button {
+        background-color: var(--background-2);
+      }
+    }
+  }
+}
+
+.blogs {
+  margin-top: 80px;
+  padding: 80px 0;
+  background-color: rgb(255 255 255 / 30%);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      font-family: var(--font-primary);
+      font-size: 48px;
+      font-style: italic;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    a {
+      display: flex;
+      max-width: max-content;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 40px;
+  }
+}
+
+.join {
+  position: relative;
+  margin: 0 23px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 136px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--black);
+    z-index: -1;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 40px 60px;
+    max-height: 242px;
+    margin-top: 177px;
+
+    &::before,
+    &::after {
+      background-color: var(--primary);
+    }
+  }
+
+  &__info {
+    h2 {
+      font-family: var(--font-primary);
+      font-size: 48px;
+      font-style: italic;
+      font-weight: 600;
+      text-transform: uppercase;
+      max-width: 385px;
+      color: rgb(255 255 255 / 0.7);
+
+      b {
+        color: var(--white);
+      }
+    }
+
+    .button {
+      margin-top: 24px;
+
+      &:hover {
+        color: var(--background-2);
+        background-color: var(--black);
+      }
+    }
+  }
+
+  img {
+    margin-top: -160px;
+  }
+}
+
+.footer {
+  margin-top: 0;
+  border-radius: 0 var(--border-radius) 0 var(--border-radius);
+}
