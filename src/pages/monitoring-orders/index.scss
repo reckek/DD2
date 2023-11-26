@@ -1,0 +1,127 @@
+@import "../../components/sectionHeader/sectionHeader.scss";
+@import "../../components/teamPreview/teamPreview.scss";
+
+.section-header {
+  padding-bottom: 0;
+}
+
+.monitoring-orders {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 40px;
+    height: 948px;
+    margin-top: -80px;
+
+    &::after,
+    &::before {
+      clip-path: polygon(4% 0%, 100% 0%, 100% 96%, 96% 100%, 0% 100%, 0% 4%);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    column-gap: 30px;
+    row-gap: 28px;
+    padding: 0;
+    overflow-y: auto;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  .toggler {
+    max-width: 424px;
+    padding: 4px;
+    background-color: var(--background);
+
+    &__item {
+      padding: 16px 16px;
+      text-align: center;
+    }
+  }
+
+  &__max {
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    color: var(--primary);
+  }
+}
+
+.order {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 16px 20px;
+  border-radius: var(--border-radius);
+  background-color: var(--background);
+
+  &__rank {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    path {
+      stroke: var(--background-3);
+    }
+
+    &-start,
+    &-end {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    svg {
+      opacity: 30%;
+      transition: all 0.3s;
+
+      circle,
+      path,
+      rect {
+        stroke: var(--primary);
+      }
+
+      &.order__status-active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__button {
+    svg {
+      transform: scale3d(1, 1, 1);
+      transition: all .2s;
+    }
+
+    path {
+      stroke: var(--primary);
+    }
+
+    &:hover {
+      svg {
+        transform: scale3d(1.5, 1.5, 1.5);
+      }
+    }
+  }
+}
