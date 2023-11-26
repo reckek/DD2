@@ -18,11 +18,21 @@
 
 .messenger {
   display: flex;
-  margin-top: 100px;
 
   min-height: 708px;
 
   background: var(--background-2);
+
+  &__body {
+    width: 100%;
+    margin-top: -90px;
+    margin-bottom: -50px;
+    padding: 40px;
+
+    background: var(--white);
+
+    clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
+  }
 
   &__order-description {
     width: 100%;
@@ -232,7 +242,7 @@
       z-index: 2;
 
       display: grid;
-      width: 100%;
+      width: 80%;
       max-width: 642px;
 
       left: 49%;
@@ -271,6 +281,7 @@
     &-date {
       margin-left: auto;
       margin-right: auto;
+      margin-top: 28px;
 
       border-radius: 4px;
 
@@ -427,4 +438,11 @@
   height: 100%;
 
   background: var(--background-3);
+}
+
+.messenger__toggler {
+  &-item {
+    padding: 16px 49px;
+    text-align: center;
+  }
 }
