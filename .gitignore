@@ -23,4 +23,5 @@ zip/**
 
 ex_files
 Thumbs.db
-package-lock.json
+
+*-lock.*
