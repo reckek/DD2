@@ -145,30 +145,36 @@
       margin-right: auto;
     }
 
-    &-item {
+    &-lain-progress {
       position: absolute;
       z-index: 1;
 
-      top: -50%;
-      transform: translateX(-50%);
-
-      transition: left 0.5s ease-in;
-
-      width: 16px;
-      height: 24px;
-
-      background-image: url("../../public/images/loyalty-system/discount__progress-bar-item.svg");
-    }
-
-    &-lain-progress {
-      position: absolute;
-      z-index: 0;
-
       height: 2px;
-
       transition: left 0.5s ease-in;
-
       background: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: end;
+
+      &::after {
+        content: " ";
+        z-index: 1;
+
+        display: block;
+
+        width: 16px;
+        height: 24px;
+
+        transition: left 0.5s ease-in;
+
+        transform: translateX(50%);
+
+        background-image: url("../../public/images/loyalty-system/discount__progress-bar-item.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
     }
 
     &-lain {

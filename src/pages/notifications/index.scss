@@ -1,0 +1,163 @@
+@import "../../components/sectionHeader/sectionHeader.scss";
+
+.notifications {
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 0.4fr 1fr;
+    gap: 30px;
+  }
+
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 24px;
+
+    > button {
+      width: 100%;
+    }
+  }
+
+  &__switch-category {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 16px 20px;
+    width: 100%;
+
+    &::after,
+    &::before {
+      clip-path: polygon(8% 0%, 100% 0%, 100% 86%, 92% 100%, 0% 100%, 0% 14%);
+    }
+  }
+
+  &__category {
+    color: var(--primary);
+    background-color: transparent;
+    transition: all 0.2s;
+
+    &::after,
+    &::before {
+      clip-path: polygon(7% 0%, 100% 0%, 100% 70%, 93% 100%, 0% 100%, 0% 30%);
+    }
+
+    &::after {
+      transition: all 0.2s;
+    }
+
+    &--active {
+      color: var(--white);
+      &::after {
+        background-color: var(--primary);
+      }
+    }
+
+    &:hover {
+      color: var(--white);
+      background-color: transparent;
+
+      &::after {
+        background-color: var(--primary);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+  }
+}
+
+.notification {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+
+  &::after,
+  &::before {
+    clip-path: polygon(3% 0%, 100% 0%, 100% 80%, 98% 100%, 0% 100%, 0% 20%);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__time {
+    font-family: var(--purple);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--purple);
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: unset;
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--primary);
+    background-color: transparent;
+  }
+
+  &__body {
+    display: flex;
+    align-items: start;
+    gap: 16px;
+
+    > svg {
+      margin-top: 5px;
+    }
+  }
+
+  &__messages {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    > p {
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      color: var(--black);
+
+      a {
+        padding: 2px 4px;
+        font-family: var(--font-primary);
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: var(--border-radius);
+        color: var(--primary);
+        background-color: rgb(0 0 0 / 0);
+        transition: all .2s;
+
+        &:hover {
+          background-color: rgb(0 0 0 / .1);
+        }
+      }
+    }
+
+  }
+}

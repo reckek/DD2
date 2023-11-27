@@ -1,10 +1,14 @@
+@import "../../components/sectionHeader/sectionHeader.scss";
 @import "../../components/history/history.scss";
 
 .main {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin-top: -190px;
+}
+
+.section-header {
+  padding-bottom: 65px;
 }
 
 .team-member {
@@ -84,6 +88,10 @@
       color: var(--white);
       opacity: .7;
     }
+  }
+
+  &__body {
+    margin-top: -100px;
   }
 }
 
