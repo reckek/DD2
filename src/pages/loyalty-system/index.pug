@@ -1,73 +1,82 @@
 include ../../components/head/head.pug
 include ../../components/header/header.pug
-include ../../components/sectionHeader/sectionHeader.pug
 include ../../components/footer/footer.pug
 
 doctype html
 html(lang="ru")
   +head('Blog')
   body
-    +header
-    main.main
+    main.main.container.container-custom
       section.discount
-        +sectionHeader
-          .discount__header.container.container-custom
-            h1 Система лояльности
-            p Мы рады представить Вашему вниманию новую систему вечных скидок постоянным клиентам! Эта скидка зависит от объема ваших покупок на сайте, она вечная и не сгорает. Следить за своей текущей скидкой можно прямо на этой странице (для залогиненных пользователей).
-        .discount__body.container.container-custom
-          .discount__content
-            ul.discount__list
-              li.discount__item.discount__item--inactive
-                img(src="../../public/images/loyalty-system/mango.png" alt="mango")
-                h2 Mango
+        .discount__content
+          ul.discount__list
 
-                small от #{" "}
-                  span 5000 #{" "}
-                  | р
-                p
-                  span 3% #{" "}
-                  | Скидка
-              li.discount__item.discount__item--inactive
-                img(src="../../public/images/loyalty-system/soid-stone.png" alt="soid-stone")
-                h2 Void Stone
-                small от #{" "}
-                  span 5000 #{" "}
-                  | р
-                p
-                  span 3% #{" "}
-                  | Скидка
-              li.discount__item.discount__item--active
-                img(src="../../public/images/loyalty-system/phase-boots.png" alt="phase-boots")
-                h2 Phase Boots
-                small от #{" "}
-                  span 5000 #{" "}
-                  | р
-                p
-                  span 3% #{" "}
-                  | Скидка
-              li.discount__item
-                img(src="../../public/images/loyalty-system/glimmer-gape.png" alt="glimmer-gap")
-                h2 Glimmer Cape
-                small от #{" "}
-                  span 5000 #{" "}
-                  | р
-                p
-                  span 3% #{" "}
-                  | Скидка
-              li.discount__item
-                img(src="../../public/images/loyalty-system/silver-edge.png" alt="silver-edge")
-                h2 Silver Edge
-                small от #{" "}
-                  span 5000 #{" "}
-                  | р
-                p
-                  span 3% #{" "}
-                  | Скидка
-            .discount__progress-bar
-              .discount__progress-bar-lain-progress(style="width: 50%;")
-              .discount__progress-bar-item(style="left: 50%;")
+            li.discount__item.in-active
+              img(src="../../public/images/loyalty-system/mango.png" alt="mango")
+              h2 Mango
+
+              small от #{" "}
+                span 5000 #{" "}
+                | р
+              p
+                span 3% #{" "}
+                | Скидка
+
+            li.discount__item.in-active
+              img(src="../../public/images/loyalty-system/soid-stone.png" alt="soid-stone")
+              h2 Void Stone
+
+              small от #{" "}
+                span 5000 #{" "}
+                | р
+              p
+                span 3% #{" "}
+                | Скидка
+
+            li.discount__item.in-active
+              img(src="../../public/images/loyalty-system/phase-boots.png" alt="phase-boots")
+              h2 Phase Boots
+
+              small от #{" "}
+                span 5000 #{" "}
+                | р
+              p
+                span 3% #{" "}
+                | Скидка
+
+            li.discount__item.active
+              img(src="../../public/images/loyalty-system/glimmer-gape.png" alt="glimmer-gap")
+              h2 Glimmer Cape
+
+              small от #{" "}
+                span 5000 #{" "}
+                | р
+              p
+                span 3% #{" "}
+                | Скидка
+
+            li.discount__item
+              img(src="../../public/images/loyalty-system/silver-edge.png" alt="silver-edge")
+              h2 Silver Edge
+
+              small от #{" "}
+                span 5000 #{" "}
+                | р
+              p
+                span 3% #{" "}
+                | Скидка
+
+
+          .discount__progress-bar
+            .discount__progress-bar-before
+            .discount__progress-bar-box
+              .discount__progress-bar-lain-progress(style="width: 75%;")
               .discount__progress-bar-lain
-          button.discount__button Сделать заказ
+            .discount__progress-bar-after
+
+
+
+        button.discount__button Сделать заказ
 
 
   +footer

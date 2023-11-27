@@ -1,42 +1,12 @@
-@import "../../components/sectionHeader/sectionHeader.scss";
-
 .discount {
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: -50px;
+  padding: 40px;
 
-    h1 {
-      max-width: 350px;
-      font-family: var(--font-primary);
-      font-size: 48px;
-      font-style: italic;
-      font-weight: 400;
-      text-transform: uppercase;
-      color: var(--white);
-    }
+  background: var(--white);
 
-    p {
-      max-width: 635px;
-      font-family: var(--font-primary);
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 400;
-      color: var(--white);
-    }
-  }
-
-  &__body {
-    width: 100%;
-    margin-top: -90px;
-    margin-bottom: -50px;
-    padding: 40px;
-
-    background: var(--white);
-
-    clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
-  }
+  clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
 
   &__content {
     padding: 88px 72px;
@@ -68,6 +38,26 @@
 
     color: var(--white);
     text-align: center;
+
+    &.active {
+      opacity: 1;
+
+      > h2 {
+        font-size: 20px;
+      }
+
+      > small {
+        font-size: 13px;
+      }
+
+      > p {
+        font-size: 15px;
+      }
+    }
+
+    &.in-active {
+      opacity: 0.3;
+    }
 
     > img {
       width: 100%;
@@ -102,26 +92,6 @@
       font-style: normal;
       font-weight: 500;
     }
-
-    &--active {
-      opacity: 1;
-
-      > h2 {
-        font-size: 20px;
-      }
-
-      > small {
-        font-size: 13px;
-      }
-
-      > p {
-        font-size: 15px;
-      }
-    }
-
-    &--inactive {
-      opacity: 0.3;
-    }
   }
 
   &__button {
@@ -148,39 +118,63 @@
   }
 
   &__progress-bar {
-    position: relative;
-    width: 770px;
-    height: 24px;
+    display: flex;
 
-    margin-left: auto;
-    margin-right: auto;
+    &-after {
+      width: 5%;
+      height: 2px;
 
-    &-item {
-      position: absolute;
-      z-index: 1;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+    }
 
-      top: -50%;
-      transform: translateX(-50%);
+    &-before {
+      width: 5%;
+      height: 2px;
 
-      transition: left 0.5s ease-in;
+      transform: rotate(180deg);
+      background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    }
 
-      width: 16px;
+    &-box {
+      position: relative;
+
       height: 24px;
+      width: 90%;
 
-      background: blue;
-      border-radius: 10px;
-      border: solid 2px white;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     &-lain-progress {
       position: absolute;
-      z-index: 0;
+      z-index: 1;
 
       height: 2px;
-
       transition: left 0.5s ease-in;
-
       background: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: end;
+
+      &::after {
+        content: " ";
+        z-index: 1;
+
+        display: block;
+
+        width: 16px;
+        height: 24px;
+
+        transition: left 0.5s ease-in;
+
+        transform: translateX(50%);
+
+        background-image: url("../../public/images/loyalty-system/discount__progress-bar-item.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
     }
 
     &-lain {
