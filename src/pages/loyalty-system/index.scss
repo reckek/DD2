@@ -1,12 +1,42 @@
+@import "../../components/sectionHeader/sectionHeader.scss";
+
 .discount {
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: -50px;
-  padding: 40px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 
-  background: var(--white);
+    h1 {
+      max-width: 350px;
+      font-family: var(--font-primary);
+      font-size: 48px;
+      font-style: italic;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: var(--white);
+    }
 
-  clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
+    p {
+      max-width: 635px;
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      color: var(--white);
+    }
+  }
+
+  &__body {
+    width: 100%;
+    margin-top: -90px;
+    margin-bottom: -50px;
+    padding: 40px;
+
+    background: var(--white);
+
+    clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
+  }
 
   &__content {
     padding: 88px 72px;

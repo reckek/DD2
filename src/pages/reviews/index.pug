@@ -1,0 +1,127 @@
+include ../../components/head/head.pug
+include ../../components/header/header.pug
+include ../../components/sectionHeader/sectionHeader.pug
+include ../../components/review/review.pug
+include ../../components/checkbox/checkbox.pug
+include ../../components/footer/footer.pug
+
+doctype html
+html(lang="ru")
+  +head('reviews')
+  body
+    +header
+    main.main
+      section.reviews
+        +sectionHeader
+          header.reviews__header.container.container-custom
+            h1.section-title Отзывы
+            img(src="../../public/images/reviews/header-img.png", alt="Отзывы")
+        .reviews__body.container.container-custom
+          aside.reviews__aside
+            .reviews__description
+              p После выполнения каждого заказа, вам приходит уведомление, информирующее о закрытии заказа, а так же с просьбой оставить нам отзыв о нашей работе.
+              p Через любой отзыв вы можете перейти к заказу, в котором был оставлен данный отзыв и посмотреть полную информацию по этому заказу.
+              p Со всеми остальными отзывами о нашей работе вы можете ознакомиться на отдельной странице, кликнув по кнопке ниже.
+            form.reviews__filter.filter
+              h2.filter__title Сортировка по оценкам
+              .filter__item
+                +checkbox('filter', true)
+                .filter__item-stars
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                p.filter__item-description 5
+                p.filter__item-counts (353)
+              .filter__item
+                +checkbox('filter', true)
+                .filter__item-stars
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg.filter__item-stars-inactive(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                p.filter__item-description 4
+                p.filter__item-counts (620)
+              .filter__item
+                +checkbox('filter', true)
+                .filter__item-stars
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg.filter__item-stars-inactive(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg.filter__item-stars-inactive(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                p.filter__item-description 3
+                p.filter__item-counts (40)
+              .filter__item
+                +checkbox('filter', true)
+                .filter__item-stars
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg.filter__item-stars-inactive(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg.filter__item-stars-inactive(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg.filter__item-stars-inactive(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                p.filter__item-description 2
+                p.filter__item-counts (10)
+              .filter__item
+                +checkbox('filter', true)
+                .filter__item-stars
+                  svg(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg.filter__item-stars-inactive(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg.filter__item-stars-inactive(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg.filter__item-stars-inactive(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                  svg.filter__item-stars-inactive(width="16" height="15" viewBox="0 0 16 15" fill="none")
+                    path(d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z")
+                p.filter__item-description 1
+                p.filter__item-counts (0)
+
+
+
+
+          ul.reviews__list
+            li.reviews__item
+              +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            li.reviews__item
+              +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            li.reviews__item
+              +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            li.reviews__item
+              +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            li.reviews__item
+              +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            li.reviews__item
+              +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            li.reviews__item
+              +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            li.reviews__item
+              +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            li.reviews__item
+              +review("11080", "Буст рейтинга", "danielvfrcbv:")
+            li.reviews__item
+              +review("11080", "Буст рейтинга", "danielvfrcbv:")
+    +footer

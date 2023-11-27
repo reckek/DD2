@@ -1,0 +1,36 @@
+include ../../components/head/head.pug
+include ../../components/header/header.pug
+include ../../components/sectionHeader/sectionHeader.pug
+include ../../components/blogPreview/blogPreview.pug
+include ../../components/footer/footer.pug
+
+doctype html
+html(lang="ru")
+  +head('Блог')
+  body
+    +header
+    main.main
+      section.blogs
+        +sectionHeader
+          header.blogs__header.container.container-custom
+            h1.section-title Блог
+            img(src="../../public/images/blogs/blogs-header.png", alt="Блог")
+        .blogs__body.container.container-custom
+          ul.blogs__list.container.container-custom
+            +blogPreview
+            +blogPreview
+            +blogPreview
+            +blogPreview
+            +blogPreview
+            +blogPreview
+            +blogPreview
+            +blogPreview
+            +blogPreview
+            +blogPreview
+            +blogPreview
+            +blogPreview
+            +blogPreview
+            +blogPreview
+            +blogPreview
+            +blogPreview
+    +footer

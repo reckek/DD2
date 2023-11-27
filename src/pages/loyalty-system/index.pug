@@ -1,19 +1,25 @@
 include ../../components/head/head.pug
 include ../../components/header/header.pug
+include ../../components/sectionHeader/sectionHeader.pug
 include ../../components/footer/footer.pug
 
 doctype html
 html(lang="ru")
   +head('Blog')
   body
-    main.main.container.container-custom
+    +header
+    main.main
       section.discount
-        .discount__content
-          ul.discount__list
-
-            li.discount__item.in-active
-              img(src="../../public/images/loyalty-system/mango.png" alt="mango")
-              h2 Mango
+        +sectionHeader
+          .discount__header.container.container-custom
+            h1 Система лояльности
+            p Мы рады представить Вашему вниманию новую систему вечных скидок постоянным клиентам! Эта скидка зависит от объема ваших покупок на сайте, она вечная и не сгорает. Следить за своей текущей скидкой можно прямо на этой странице (для залогиненных пользователей).
+        .discount__body.container.container-custom
+          .discount__content
+            ul.discount__list
+              li.discount__item.in-active
+                img(src="../../public/images/loyalty-system/mango.png" alt="mango")
+                h2 Mango
 
               small от #{" "}
                 span 5000 #{" "}

@@ -1,71 +1,88 @@
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  height: 324px;
+  height: min-content;
   padding: 36px;
-  margin: 23px;
-  overflow: hidden;
-  border-radius: var(--border-radius);
-  background: radial-gradient(243.79% 141.42% at 100% 100%, rgba(62, 37, 216, 1) 0%, rgba(37, 183, 216, 0.57) 53.13%, rgba(101, 61, 153, 1) 100%);
+  margin: 23px 23px 0 23px;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  & a.accent {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    font: var(--font-button);
+    padding: 8px 12px;
+    border: none;
+    border-radius: 45px;
+
+    text-decoration: none;
+
+    color: var(--primary);
+    background-color: var(--white);
+    transition: all .2s ease-out;
+    outline: solid 0px;
+
+    &:hover {
+      outline: solid 3px;
+    }
+  }
+
+  & .profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font: var(--font-button);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--white);
+    transition: all .2s;
+
+    > img {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      object-fit: cover;
+      object-position: center;
+      background-color: var(--white);
+    }
+  }
 
   .navbar-toggler svg {
     stroke: var(--white);
   }
 
-  .header__container {
+  &__auth-button {
     display: flex;
-    justify-content: space-between;
-    align-self: flex-start;
     align-items: center;
-    width: 100%;
+    gap: 12px;
+    color: var(--primary);
+    background-color: var(--white);
 
-    > div {
-      display: flex;
-      align-items: center;
-      gap: 40px;
+    path {
+      stroke: var(--primary);
+      transition: .2s ease-out;
     }
 
-    & a.accent {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: nowrap;
-      font: var(--font-button);
-      padding: 8px 12px;
-      border: none;
-      border-radius: 45px;
-
-      text-decoration: none;
-
-      color: var(--primary);
-      background-color: var(--white);
-      transition: all .2s ease-out;
-      outline: solid 0px;
-
-      &:hover {
-        outline: solid 3px;
-      }
-    }
-
-    & .profile {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-
-      font: var(--font-button);
-      text-transform: uppercase;
-      text-decoration: none;
+    &:hover {
       color: var(--white);
-      transition: all .2s;
+      background-color: var(--primary);
 
-      > img {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        object-fit: cover;
-        object-position: center;
-        background-color: var(--white);
+      path {
+        stroke: var(--white);
       }
     }
   }

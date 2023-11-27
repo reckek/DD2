@@ -1,7 +1,10 @@
+@import "../base/fonts.scss";
+
 :root {
   --primary: #3e25d8;
   --black: #21212d;
   --red: #d52b1e;
+  --red-2: #BB3C3C;
   --white: #ffffff;
   --purple: #5f5a79;
 
@@ -34,6 +37,10 @@
 
 a {
   cursor: pointer;
+}
+
+p {
+  margin: 0;
 }
 
 .section-title {
