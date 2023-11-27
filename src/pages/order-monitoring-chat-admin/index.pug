@@ -1,6 +1,7 @@
 include ../../components/head/head.pug
 include ../../components/header/header.pug
 include ../../components/sectionHeader/sectionHeader.pug
+include ../../components/history/history.pug
 include ../../components/footer/footer.pug
 
 doctype html
@@ -12,20 +13,40 @@ html(lang="ru")
       +sectionHeader
         .post-header.container.container-custom
           h1 заказ №11080
+          .post-header__buttons
+            .post-header__buttons-order-activated
+              button
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 16L18 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                | Отказать от заказа
+              button
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 16L16 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 8L16 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                | Заказ выполнен
 
-      .container.container-custom
-        section.messenger
+            .post-header__buttons-order-in-activated.active
+              button
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 16L18 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                | Взять заказ
+
+      .messenger__body.container.container-custom
+        section.messenger.border-clip-2.container.container-custom
           .messenger__order-description
             h2 Детали заказа
             .messenger__MMP-progress-content
               .messenger__MMP-progress-status-MMR
                 small.title-type  СТАРТОВЫЙ ММР
-                img(src="../../public/images/order-monitoring/Herald.svg" alt="Herald")
+                img(src="../../public/images/order-monitoring/Herald.png" alt="Herald")
                 p Herald II 2 500 MMR
               .messenger__MMP-progress-arrow-element
               .messenger__MMP-progress-status-MMR
                 small.title-type  ИТОГОВЫЙ ММР
-                img(src="../../public/images/order-monitoring/Immorta.svg" alt="Immorta")
+                img(src="../../public/images/order-monitoring/Immorta.png" alt="Immorta")
                 p Herald II 2 500 MMR
 
             article.progressbar-container
@@ -34,17 +55,19 @@ html(lang="ru")
 
             .messenger__order-info
               .row-container
-                .messenger__qwe
+                div
                   small.title-type  тип заказа:
                   p Буст рейтинга
-                .messenger__qwe
+                div
                   small.title-type статус:
                   p(style="color: #3E25D8;") Выполняется
+
               .messenger__order-info-box
                 small.title-type Ожидаемое время завершения:
                 p
                   span -
                   | 10 октября 2023 г. в 19:48
+
               .messenger__order-info-box
                 small.title-type Оплата
                 p 1 120 500 ₽
@@ -107,28 +130,39 @@ html(lang="ru")
                       <path d="M8 16L16 8" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
 
-
-            .messenger__order-info-user
+            .messenger__order-info
               .row-container
-                img(src="../../public/images/order-monitoring/user-img83.png" alt="user").messenger__order-info-user-img
-                .messenger__order-info-user-alias
-                  h4.messenger__order-info-user-nickname Никнейм
-                  p.messenger__order-info-user-FIO ФИО
-                img(src="../../public/images/order-monitoring/Immorta.svg" alt="Immorta").messenger__order-info-rank-img
+                div
+                  small.title-type  тип заказа:
+                  p Буст рейтинга
+                div
+                  small.title-type статус:
+                  p(style="color: #3E25D8;") Выполняется
 
-              .messenger__order-info-user-account
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="9" r="3" stroke="#3E25D8" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M12 14C10.6065 14 9.30805 14.4072 8.21723 15.1091C4.96615 17.2011 8.13401 21 12 21C15.866 21 19.0339 17.2011 15.7828 15.1091C14.6919 14.4072 13.3935 14 12 14Z" stroke="#3E25D8" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10"/>
-                </svg>
-
-                a(href="")  Профиль
+              .messenger__order-info-box
+                small.title-type Ожидаемое время завершения:
+                p
+                  span -
+                  | 10 октября 2023 г. в 19:48
 
           .messenger__chat-bloc
             .messenger__chat-switching
-              button.messenger__chat-switching-button.messenger__chat-switching-button--active  Чат с бустером
-              button.messenger__chat-switching-button  Чат с администрацией
+              .toggler
+                label.toggler__item.messenger__toggler-item
+                  | Мои заказы
+                  input(
+                    checked=""
+                    name="currency"
+                    type="radio"
+                    )
+                label.toggler__item.messenger__toggler-item
+                  | Свободные заказы
+                  input(
+                    name="currency"
+                    type="radio"
+                    )
+
+
             .messenger__chat-content
               .messenger__chat-subject
                 small ПОЖЕЛАНИЯ КЛИЕНТА:
@@ -162,8 +196,30 @@ html(lang="ru")
                   | Сообщение от бустера
                 p.messenger__chat-element.messenger__chat-recipient-message(time="13:34")
                   | Сообщение от бустера
+              // .messenger__chat-no-messages.active чтобы включить
+              p.messenger__chat-no-messages Чат недоступен пока вы не взяли заказ
+
+            // .messenger__chat-input.in-active для отключения
+
             .messenger__chat-input
               input(type="text" placeholder="Введите ваше сообщение...")
-              button
+              <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M0.00857142 16L18 8L0.00857142 0L0 6.22222L12.8571 8L0 9.77778L0.00857142 16Z" fill="#5F5A79"/>
+              </svg>
+
+
+
+        section.orders.container.container-custom
+        section.team-member__history.container.container-custom
+            h1.history__title Последние игры
+            +historyList
+              +historyItem("DOOM", true, 25, 0, 13, "02:58:10", 25, false)
+                svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+                  path(d="M12 4L4 12L12 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  path(d="M20 4L12 12L20 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              +historyItem("DOOM", false, 25, 0, 13, "02:58:10", -25, false)
+                svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+                  path(d="M12 4L4 12L12 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  path(d="M20 4L12 12L20 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
   +footer

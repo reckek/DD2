@@ -2,6 +2,7 @@
 
 .main {
 }
+
 .title-type {
   color: var(--purple);
   font-family: var(--font-primary);
@@ -16,6 +17,50 @@
   justify-content: space-between;
 }
 
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 56px;
+    text-transform: uppercase;
+  }
+
+  img {
+    margin-bottom: -180px;
+  }
+
+  &__buttons {
+    display: flex;
+
+    column-gap: 12px;
+    > button {
+      display: flex;
+
+      column-gap: 8px;
+      padding: 16px;
+
+      color: var(--white);
+      background: none;
+      border-radius: 4px;
+      border: solid 1px var(--white);
+
+      text-decoration: none;
+
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+    }
+  }
+}
+
 .messenger {
   display: flex;
 
@@ -26,12 +71,19 @@
   &__body {
     width: 100%;
     margin-top: -90px;
-    margin-bottom: -50px;
     padding: 40px;
 
     background: var(--white);
 
     clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
+  }
+
+  &__toggler {
+    flex-wrap: wrap;
+    &-item {
+      padding: 16px 49px;
+      text-align: center;
+    }
   }
 
   &__order-description {
@@ -402,6 +454,8 @@
   }
 }
 
+
+
 .progressbar-container {
   position: relative;
   width: 100%;
@@ -438,11 +492,4 @@
   height: 100%;
 
   background: var(--background-3);
-}
-
-.messenger__toggler {
-  &-item {
-    padding: 16px 49px;
-    text-align: center;
-  }
 }
