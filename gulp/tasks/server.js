@@ -11,10 +11,11 @@ const [taskServe] = createTask("serve", () => {
       baseDir: config.dest.root,
     },
     files: [
-      `${config.dest.root}/**/*.*`,
+      `${config.src.root}/**/*.*`,
+      `${config.src.public}/**/*.*`,
     ],
     open: false,
-    notify: false,
+    notify: true,
   });
 });
 
