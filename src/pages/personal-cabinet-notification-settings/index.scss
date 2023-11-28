@@ -1,0 +1,76 @@
+@import "../personal-cabinet-layout/index.scss";
+
+.notifications {
+  &__table {
+    &-row {
+      display: grid;
+
+      padding: 20px 0;
+      border-bottom: solid 1px #d2d0dd;
+
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+    }
+
+    &-header {
+      text-align: center;
+
+      color: #5f5a79;
+      font-family: Rubik;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+    }
+    &-title {
+      display: grid;
+      align-items: center;
+
+      color: #5f5a79;
+      font-family: Rubik;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 600;
+    }
+    &-cell {
+      display: grid;
+      place-items: center;
+    }
+  }
+  &__telegram {
+    &-link {
+      display: flex;
+      text-decoration: none;
+    }
+    &-link-text {
+      margin-left: 8px;
+
+      text-decoration: none;
+
+      color: #31a8df;
+      font-family: Rubik;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+
+      &--red {
+        color: #bb3c3c;
+        margin-left: 24px;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    &-row {
+      display: flex;
+      margin-top: 8px;
+    }
+  }
+  &__save-settings {
+    border-radius: 4px;
+  }
+}
+
+//TODO доделать чек бокс
