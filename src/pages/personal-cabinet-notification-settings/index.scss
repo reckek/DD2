@@ -1,4 +1,5 @@
 @import "../personal-cabinet-layout/index.scss";
+@import "../../components/checkbox/checkbox.scss";
 
 .notifications {
   &__table {
@@ -32,6 +33,8 @@
       font-size: 15px;
       font-style: normal;
       font-weight: 600;
+
+      grid-area: 1 / 1 / 2 / 3;
     }
     &-cell {
       display: grid;

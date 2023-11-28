@@ -1,4 +1,5 @@
 extends ../personal-cabinet-layout/index
+include ../../components/checkbox/checkbox.pug
 
 block aside
   +userAside("notifications")
@@ -9,20 +10,21 @@ block content
   section.notifications
     .notifications__table
       .notifications__table-row
-        .notifications__table-cell
-        .notifications__table-cell
+        .notifications__table-title
         .notifications__table-cell.notifications__table-header Промо-новости
         .notifications__table-cell.notifications__table-header Уведомления о заказе
       .notifications__table-row
         .notifications__table-title Электронная почта
         .notifications__table-cell
-        .notifications__table-cell <input class="checkbox" type="checkbox"  >
-        .notifications__table-cell <input class="checkbox" type="checkbox"  >
+          +checkbox('notifications', true)
+        .notifications__table-cell
+          +checkbox('notifications', true)
       .notifications__table-row
         .notifications__table-title Номер телефона
         .notifications__table-cell
-        .notifications__table-cell <input class="checkbox" type="checkbox"  >
-        .notifications__table-cell <input class="checkbox" type="checkbox"  >
+          +checkbox('notifications', true)
+        .notifications__table-cell
+          +checkbox('notifications', true)
       .notifications__table-row
         .notifications__table-title.notifications__telegram
           p Telegram
@@ -48,6 +50,7 @@ block content
               a(href="").notifications__telegram-link-text RuslanVal
             a(href="").notifications__telegram-link-text.notifications__telegram-link-text--red Отвязать
         .notifications__table-cell
-        .notifications__table-cell <input class="checkbox" type="checkbox"  >
-        .notifications__table-cell <input class="checkbox" type="checkbox"  >
+          +checkbox('notifications', true)
+        .notifications__table-cell
+          +checkbox('notifications', true)
   button.button.notifications__save-settings Сохранить изменения
