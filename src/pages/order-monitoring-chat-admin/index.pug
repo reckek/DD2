@@ -35,18 +35,18 @@ html(lang="ru")
                 | Взять заказ
 
       .messenger__body.container.container-custom
-        section.messenger.border-clip-2.container.container-custom
+        section.messenger.border-clip-2
           .messenger__order-description
             h2 Детали заказа
             .messenger__MMP-progress-content
               .messenger__MMP-progress-status-MMR
                 small.title-type  СТАРТОВЫЙ ММР
-                img(src="../../public/images/order-monitoring/Herald.png" alt="Herald")
+                img(src="../../public/images/order-monitoring-chat/Herald.png" alt="Herald")
                 p Herald II 2 500 MMR
               .messenger__MMP-progress-arrow-element
               .messenger__MMP-progress-status-MMR
                 small.title-type  ИТОГОВЫЙ ММР
-                img(src="../../public/images/order-monitoring/Immorta.png" alt="Immorta")
+                img(src="../../public/images/order-monitoring-chat/Immorta.png" alt="Immorta")
                 p Herald II 2 500 MMR
 
             article.progressbar-container
@@ -204,14 +204,12 @@ html(lang="ru")
             .messenger__chat-input
               input(type="text" placeholder="Введите ваше сообщение...")
               <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path d="M0.00857142 16L18 8L0.00857142 0L0 6.22222L12.8571 8L0 9.77778L0.00857142 16Z" fill="#5F5A79"/>
+                <path d="M0.00857142 16L18 8L0.00857142 0L0 6.22222L12.8571 8L0 9.77778L0.00857142 16Z" fill="#5F5A79"/>
               </svg>
 
-
-
-        section.orders.container.container-custom
-        section.team-member__history.container.container-custom
-            h1.history__title Последние игры
+        section.messenger__history
+          header.history.border-clip-2
+            h1.history__title Последние игры на заказе
             +historyList
               +historyItem("DOOM", true, 25, 0, 13, "02:58:10", 25, false)
                 svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
@@ -222,4 +220,22 @@ html(lang="ru")
                   path(d="M12 4L4 12L12 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                   path(d="M20 4L12 12L20 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
+        .messenger__alert
+          .messenger__alert-container
+            button.messenger__alert-close
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 13L13 0.999999" stroke="#5F5A79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1 1L13 13" stroke="#5F5A79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+
+            h2.messenger__alert-title Понравилось работать с бустером?
+            p.messenger__alert-text отблагодарите его, <br> оставив чаевые. <br> 100% суммы получит бустер
+            .row-container.messenger__alert-row-container
+              .messenger__alert-input-box
+                label(for="").messenger__alert-input-title Сумма чаевых
+                input(type="text" value="1000").messenger__alert-input
+              button.messenger__alert-button Отправить
+            smal.messenger__alert-caption Сумма на ваше усмотрение
+            img(src="../../public/images/order-monitoring-chat/golden-hand.png" alt="alt").messenger__alert-img
   +footer
