@@ -1,0 +1,33 @@
+extends ../personal-cabinet-layout/index
+
+block aside
+  +userAside("balance")
+
+
+block content
+  +content("Баланс")
+  section.balance
+    .balance__top-up-box
+      .balance__top-up-account-balance
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 9V15C10 16.1046 10.8954 17 12 17H19C20.1046 17 21 16.1046 21 15V9C21 7.89543 20.1046 7 19 7H12C10.8954 7 10 7.89543 10 9Z" stroke="#3E25D8" stroke-width="2"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M4 6C4 5.44772 4.44772 5 5 5L12 5H17L19.8293 5C19.4175 3.83481 18.3062 3 17 3L5 3C3.34315 3 2 4.34315 2 6L2 18C2 19.6569 3.34315 21 5 21L17 21C18.3062 21 19.4175 20.1652 19.8293 19H17L12 19H5C4.44772 19 4 18.5523 4 18L4 6Z" fill="#3E25D8"/>
+          <circle cx="14" cy="12" r="2" fill="#3E25D8"/>
+        </svg>
+        <p> <span id=''>15 500</span> <span id=''>₽</span></p>
+      button.balance__top-up-button Пополнить
+    .balance__transactions
+      h2.balance__transactions-title  История баланса
+      ul.balance__transactions-list
+        li.balance__transactions-item
+          span.balance__transactions-icon-status.balance__transactions-icon-status--withdrawal
+          p.balance__transactions-data 06.10.2023 2:12
+          <p>Потрачено
+            <span id=''>2 500</span><span id=''>₽</span> на заказ
+            <a href="" class="balance__transactions-link-order">№<span>24414124</span></a>
+          </p>
+
+        li.balance__transactions-item
+          span.balance__transactions-icon-status.balance__transactions-icon-status--replenishment
+          p.balance__transactions-data 06.10.2023 2:12
+          p Пополнение 15 000 ₽
