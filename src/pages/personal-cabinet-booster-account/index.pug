@@ -1,0 +1,29 @@
+extends ../personal-cabinet-layout/index
+include ../../components/avatar/avatar.pug
+include ../../components/textarea/textarea.pug
+include ../../components/favoriteHeros/favoriteHeros.pug
+
+block aside
+  +boosterAside("profile")
+
+
+block content
+  +content("Профиль бустера")
+  .booster-profile
+    .booster-profile__rank
+      .booster-profile__rank-img
+        img(src="../../public/images/rank-1.png", alt="rank 1")
+        p Herald II
+      .booster-profile__mmr
+        p Ваш MMR
+        p#mmr 12 500
+    hr
+    form
+      +textarea("Обо мне")(placeholder="Расскажите о себе", class="booster-profile__input")
+      .booster-profile__favorite-heros
+        h2 Любимые герои
+        +favoriteHeros(2)
+      hr
+      button.button(type="submit") Сохранить данные
+
+
