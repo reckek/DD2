@@ -216,7 +216,6 @@
       display: flex;
       column-gap: 8px;
 
-      color: var(--primary);
       font-family: var(--font-primary);
 
       font-size: 15px;
@@ -225,6 +224,7 @@
 
       > a {
         text-decoration: none;
+        color: var(--primary);
       }
     }
   }
@@ -453,8 +453,6 @@
     }
   }
 }
-
-
 
 .progressbar-container {
   position: relative;
