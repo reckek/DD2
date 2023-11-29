@@ -4,6 +4,8 @@
 }
 
 .title-type {
+  display: flex;
+
   color: var(--purple);
   font-family: var(--font-primary);
   font-size: 10px;
@@ -91,6 +93,8 @@
     max-width: 310px;
 
     padding: 40px 30px 40px 40px;
+
+    border-right: solid 1px var(--background);
 
     > h2 {
       color: var(--black);
@@ -230,7 +234,8 @@
   }
 
   &__order-info-rank-img {
-    max-width: 52px;
+    width: 52px;
+    height: 52px;
   }
 
   &__chat {
