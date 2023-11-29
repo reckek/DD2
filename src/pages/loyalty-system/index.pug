@@ -1,5 +1,6 @@
 include ../../components/head/head.pug
 include ../../components/header/header.pug
+include ../../components/progressBar/progressBar.pug
 include ../../components/footer/footer.pug
 
 doctype html
@@ -10,7 +11,6 @@ html(lang="ru")
       section.discount
         .discount__content
           ul.discount__list
-
             li.discount__item.in-active
               img(src="../../public/images/loyalty-system/mango.png" alt="mango")
               h2 Mango
@@ -65,17 +65,7 @@ html(lang="ru")
               p
                 span 3% #{" "}
                 | Скидка
-
-
-          .discount__progress-bar
-            .discount__progress-bar-before
-            .discount__progress-bar-box
-              .discount__progress-bar-lain-progress(style="width: 75%;")
-              .discount__progress-bar-lain
-            .discount__progress-bar-after
-
-
-
+          +progressBar(50)
         button.discount__button Сделать заказ
 
 

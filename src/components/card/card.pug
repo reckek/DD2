@@ -1,3 +1,5 @@
+include ../progressBar/progressBar.pug
+
 mixin card(cardId, type, start, end, progress)
   .status-card.border-clip-2
     .status-card__info.border-clip-2
@@ -14,9 +16,7 @@ mixin card(cardId, type, start, end, progress)
         .stat.status-card__mmr-end
           p= end
           span ИТОГОВЫЙ ММР
-      labe.status-card__progress
-        | {{progress}}%
-        progress(value="0")
+      +progressBar(50)(class="status-card__progress-bar")
     .status-card__status
       .status-card__status-header
         svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
