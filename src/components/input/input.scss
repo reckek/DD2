@@ -1,0 +1,34 @@
+.input {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--background-3);
+  background-color: var(--background-2);
+
+  &__title {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    right: 16px;
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    text-wrap: nowrap;
+    color: var(--purple);
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  input {
+    padding: 30px 16px 10px;
+    width: 100%;
+    height: 100%;
+    font: var(--font-text-secondary-regular);
+    color: var(--black);
+
+    &::placeholder {
+      font: var(--font-text-secondary-regular);
+      color: var(--purple);
+    }
+  }
+}
