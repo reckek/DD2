@@ -1,0 +1,16 @@
+@import "../personal-cabinet-layout/index.scss";
+@import "../../components/card/card.scss";
+.personal-orders {
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+    max-width: 530px;
+  }
+}
