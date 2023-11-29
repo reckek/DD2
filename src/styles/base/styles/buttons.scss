@@ -2,10 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font: var(--font-button);
+  width: max-content;
   padding: 12px 16px;
   border: none;
-  border-radius: unset;
+  border-radius: var(--border-radius);
+  font: var(--font-button);
   text-transform: uppercase;
   color: var(--white);
   background-color: var(--primary);
@@ -54,6 +55,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  width: max-content;
   padding: 15px 20px;
   border: 1px solid var(--primary);
   border-radius: var(--border-radius);
@@ -64,8 +66,33 @@
   background-color: transparent;
   transition: all 0.2s;
 
+  path, circle {
+    stroke: var(--primary);
+    transition: all .2s;
+
+    &.fill {
+      stroke: unset;
+      fill: var(--primary);
+    }
+
+    &.unset {
+      stroke: unset;
+      fill: unset;
+    }
+  }
+
   &:hover {
     color: var(--purple);
     border-color: var(--purple);
+
+
+    path, circle {
+      stroke: var(--purple);
+
+      &.fill {
+        stroke: unset;
+        fill: var(--purple);
+      }
+    }
   }
 }
