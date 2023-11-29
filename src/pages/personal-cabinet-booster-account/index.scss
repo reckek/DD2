@@ -55,6 +55,11 @@
     gap: 20px;
   }
 
+  &__favorite-heros h2 {
+    font: var(--font-text-secondary-regular);
+    color: var(--purple);
+  }
+
   &__input {
     min-height: 192px;
     resize: none;
