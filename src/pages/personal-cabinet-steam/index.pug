@@ -1,0 +1,59 @@
+extends ../personal-cabinet-layout/index
+include ../../components/accordion/accordion.pug
+
+block aside
+  +userAside("steam")
+
+
+block content
+  +content("STEAM АККАУНТ")
+  section.steam-account
+
+    form(action="").steam-account__form
+      .named-input
+        label(for="login").named-input__title Логин Steam аккаунта
+        input(type="text" id="login").named-input__input
+      .steam-account__form-row
+        .named-input
+          label(for="login").named-input__title Логин Steam аккаунта
+          input(type="text" id="login").named-input__input
+
+        .named-input
+          label(for="login").named-input__title Логин Steam аккаунта
+          input(type="text" id="login").named-input__input
+
+    button.button.steam-account__saving-settings Сохранить изменения
+    section.steam-account__posts
+      h2 Полезные статьи
+      .steam-account__post
+
+        #accordionActiveItem.accordion.accordion-flush.questions__layout
+          +accordion("Включаем семейный просмотр", "steam-account-post-1", "#accordionActiveItem")
+            <video controls class="steam-account__post-video" >
+              <source src="" />
+            </video>
+            p.steam-account__post-text  <b>Семейный просмотр</b>  - функция в стиме, которая позволяет ограничить доступ наших бустеров к настройкам аккаунта.
+
+      .steam-account__post
+        #accordionActiveItem.accordion.accordion-flush.questions__layout
+          +accordion("Удаляем мобильный аутентификатор", "steam-account-post-2", "#accordionActiveItem")
+            <video controls class="steam-account__post-video" >
+              <source src="" />
+            </video>
+            p.steam-account__post-text Если Вы используете мобильный аутентификатор, его необходимо удалить, после чего отключить Steam Guard!
+
+      .steam-account__post
+        #accordionActiveItem.accordion.accordion-flush.questions__layout
+          +accordion("Отключаем Steam Guard", "steam-account-post-3", "#accordionActiveItem")
+            <video controls class="steam-account__post-video" >
+              <source src="" />
+            </video>
+            p.steam-account__post-text <b>Steam Guard</b> - функция в стиме, которая защищает Ваш аккаунт от доступа с других устройств, но так как бустеры должны иметь моментальный доступ (без паролей) к Вашему аккаунту (что обеспечит высокую скорость выполнения) эту функцию нужно отключить.
+
+      .steam-account__post
+        #accordionActiveItem.accordion.accordion-flush.questions__layout
+          +accordion("Как создать запасные коды Steam Guard", "steam-account-post-4", "#accordionActiveItem")
+            <video controls class="steam-account__post-video" >
+              <source src="" />
+            </video>
+            p.steam-account__post-text <b>Steam Guard</b> - функция в стиме, которая защищает Ваш аккаунт от доступа с других устройств, но так как бустеры должны иметь моментальный доступ (без паролей) к Вашему аккаунту (что обеспечит высокую скорость выполнения) эту функцию нужно отключить.
