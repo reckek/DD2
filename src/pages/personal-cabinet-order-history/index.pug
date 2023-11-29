@@ -1,0 +1,23 @@
+extends ../personal-cabinet-layout/index
+include ../../components/card/card.pug
+
+block aside
+  +userAside("orders")
+
+
+block content
+  +content("История заказов/покупо")
+  section
+    ul.personal-orders__list
+      li.personal-orders__item
+        +card("11080", "Буст рейтинга", "3 377", "13 377", 50)
+      li.personal-orders__item
+        +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
+      li.personal-orders__item
+        +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
+      li.personal-orders__item
+        +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
+      li.personal-orders__item
+        +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
+      li.personal-orders__item
+        +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
