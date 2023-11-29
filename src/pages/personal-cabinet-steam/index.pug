@@ -1,4 +1,5 @@
 extends ../personal-cabinet-layout/index
+include ../../components/input/input.pug
 include ../../components/accordion/accordion.pug
 
 block aside
@@ -10,17 +11,10 @@ block content
   section.steam-account
 
     form(action="").steam-account__form
-      .named-input
-        label(for="login").named-input__title Логин Steam аккаунта
-        input(type="text" id="login").named-input__input
+      +input('Логин Steam аккаунта')(id="login", type="text")
       .steam-account__form-row
-        .named-input
-          label(for="login").named-input__title Логин Steam аккаунта
-          input(type="text" id="login").named-input__input
-
-        .named-input
-          label(for="login").named-input__title Логин Steam аккаунта
-          input(type="text" id="login").named-input__input
+        +input('Логин Steam аккаунта')(id="login", type="text")
+        +input('Пароль Steam аккаунта')(id="login", type="text")
 
     button.button.steam-account__saving-settings Сохранить изменения
     section.steam-account__posts
