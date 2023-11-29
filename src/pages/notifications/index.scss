@@ -35,6 +35,11 @@
     &::before {
       clip-path: polygon(8% 0%, 100% 0%, 100% 86%, 92% 100%, 0% 100%, 0% 14%);
     }
+
+    button {
+      width: 100%;
+      justify-content: start;
+    }
   }
 
   &__category {
