@@ -7,7 +7,7 @@ mixin teamPreview(hiddenButton)
           p Никнейм
           span ФИО
       img.team-preview__rank(src="../../public/images/rank-1.png", alt="")
-    .separator
+    hr
     .team-preview__stats
       .team-preview__stat
         p 13 377
@@ -19,7 +19,7 @@ mixin teamPreview(hiddenButton)
         p 8 726
         span Побед
     if !hiddenButton
-      .separator
+      hr
       .team-preview__show-profile
         a(href="=0") Посмотреть профиль
         svg(width="20" height="20" viewBox="0 0 20 20" fill="none")

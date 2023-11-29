@@ -1,0 +1,11 @@
+mixin favoriteHeros(count)
+  - var n = 0;
+
+  .favorite-heros()&attributes(attributes)
+    while n < count
+      img.favorite-heros__item(src="=0", alt=`{{ Hero, ${n++} }}`)
+    button.favorite-heros__add(type="button", aria-label="Добавить героя")
+      svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+        path(d="M12 5V19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M5 12L19 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+

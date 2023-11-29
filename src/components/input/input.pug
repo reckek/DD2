@@ -1,0 +1,4 @@
+mixin input(title, labelProps)
+  label.input&attributes(labelProps)
+    p.input__title= title
+    input(name=title)&attributes(attributes)

@@ -1,0 +1,30 @@
+.favorite-heros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  gap: 8px;
+
+  &__item {
+    display: inline-block;
+    width: 104px;
+    height: 64px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: calc(var(--border-radius) * 2);
+    background-color: var(--background-3);
+  }
+
+  &__add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed var(--purple);
+    border-radius: calc(var(--border-radius) * 2);
+    background-color: var(--background);
+    padding: 0 40px;
+
+    path {
+      stroke: var(--primary);
+    }
+  }
+}
