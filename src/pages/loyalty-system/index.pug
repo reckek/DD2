@@ -65,8 +65,13 @@ html(lang="ru")
               p
                 span 3% #{" "}
                 | Скидка
-          +progressBar(50)
+
+          .discount__progress-bar
+            .discount__progress-bar-before
+            .discount__progress-bar-box
+              .discount__progress-bar-lain-progress(style="width: 75%;")
+              .discount__progress-bar-lain
+            .discount__progress-bar-after
+
         button.discount__button Сделать заказ
-
-
   +footer
