@@ -1,0 +1,4 @@
+mixin textarea(title, labelProps)
+  label.textarea&attributes(labelProps)
+    p.textarea__title= title
+    textarea(name=title)&attributes(attributes)

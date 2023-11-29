@@ -1,0 +1,5 @@
+mixin progressBar(progress)
+  .custom-progress&attributes(attributes)
+    .custom-progress__preview( style=`width: ${progress}%;` )= `${progress}%`
+    .custom-progress__element
+      .custom-progress__line(style=`width: ${progress}%;`)

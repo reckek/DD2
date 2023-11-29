@@ -1,3 +1,5 @@
+@import "../progressBar/progressBar.scss";
+
 .status-card {
   display: flex;
   flex-direction: row;
@@ -141,5 +143,9 @@
         stroke: var(--white);
       }
     }
+  }
+
+  &__progress-bar {
+    margin-top: 24px;
   }
 }
