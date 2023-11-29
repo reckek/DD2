@@ -23,7 +23,7 @@ const config = {
     public: `${destPath}/public`,
     styles: destPath,
     scripts: `${destPath}/main.js`,
-    views: `${destPath}/components`,
+    components: `${destPath}/components`,
     pages: `${destPath}/pages`,
 
     fonts: `${destPath}/assets/fonts`,
