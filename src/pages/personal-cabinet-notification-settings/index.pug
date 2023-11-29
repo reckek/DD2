@@ -1,0 +1,56 @@
+extends ../personal-cabinet-layout/index
+include ../../components/checkbox/checkbox.pug
+
+block aside
+  +userAside("notifications")
+
+
+block content
+  +content("Настройки уведомления")
+  section.notifications
+    .notifications__table
+      .notifications__table-row
+        .notifications__table-title
+        .notifications__table-cell.notifications__table-header Промо-новости
+        .notifications__table-cell.notifications__table-header Уведомления о заказе
+      .notifications__table-row
+        .notifications__table-title Электронная почта
+        .notifications__table-cell
+          +checkbox('notifications', true)
+        .notifications__table-cell
+          +checkbox('notifications', true)
+      .notifications__table-row
+        .notifications__table-title Номер телефона
+        .notifications__table-cell
+          +checkbox('notifications', true)
+        .notifications__table-cell
+          +checkbox('notifications', true)
+      .notifications__table-row
+        .notifications__table-title.notifications__telegram
+          p Telegram
+          div.notifications__telegram-row
+            .notifications__telegram-link
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_346_9836)">
+              <path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="url(#paint0_linear_346_9836)"/>
+              <path d="M6.76953 10.7308L7.95595 14.0146C7.95595 14.0146 8.10428 14.3219 8.26311 14.3219C8.42195 14.3219 10.7844 11.8642 10.7844 11.8642L13.4114 6.79004L6.81186 9.88312L6.76953 10.7308Z" fill="#C8DAEA"/>
+              <path d="M8.34111 11.5732L8.11336 13.9937C8.11336 13.9937 8.01803 14.7354 8.75953 13.9937C9.50103 13.2521 10.2108 12.6802 10.2108 12.6802" fill="#A9C6D8"/>
+              <path d="M6.7897 10.8482L4.3492 10.0531C4.3492 10.0531 4.05753 9.93474 4.15145 9.66641C4.17078 9.61107 4.20978 9.56399 4.32644 9.48307C4.8672 9.10616 14.3353 5.70307 14.3353 5.70307C14.3353 5.70307 14.6026 5.61299 14.7603 5.67291C14.7993 5.68498 14.8344 5.7072 14.862 5.73729C14.8896 5.76738 14.9087 5.80426 14.9174 5.84416C14.9344 5.91463 14.9415 5.98713 14.9385 6.05957C14.9378 6.12224 14.9302 6.18032 14.9244 6.27141C14.8668 7.20182 13.1411 14.1458 13.1411 14.1458C13.1411 14.1458 13.0379 14.5522 12.6679 14.5661C12.577 14.569 12.4865 14.5536 12.4016 14.5208C12.3168 14.488 12.2395 14.4384 12.1742 14.3751C11.4483 13.7507 8.93928 12.0645 8.38486 11.6937C8.37236 11.6851 8.36182 11.674 8.35398 11.6611C8.34613 11.6482 8.34114 11.6337 8.33936 11.6187C8.33161 11.5796 8.37411 11.5312 8.37411 11.5312C8.37411 11.5312 12.7429 7.64782 12.8592 7.24016C12.8682 7.20857 12.8342 7.19299 12.7885 7.20682C12.4984 7.31357 7.4682 10.4902 6.91303 10.8407C6.87307 10.8528 6.83083 10.8554 6.7897 10.8482Z" fill="white"/>
+              </g>
+              <defs>
+              <linearGradient id="paint0_linear_346_9836" x1="10" y1="20" x2="10" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#1D93D2"/>
+              <stop offset="1" stop-color="#38B0E3"/>
+              </linearGradient>
+              <clipPath id="clip0_346_9836">
+              <rect width="20" height="20" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg>
+              a(href="").notifications__telegram-link-text RuslanVal
+            a(href="").notifications__telegram-link-text.notifications__telegram-link-text--red Отвязать
+        .notifications__table-cell
+          +checkbox('notifications', true)
+        .notifications__table-cell
+          +checkbox('notifications', true)
+    button.button.notifications__save-settings Сохранить изменения
