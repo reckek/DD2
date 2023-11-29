@@ -1,0 +1,62 @@
+@import "../personal-cabinet-layout/index.scss";
+@import "../../components/avatar/avatar.scss";
+@import "../../components/textarea/textarea.scss";
+@import "../../components/favoriteHeros/favoriteHeros.scss";
+
+.booster-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__rank {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &-img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+
+      img {
+        display: block;
+        width: 104px;
+        height: 104px;
+        object-fit: fill;
+        object-position: center;
+      }
+
+      p {
+        font: var(--font-text-secondary-regular);
+        color: var(--purple);
+      }
+    }
+  }
+
+  &__mmr {
+    display: flex;
+    flex-direction: column;
+    font: var(--font-text-secondary-regular);
+    color: var(--purple);
+    padding: 10px 16px;
+    border: 1px solid rgba(210, 208, 221, 0.40);
+    border-radius: var(--border-radius);
+    width: 160px;
+
+    p:last-child {
+      font: var(--font-text-primary);
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__input {
+    min-height: 192px;
+    resize: none;
+  }
+}
