@@ -1,4 +1,4 @@
-.input {
+.textarea {
   position: relative;
   width: 100%;
   border: 1px solid var(--background-3);
@@ -20,7 +20,7 @@
     overflow: hidden;
   }
 
-  input {
+  textarea {
     padding: 30px 16px 10px;
     width: 100%;
     height: 100%;
