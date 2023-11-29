@@ -1,0 +1,109 @@
+@import "../personal-cabinet-layout/index.scss";
+
+.balance {
+  &__top-up-box {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 24px;
+
+    border-radius: 4px;
+    background: linear-gradient(293deg, #3e25d8 -100%, rgba(37, 183, 216, 0.57) 6.25%, #653d99 100%) var(--black);
+  }
+  &__top-up-account-balance,
+  &__top-up-button {
+    display: flex;
+    height: min-content;
+    border-radius: 4px;
+
+    padding: 0;
+    margin: 0;
+    padding: 16px 24px;
+
+    background: var(--white);
+    color: var(--primary);
+    font-family: var(--font-primary);
+  }
+  &__top-up-account-balance {
+    display: flex;
+    align-items: center;
+
+    column-gap: 8px;
+
+    font-size: 27px;
+    font-style: italic;
+    font-weight: 600;
+  }
+  &__top-up-button {
+    border: none;
+    font-weight: 600;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &__transactions {
+    border-top: solid 1px var(--background-3);
+
+    margin-top: 32px;
+    padding: 32px 0;
+    &-title {
+      color: var(--black);
+      font-family: var(--font-primary);
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    &-list {
+      margin-top: 20px;
+      padding: 0;
+    }
+    &-item {
+      display: grid;
+      grid-template-columns: auto 1fr 4fr;
+      grid-template-rows: 1fr;
+      grid-column-gap: 24px;
+
+      padding: 8px 0;
+
+      border-bottom: solid 1px var(--background-3);
+
+      color: var(--purple);
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    &-data {
+    }
+    &-link-order {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    &-icon-status {
+      width: 24px;
+      height: 24px;
+
+      background-origin: border-box;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &--replenishment {
+        background-image: url("../../public/images/personal-cabinet-balance/replenishment.svg");
+      }
+      &--withdrawal {
+        background-image: url("../../public/images/personal-cabinet-balance/withdrawal.svg");
+      }
+    }
+  }
+}
