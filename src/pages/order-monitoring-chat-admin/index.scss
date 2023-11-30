@@ -109,6 +109,8 @@
 
     padding: 40px 30px 40px 40px;
 
+    border-right: solid 1px var(--background);
+
     > h2 {
       color: var(--black);
       font-family: var(--font-primary);
@@ -159,11 +161,14 @@
     border-top: var(--border);
 
     p {
-      color: var(--black);
       font-family: var(--font-primary);
       font-size: 15px;
       font-style: normal;
       font-weight: 600;
+    }
+
+    &-copy-text {
+      color: var(--primary);
     }
 
     &-box {
@@ -261,7 +266,11 @@
       padding: 24px 24px 0 24px;
     }
     &-switching {
+      display: flex;
       width: max-content;
+
+      background: #e4e2f1;
+      border-radius: 4px;
 
       padding: 4px;
       margin-left: auto;
@@ -322,8 +331,7 @@
       z-index: 2;
 
       display: grid;
-      width: 85%;
-      max-width: 642px;
+      width: 87%;
 
       left: 49%;
       right: 51%;
@@ -645,12 +653,9 @@
   }
 
   &__toggler {
-    max-width: 424px;
-    padding: 4px;
-    background-color: var(--background);
-
+    flex-wrap: wrap;
     &-item {
-      padding: 16px 16px;
+      padding: 16px 49px;
       text-align: center;
     }
   }

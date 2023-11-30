@@ -1,4 +1,5 @@
 @import "../../components/sectionHeader/sectionHeader.scss";
+@import "../../components/history/history.scss";
 
 .main {
 }
@@ -73,7 +74,6 @@
   &__body {
     width: 100%;
     margin-top: -90px;
-    background: var(--white);
 
     clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
   }
@@ -236,6 +236,10 @@
     height: 52px;
   }
 
+  &__history {
+    margin-top: 28px;
+  }
+
   &__chat {
     &-bloc {
       position: relative;
@@ -297,8 +301,7 @@
       z-index: 2;
 
       display: grid;
-      width: 80%;
-      max-width: 642px;
+      width: 87%;
 
       left: 49%;
       right: 51%;
@@ -455,6 +458,153 @@
       }
     }
   }
+  &__alert {
+    position: fixed;
+    z-index: 5;
+
+    right: 32px;
+    bottom: 30vh;
+
+    border-radius: 4px;
+    background: radial-gradient(
+        243.79% 141.42% at 100% 100%,
+        rgba(73, 51, 218, 0.5) 0%,
+        rgba(37, 183, 216, 0.29) 53.13%,
+        rgba(101, 61, 153, 0.5) 100%
+      ),
+      #38384c;
+
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-style: italic;
+    &-container {
+      position: relative;
+      padding: 24px;
+      max-width: 320px;
+    }
+    &-close {
+      position: absolute;
+
+      display: flex;
+      padding: 10px;
+
+      align-items: center;
+      justify-content: center;
+
+      right: -15px;
+      top: -15px;
+
+      border: none;
+      background: var(--white);
+
+      border-radius: 100%;
+
+      &:hover {
+        > svg {
+          opacity: 0.7;
+        }
+      }
+    }
+    &-title {
+      opacity: 0.7;
+
+      font-size: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    &-text {
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    &-caption {
+      opacity: 0.7;
+
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+    }
+    &-img {
+      position: absolute;
+      z-index: -1;
+
+      top: 24px;
+      right: 24px;
+    }
+    &-row-container {
+      background: var(--white);
+
+      border-radius: 4px;
+      padding: 10px 16px;
+      margin-top: 20px;
+    }
+    &-input-box {
+      width: 100%;
+    }
+    &-input {
+      width: 100%;
+
+      background: none;
+      border: none;
+    }
+    &-input-title {
+      color: #9b9b9b;
+      font-family: var(--font-primary);
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+    }
+    &-button {
+      display: flex;
+
+      margin-left: 8px;
+      margin-top: auto;
+      padding: 11px 12px;
+
+      border: none;
+      background: none;
+
+      height: min-content;
+
+      border-radius: 4px;
+      background: var(--primary);
+
+      color: var(--white);
+
+      &:hover {
+        background-color: color-mix(in srgb, var(--primary), var(--black) 20%);
+      }
+    }
+  }
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  margin: 0;
+
+  &__title {
+    font-family: var(--font-primary);
+    font-size: 27px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-style: italic;
+    color: var(--black);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 20px;
+  }
 }
 
 .progressbar-container {
@@ -493,4 +643,15 @@
   height: 100%;
 
   background: var(--background-3);
+}
+.border-clip-2 {
+  &::after {
+    clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
+    background-color: var(--background-2);
+  }
+
+  &::before {
+    clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
+    background-color: var(--background-3);
+  }
 }
