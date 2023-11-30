@@ -1,0 +1,26 @@
+include ../../components/head/head.pug
+include ../../components/header/header.pug
+include ../../components/sectionHeader/sectionHeader.pug
+include ../../components/input/input.pug
+include ../../components/checkbox/checkbox.pug
+include ../../components/footer/footer.pug
+
+doctype html
+html(lang="ru")
+  +head('Работа с бустером')
+  body
+    main.main
+      +sectionHeader
+        header.buy-account__header.container.container-custom
+          h1.section-title Работа бустером
+      .work-with-specialist-success.container.container-custom.border-clip-2
+        svg(width="80" height="80" viewBox="0 0 80 80" fill="none")
+          circle(cx="40" cy="40" r="38" fill="#90E161" stroke="#21212D" stroke-width="4")
+          path(d="M32 33C32 29.134 28.866 26 25 26C21.134 26 18 29.134 18 33" stroke="#21212D" stroke-width="4" stroke-linecap="round")
+          path(d="M40 59C45.5228 59 50 54.5228 50 49H30C30 54.5228 34.4772 59 40 59Z" stroke="#21212D" stroke-width="4" stroke-linecap="round")
+          path(d="M62 33C62 29.134 58.866 26 55 26C51.134 26 48 29.134 48 33" stroke="#21212D" stroke-width="4" stroke-linecap="round")
+        .work-with-specialist-success__message
+          h2 Спасибо за заявку!
+          p Мы с вами свяжемся в течении рабочей недели.
+        a.work-with-specialist-success__link.button.remove-link-style(href="") Вернуться на главную
+  +footer
