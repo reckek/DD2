@@ -47,6 +47,14 @@
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     background-color: var(--background-2);
   }
+
+  &__title {
+    font-family: var(--font-primary);
+    font-size: 27px;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
 }
 
 .tab {
