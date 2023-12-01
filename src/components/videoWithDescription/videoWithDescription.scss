@@ -3,6 +3,10 @@
   flex-direction: column;
   gap: 16px;
 
+  &:is(:not:first-child) {
+    margin-top: 28px;
+  }
+
   &__title {
     font-family: var(--font-primary);
     font-size: 27px;
