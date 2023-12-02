@@ -1,0 +1,30 @@
+extends ../service-catalog-layout/index.pug
+include ../../components/input/input.pug
+include ../../components/textarea/textarea.pug
+include ../../components/checkbox/checkbox.pug
+
+block steps
+  +steps(3)
+
+block aside
+  +aside("payment")
+
+block content
+  +blockTitle("данные аккаунта")
+  form.payment-form(action="post" method="method")
+    .payment-form__row
+      +input("Логин Steam аккаунта *")(type="text")
+      +input("Пароль Steam аккаунта *")(type="password")
+    .payment-form__row
+      +input("Ваш e-mail *")(type="text")
+      +input("Соц. сеть для быстрой связи (TG, VK, FB и т.д.)")(type="text")
+    +input("Номера телефона (Код страны+номер)")(type="text")
+    +textarea("Пожелания к заказу:")(type="text")
+
+    label.payment-form__checkbox
+      +checkbox
+      p
+        | Я согласен с#{" "}
+        a(href="=0") условиями
+        | #{" "}пользовательского соглашения
+

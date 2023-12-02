@@ -1,0 +1,23 @@
+extends ../personal-cabinet-layout/index
+include ../../components/input/input.pug
+
+block aside
+  +boosterAside("requisites")
+
+
+block content
+  +content("Реквизиты")
+  section.requisites
+    form.requisites__form
+      +input("Номер карты")(type="number", placeholder="Введите номер карты")
+      +input("Держатель карты")(type="text", placeholder="Введите держателя карты")
+      p.requisites__form-full Взымается комиссия 5%
+      button.button.requisites__form-full(type="submit") Сохранить данные
+    hr
+    form.requisites__form
+      +input("USDT")(type="number", placeholder="Введите номер USDT")
+      +input("BTC")(type="number", placeholder="Введите номер BTC")
+      p Взымается комиссия 2,5$ + 5%
+      p Взымается комиссия 2$ + 10%
+      button.button.requisites__form-full(type="submit") Сохранить данные
+

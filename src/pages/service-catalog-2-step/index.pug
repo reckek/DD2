@@ -1,0 +1,12 @@
+extends ../service-catalog-layout/index.pug
+include ../../components/videoWithDescription/videoWithDescription.pug
+
+block steps
+  +steps(2)
+
+block aside
+  +aside()
+
+block content
+  +videoWithDescription("Включаем семейный просмотр", "Если Вы используете мобильный аутентификатор, его необходимо удалить, после чего отключить Steam Guard!", "Не хочу отключать Steam Guard")
+  +videoWithDescription("Отключаем Steam Guard", "Steam Guard - функция в стиме, которая защищает Ваш аккаунт от доступа с других устройств, но так как бустеры должны иметь моментальный доступ (без паролей) к Вашему аккаунту (что обеспечит высокую скорость выполнения) эту функцию нужно отключить.", "Не хочу отключать Steam Guard")

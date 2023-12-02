@@ -1,0 +1,47 @@
+include ../../components/head/head.pug
+include ../../components/header/header.pug
+include ../../components/sectionHeader/sectionHeader.pug
+include ../../components/input/input.pug
+include ../../components/checkbox/checkbox.pug
+include ../../components/footer/footer.pug
+
+doctype html
+html(lang="ru")
+  +head('Работа с бустером')
+  body
+    main.main
+      +sectionHeader
+        header.buy-account__header.container.container-custom
+          h1.section-title Работа бустером
+      .work-with-specialist.container.container-custom.border-clip-2
+        form.work-with-specialist__form
+          +input("ФИО")(type="text")
+          +input("Регионы на которых играете")(type="text")
+          .work-with-specialist__form--row
+            +input("MMR")(type="number")
+            +input("ID в Dota 2/Ссылка на Dotabuff")(type="text")
+          +input("MMR")(type="number")
+          +input("Опыт работы бустером")(type="text")
+          .work-with-specialist__form--row
+            +input("Контактные данные (Tg, Vk, Discord)")(type="text")
+            +input("Электронная почта")(type="email")
+          label.work-with-specialist__checkbox
+            +checkbox
+            .work-with-specialist__checkbox-message
+              | Я согласен с#{" "}
+              a(href="=0") условиями
+              | #{" "}пользовательского соглашения
+          button.button.work-with-specialist__button(type="submit") Подать заявку
+        .work-with-specialist__description
+          svg(width="66" height="46" viewBox="0 0 66 46" fill="none")
+            path(d="M1 6.99417C1 5.25249 2.12544 3.71257 3.80586 3.25468C7.14337 2.34525 12.7916 1 17 1C21.8823 1 28.7024 2.81056 31.6043 3.65071C32.4408 3.89289 33 4.66113 33 5.53197V42.2644C33 43.6181 31.6831 44.5936 30.3777 44.2351C27.067 43.3259 21.2866 41.9302 17 41.9302C13.7065 41.9302 9.53122 42.7541 6.27175 43.5483C3.64122 44.1892 1 42.2363 1 39.5288V6.99417Z" stroke="#3E25D8" stroke-width="2")
+            path(d="M7 22C7 22 13.0267 21 17 21C20.9733 21 27 22 27 22" stroke="#3E25D8" stroke-width="2" stroke-linecap="round")
+            path(d="M7 27C7 27 13.0267 26 17 26" stroke="#3E25D8" stroke-width="2" stroke-linecap="round")
+            path(d="M7 31C7 31 13.0267 30 17 30C20.9733 30 27 31 27 31" stroke="#3E25D8" stroke-width="2" stroke-linecap="round")
+            path(d="M33 5.53197C33 4.66113 33.5593 3.89289 34.3957 3.65071C37.2976 2.81056 44.1177 1 49 1C53.2084 1 58.8566 2.34525 62.1941 3.25468C63.8746 3.71257 65 5.25248 65 6.99417V39.5288C65 42.2363 62.3588 44.1892 59.7283 43.5483C56.4688 42.7541 52.2935 41.9302 49 41.9302C44.7134 41.9302 38.933 43.3259 35.6223 44.2351C34.3169 44.5936 33 43.6181 33 42.2644V5.53197Z" stroke="#3E25D8" stroke-width="2")
+            path(d="M5 9.56155C5 8.64382 5.62459 7.84385 6.51493 7.62127L10.5149 6.62127C11.7772 6.30569 13 7.26041 13 8.56155V14.4384C13 15.3562 12.3754 16.1561 11.4851 16.3787L7.48507 17.3787C6.22278 17.6943 5 16.7396 5 15.4384V9.56155Z" fill="#3E25D8")
+            path(d="M55 22C55 25.3137 52.3137 27 49 27C45.6863 27 43 25.3137 43 22C43 18.6863 45.6863 15 49 15C52.3137 15 55 18.6863 55 22Z" fill="#3E25D8")
+          p Для того, чтобы обезопасить наших клиентов, все бустеры нанимаются по предоставлению паспортных данных.
+
+
+  +footer

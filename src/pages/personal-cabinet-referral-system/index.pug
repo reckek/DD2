@@ -1,0 +1,41 @@
+extends ../personal-cabinet-layout/index
+include ../../components/avatar/avatar.pug
+include ../../components/input/input.pug
+
+block aside
+  +userAside("referralSystem")
+
+
+block content
+  +content("Реферальная система")
+  form.input-promo
+    h2 Выгода 10%
+    p Отправьте этот промокод друзьям. Каждый получит скидку 10% на первый заказ от 2 500 ₽. А вы — 3% на баланс от всех потраченных им денег.
+    .input-promo__input
+      +input("Введите промокод")(max="5")
+      .input-promo__input-row
+        button.button.outline-button Скопировать
+        button.button Сохранить
+  .collect
+    .collect__background
+      h2.collect__earned
+        span Денег заработано
+        | 2 500 000 ₽
+      button.collect__action.button.invert-button Собрать
+  hr
+  +content("Список ваших рефералов")
+  ul.referral-members
+    li.referral-members__item
+      img(src="=0", alt="{{ Nickname }}")
+      p Nickname
+    li.referral-members__item
+      img(src="=0", alt="{{ Nickname }}")
+      p Nickname
+    li.referral-members__item
+      img(src="=0", alt="{{ Nickname }}")
+      p Nickname
+    li.referral-members__item
+      img(src="=0", alt="{{ Nickname }}")
+      p Nickname
+
+

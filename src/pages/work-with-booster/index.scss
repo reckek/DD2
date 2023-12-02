@@ -1,0 +1,69 @@
+@import "../../components/sectionHeader/sectionHeader.scss";
+@import "../../components/input/input.scss";
+@import "../../components/checkbox/checkbox.scss";
+
+.work-with-specialist {
+  display: grid;
+  grid-template-columns: 1fr 0.45fr;
+  gap: 46px;
+  padding: 40px;
+  margin-top: -90px;
+
+  &::after,
+  &::before {
+    clip-path: polygon(3% 0%, 100% 0%, 100% 96%, 96% 100%, 0% 100%, 0% 6%);
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    > * {
+      grid-column: 1/3;
+    }
+
+    &--row {
+      grid-column: 1/3;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+
+      .input:first-child {
+        grid-column: 1/2;
+      }
+      .input:last-child {
+        grid-column: 2/3;
+      }
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+
+    font: var(--font-text-primary);
+
+    .checkbox:has(input:checked) .checkbox__custom svg {
+      transform: scale3d(1, 1, 1) translate(-50%, -50%);
+    }
+
+    a {
+      color: var(--primary);
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font: var(--font-text-primary);
+    color: var(--purple);
+  }
+}

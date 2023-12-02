@@ -1,0 +1,7 @@
+mixin videoWithDescription(title, description, buttonText)
+  .video-with-description
+    .video-with-description__title= title
+    video.video-with-description__video(src="=0" alt="Видео" controls)
+    .video-with-description__description !{description}
+    if buttonText
+      button.button.outline-button= buttonText

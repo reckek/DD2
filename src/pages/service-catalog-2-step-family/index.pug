@@ -1,0 +1,11 @@
+extends ../service-catalog-layout/index.pug
+include ../../components/videoWithDescription/videoWithDescription.pug
+
+block steps
+  +steps(2)
+
+block aside
+  +aside()
+
+block content
+  +videoWithDescription("Включаем семейный просмотр", "<b>Семейный просмотр</b> - функция в стиме, которая позволяет ограничить доступ наших бустеров к настройкам аккаунта.")

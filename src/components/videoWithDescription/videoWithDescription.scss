@@ -1,0 +1,29 @@
+.video-with-description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &:is(:not:first-child) {
+    margin-top: 28px;
+  }
+
+  &__title {
+    font-family: var(--font-primary);
+    font-size: 27px;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--black);
+  }
+
+  &__description {
+    font: var(--font-text-primary);
+    color: var(--purple);
+  }
+
+  &__video {
+    display: block;
+    width: 100%;
+    min-height: 388px;
+  }
+}
