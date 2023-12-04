@@ -1,11 +1,11 @@
 include ../checkbox/checkbox.pug
 
-mixin service(checked=false, message, servicePrice)
+mixin service(checked=false, message, servicePrice, hasContent=false)
   .service
     label
       +checkbox(message, checked)
       p.service__message= message
       p.service__service-price= servicePrice
-    if (block)
+    if hasContent
       .service__content
         block
