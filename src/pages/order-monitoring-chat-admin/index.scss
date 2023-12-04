@@ -821,7 +821,6 @@
     right: 0;
     transform: translate(30%, -30%);
 
-
     width: 32px;
     height: 32px;
 
@@ -850,6 +849,12 @@
   }
   &__title {
     padding: 32px 40px 0 40px;
+
+    color: var(--black);
+    font-family: var(--font-primary);
+    font-size: 27px;
+    font-style: italic;
+    font-weight: 600;
   }
   &__form {
     display: grid;
@@ -898,11 +903,15 @@
     padding: 16px 40px;
     &-button {
       width: 100%;
+
+      color: var(--white);
+      font-family: var(--primary);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
     }
   }
 }
-
-
 
 $input-file-color: grey;
 $input-file-hover-color: black;
