@@ -2,10 +2,19 @@ include ../../components/head/head.pug
 include ../../components/header/header.pug
 include ../../components/sectionHeader/sectionHeader.pug
 include ../../components/input/input.pug
+include ../../components/services/services.pug
 include ../../components/footer/footer.pug
 
 mixin blockTitle(message)
   h2.service-catalog__title= message
+
+mixin blockSubTitle(message)
+  h3.service-catalog__subtitle= message
+
+mixin imgWithLabel(img, label)
+  .img-with-label
+    img(src=img, alt=label)
+    p= label
 
 mixin steps(currentStep)
   p.step(class=currentStep === 1 && "step--current")
@@ -142,6 +151,8 @@ html(lang="ru")
             block tabsList
             .service-catalog__content
               block content
+              hr
+              block services
             aside.service-catalog__aside
               block aside
 

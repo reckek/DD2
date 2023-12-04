@@ -1,5 +1,6 @@
 @import "../../components/sectionHeader/sectionHeader.scss";
 @import "../../components/input/input.scss";
+@import "../../components/services/services.scss";
 
 .service-catalog {
   &__body {
@@ -44,6 +45,34 @@
     font-weight: 600;
     text-transform: uppercase;
     color: var(--black);
+  }
+
+  &__subtitle {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--black);
+  }
+}
+
+.img-with-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  p {
+    font: var(--font-text-secondary-regular);
+    text-align: center;
+    color: var(--purple);
   }
 }
 
