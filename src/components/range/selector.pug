@@ -1,0 +1,5 @@
+mixin range(maxValue, minValue)
+  .range(style=`--min-value: ${minValue || 0}%; --max-value: ${maxValue}%`)
+    if (minValue)
+      .range__min
+    .range__line
