@@ -1,0 +1,7 @@
+include ../input/input.pug
+
+mixin select(name)
+  .select
+    +input(name)
+      select(name=name)
+        block

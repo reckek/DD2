@@ -1,0 +1,15 @@
+@import "../service-catalog-layout/index.scss";
+@import "../../components/range/range.scss";
+@import "../../components/select/select.scss";
+
+.winning-battle-cup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+
+  .select {
+    width: 298px;
+  }
+}
