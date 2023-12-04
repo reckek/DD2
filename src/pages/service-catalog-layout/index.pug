@@ -13,7 +13,10 @@ mixin blockSubTitle(message)
 
 mixin imgWithLabel(img, label)
   .img-with-label
-    img(src=img, alt=label)
+    if block
+      block
+    else
+      img(src=img, alt=label)
     p= label
 
 mixin steps(currentStep)
