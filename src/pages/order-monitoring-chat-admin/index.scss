@@ -806,6 +806,9 @@
 }
 
 .modal-window {
+  &__form {
+    padding: 0 40px;
+  }
   &__row {
     display: flex;
     column-gap: 12px;
@@ -852,6 +855,7 @@
       font-size: 15px;
       font-style: normal;
       font-weight: 500;
+      text-transform: none;
     }
   }
 }

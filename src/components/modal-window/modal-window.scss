@@ -14,7 +14,7 @@
   &__close {
     position: absolute;
     right: 0;
-    transform: translate(30%, -160%);
+    transform: translate(30%, -30%);
 
     width: 32px;
     height: 32px;
@@ -40,11 +40,9 @@
     border-radius: 4px;
     background: #e4e2f1;
 
-    padding: 40px;
-
     position: absolute;
 
-    > form {
+    form {
       display: grid;
 
       row-gap: 12px;
@@ -64,6 +62,9 @@
     }
   }
   &__title {
+    margin-top: 32px;
+    padding: 0 40px;
+
     color: var(--black);
     font-family: var(--font-primary);
     font-size: 27px;
