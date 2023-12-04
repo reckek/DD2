@@ -1,0 +1,20 @@
+@import "../service-catalog-layout/index.scss";
+@import "../../components/range/range.scss";
+@import "../../components/favoriteHeros/favoriteHeros.scss";
+
+.lp-washout {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 1fr;
+  gap: 24px;
+
+  .input {
+    height: 79px;
+  }
+
+  &__preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
