@@ -806,13 +806,6 @@
 }
 
 .modal-window {
-  &__form {
-    display: grid;
-
-    padding: 0 40px;
-    row-gap: 12px;
-    margin-top: 20px;
-  }
   &__row {
     display: flex;
     column-gap: 12px;
