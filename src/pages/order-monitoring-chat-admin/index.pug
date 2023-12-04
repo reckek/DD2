@@ -4,6 +4,8 @@ include ../../components/sectionHeader/sectionHeader.pug
 include ../../components/history/history.pug
 include ../../components/footer/footer.pug
 include ../../components/input/input.pug
+include ../../components/modal-window/modal-window.pug
+
 
 doctype html
 html(lang="ru")
@@ -218,61 +220,54 @@ html(lang="ru")
                 svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
                   path(d="M12 4L4 12L12 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                   path(d="M20 4L12 12L20 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-    article.modal-window
-      .modal-window__background
-      .modal-window__content
-        .modal-window__close
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M1 13L13 0.999999" stroke="#5F5A79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M1 1L13 13" stroke="#5F5A79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+    +modal-window("Добавить игру")
+      form(action="").modal-window__form
+        .modal-window__select
+          label(for="heroes").modal-window__select-title Выберите героя
 
-        h2.modal-window__title Добавить игру
-        form(action="").modal-window__form
-          .modal-window__select
-            label(for="heroes").modal-window__select-title Выберите героя
+          <select name="heroes" id="heroes">
+            <option value="Abaddon">Abaddon</option>
+            <option value="Alchemist">Alchemist</option>
+          </select>
 
-            <select name="heroes" id="heroes">
-              <option value="Abaddon">Abaddon</option>
-              <option value="Alchemist">Alchemist</option>
-            </select>
+        .toggler.messenger-toggler.messenger-toggler--white
+          label.toggler__item.messenger-toggler-item
+            | Победа
+            input(
+              checked=""
+              name="currency"
+              type="radio"
+              )
+          label.toggler__item.messenger-toggler-item
+            | Поражение
+            input(
+              name="currency"
+              type="radio"
+              )
 
-          .toggler.messenger-toggler.messenger-toggler--white
-              label.toggler__item.messenger-toggler-item
-                | Победа
-                input(
-                  checked=""
-                  name="currency"
-                  type="radio"
-                  )
-              label.toggler__item.messenger-toggler-item
-                | Поражение
-                input(
-                  name="currency"
-                  type="radio"
-                  )
+        .modal-window__row
+          +input("Kills",)(type="text")
+          +input("Deaths",)(type="text")
+          +input("Assists",)(type="text")
 
-          .modal-window__row
-            +input("Kills", {class: "account__input-password"})(type="text")
-            +input("Deaths", {class: "account__input-password"})(type="text")
-            +input("Assists", {class: "account__input-password"})(type="text")
+        +input("Длительность (ЧЧ:ММ:СС)",)(type="text")
 
-          .modal-window__row
-            +input("Рейтинг до игры", {class: "account__input-password"})(type="text")
-            +input("Рейтинг после игры", {class: "account__input-password"})(type="text")
+        .modal-window__row
+          +input("Рейтинг до игры",)(type="text")
+          +input("Рейтинг после игры",)(type="text")
 
-          div
-            label.label
-              span.title
-                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
-                <path d="M3 3V0H5V3H8V5H5V8H3V5H0V3H3ZM6 9V6H9V3H16L17.83 5H21C22.1 5 23 5.9 23 7V19C23 20.1 22.1 21 21 21H5C3.9 21 3 20.1 3 19V9H6ZM13 18C15.76 18 18 15.76 18 13C18 10.24 15.76 8 13 8C10.24 8 8 10.24 8 13C8 15.76 10.24 18 13 18ZM9.8 13C9.8 14.77 11.23 16.2 13 16.2C14.77 16.2 16.2 14.77 16.2 13C16.2 11.23 14.77 9.8 13 9.8C11.23 9.8 9.8 11.23 9.8 13Z" fill="#3E25D8"/>
-                </svg>
-              input(type="file")
+        div
+          label.label
+            span.title
+              <svg xmlns="http://www.w3.org/2000/svg" width="23" height="21" viewBox="0 0 23 21" fill="none">
+              <path d="M3 3V0H5V3H8V5H5V8H3V5H0V3H3ZM6 9V6H9V3H16L17.83 5H21C22.1 5 23 5.9 23 7V19C23 20.1 22.1 21 21 21H5C3.9 21 3 20.1 3 19V9H6ZM13 18C15.76 18 18 15.76 18 13C18 10.24 15.76 8 13 8C10.24 8 8 10.24 8 13C8 15.76 10.24 18 13 18ZM9.8 13C9.8 14.77 11.23 16.2 13 16.2C14.77 16.2 16.2 14.77 16.2 13C16.2 11.23 14.77 9.8 13 9.8C11.23 9.8 9.8 11.23 9.8 13Z" fill="#3E25D8"/>
+              </svg>
+            input(type="file")
 
 
 
-        .modal-window__footer
-          button.button.modal-window__footer-button Добавить
+      .modal-window__footer
+        button.button.modal-window__footer-button Добавить
 
 
 
