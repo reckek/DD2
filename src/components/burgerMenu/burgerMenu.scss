@@ -1,0 +1,83 @@
+.burger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  z-index: 10000;
+
+  &.show {
+    display: flex;
+  }
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: var(--black);
+  }
+
+  &__layout {
+    display: flex;
+    flex-direction: column;
+    width: 536px;
+    background-color: #21212d;
+    z-index: 1002;
+  }
+
+  &__close-button {
+    width: max-content;
+    margin: 79px 30px 5px 68px;
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    padding: 45px 30px 30px 68px;
+  }
+
+  &__navigation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__navigation-item {
+    position: relative;
+    list-style-type: none;
+
+    a {
+      position: relative;
+      font-family: var(--font-primary);
+      font-size: 37px;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+      z-index: 10004;
+    }
+
+    &.select::before {
+      content: '';
+      position: absolute;
+      top: -220px;
+      left: -136px;
+      display: block;
+      width: 188px;
+      height: 500px;
+      background: linear-gradient(to bottom right, rgba(62, 37, 216, 0.70) 0%, rgba(62, 37, 216, 0.00) 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, rgba(62, 37, 216, 0.70) 0%, rgba(62, 37, 216, 0.00) 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, rgba(62, 37, 216, 0.70) 0%, rgba(62, 37, 216, 0.00) 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, rgba(62, 37, 216, 0.70) 0%, rgba(62, 37, 216, 0.00) 50%) top right / 50% 50% no-repeat;
+      transform: rotate(90deg);
+      filter: blur(5px);
+    }
+  }
+}

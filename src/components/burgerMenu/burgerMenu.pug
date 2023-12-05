@@ -1,0 +1,33 @@
+mixin burgerMenu
+  #burger.burger-menu(tabindex="-1" aria-hidden="true")
+    .burger-menu__backdrop
+    .burger-menu__layout
+      button.icon-button.burger-menu__close-button(
+          aria-label="Close burger menu"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#burger"
+          )
+        svg(width="14" height="14" viewBox="0 0 14 14" fill="none")
+          path(d="M1 13L13 0.999999" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          path(d="M1 1L13 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      nav.burger-menu__navigation
+        ul.burger-menu__navigation-list
+          li.burger-menu__navigation-item
+            a(href="=0") Главная
+          li.burger-menu__navigation-item
+            a(href="=0") Каталог услуг
+          li.burger-menu__navigation-item
+            a(href="=0") Покупка аккаунтов
+          li.burger-menu__navigation-item
+            a(href="=0") Мониторинг заказов
+          li.burger-menu__navigation-item
+            a(href="=0") Наша команда
+          li.burger-menu__navigation-item
+            a(href="=0") Система лояльности
+          li.burger-menu__navigation-item
+            a(href="=0") Отзывы
+          li.burger-menu__navigation-item.select
+            a(href="=0") Блог
+          li.burger-menu__navigation-item
+            a(href="=0") Вакансии

@@ -1,88 +1,93 @@
+@import "../burgerMenu/burgerMenu.scss";
+
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: min-content;
-  padding: 36px;
-  margin: 23px 23px 0 23px;
-
-  > div {
+  &__navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 40px;
-  }
+    height: min-content;
+    padding: 36px;
+    margin: 23px 23px 0 23px;
 
-  & a.accent {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: nowrap;
-    font: var(--font-button);
-    padding: 8px 12px;
-    border: none;
-    border-radius: 45px;
-
-    text-decoration: none;
-
-    color: var(--primary);
-    background-color: var(--white);
-    transition: all .2s ease-out;
-    outline: solid 0px;
-
-    &:hover {
-      outline: solid 3px;
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 40px;
     }
-  }
 
-  & .profile {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    & a.accent {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+      font: var(--font-button);
+      padding: 8px 12px;
+      border: none;
+      border-radius: 45px;
 
-    font: var(--font-button);
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--white);
-    transition: all .2s;
+      text-wrap: nowrap;
+      text-decoration: none;
 
-    > img {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      border-radius: 100%;
-      object-fit: cover;
-      object-position: center;
+      color: var(--primary);
       background-color: var(--white);
-    }
-  }
+      transition: all 0.2s ease-out;
+      outline: solid 0px;
 
-  .navbar-toggler svg {
-    stroke: var(--white);
-  }
-
-  &__auth-button {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--primary);
-    background-color: var(--white);
-
-    path {
-      stroke: var(--primary);
-      transition: .2s ease-out;
+      &:hover {
+        outline: solid 3px;
+      }
     }
 
-    &:hover {
+    & .profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font: var(--font-button);
+      text-transform: uppercase;
+      text-decoration: none;
       color: var(--white);
-      background-color: var(--primary);
+      transition: all 0.2s;
+
+      > img {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        object-fit: cover;
+        object-position: center;
+        background-color: var(--white);
+      }
+    }
+
+    .navbar-toggler svg {
+      stroke: var(--white);
+    }
+
+    &__auth-button {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary);
+      background-color: var(--white);
 
       path {
-        stroke: var(--white);
+        stroke: var(--primary);
+        transition: 0.2s ease-out;
+      }
+
+      &:hover {
+        color: var(--white);
+        background-color: var(--primary);
+
+        path {
+          stroke: var(--white);
+        }
       }
     }
   }
@@ -100,10 +105,11 @@
     border: unset;
     border-radius: var(--border-radius);
     background-color: rgb(255, 255, 255, 0);
-    transition: background .2s;
+    transition: background 0.2s;
     padding: 10px;
 
-    &:hover, &.active {
+    &:hover,
+    &.active {
       background-color: var(--background-hover);
     }
   }
@@ -127,7 +133,7 @@
 
     opacity: 0;
     pointer-events: none;
-    transition: bottom .4s, opacity .2s;
+    transition: bottom 0.4s, opacity 0.2s;
 
     > ul {
       display: flex;
