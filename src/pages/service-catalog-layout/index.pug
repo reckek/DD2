@@ -4,6 +4,7 @@ include ../../components/sectionHeader/sectionHeader.pug
 include ../../components/input/input.pug
 include ../../components/services/services.pug
 include ../../components/favoriteHeros/favoriteHeros.pug
+include ../../components/modalWindow/modalWindow.pug
 include ../../components/footer/footer.pug
 
 mixin blockTitle(message)
@@ -138,6 +139,11 @@ mixin aside(status)
       .result__title Итого:
       .result__description 13 600 ₽
 
+mixin modals
+  .modals
+    +favoriteHerosModal("Бан 5 героев")
+    +favoriteHerosModal("ВЫбор моих 5 героев")
+
 doctype html
 html(lang="ru")
   +head('Каталог услуг')
@@ -159,5 +165,5 @@ html(lang="ru")
               block services
             aside.service-catalog__aside
               block aside
-
+      block modals
     +footer

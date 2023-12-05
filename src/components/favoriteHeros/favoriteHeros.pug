@@ -1,11 +1,169 @@
-mixin favoriteHeros(count)
+include ../modalWindow/modalWindow.pug
+
+mixin favoriteHeros(count, showPlus=true)
   - var n = 0;
 
   .favorite-heros()&attributes(attributes)
     while n < count
       img.favorite-heros__item(src="=0", alt=`{{ Hero, ${n++} }}`)
     button.favorite-heros__add(type="button", aria-label="Добавить героя")
-      svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
-        path(d="M12 5V19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-        path(d="M5 12L19 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      if showPlus
+        svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+          path(d="M12 5V19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          path(d="M5 12L19 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
+mixin hero(checked)
+  label.hero
+    input.hidden(type="checkbox", name="hero" checked=checked)
+    img(src="../../public/images/Arc_Warden_icon.png", alt="Arc Warden icon")
+    .hero__check
+      .hero__check-background
+        svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+          path(d="M6 12L10 16L18 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
+mixin favoriteHerosModal(title, expand)
+  +modalWindow(title, expand)
+    +modalContent
+      .favorite-heros-modal
+        ul.favorite-heros-modal__list
+          li.favorite-heros-modal__category-list
+            .favorite-heros-modal__category
+              .favorite-heros-modal__category-title
+                img(src="../../public/images/favorite-heros-modal/power.png")
+                | Сила
+              .favorite-heros-modal__heros
+                +hero(true)
+                +hero(true)
+                +hero(true)
+                +hero(true)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+          li.favorite-heros-modal__category-list
+            .favorite-heros-modal__category
+              .favorite-heros-modal__category-title
+                img(src="../../public/images/favorite-heros-modal/dexterity.png")
+                | Ловкость
+              .favorite-heros-modal__heros
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+          li.favorite-heros-modal__category-list
+            .favorite-heros-modal__category
+              .favorite-heros-modal__category-title
+                img(src="../../public/images/favorite-heros-modal/intelligence.png")
+                | Интеллект
+              .favorite-heros-modal__heros
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+          li.favorite-heros-modal__category-list
+            .favorite-heros-modal__category
+              .favorite-heros-modal__category-title
+                img(src="../../public/images/favorite-heros-modal/universal.png")
+                | Универсальные
+              .favorite-heros-modal__heros
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+                +hero(false)
+    +modalActions
+      +favoriteHeros(4, false)
+      .favorite-heros-modal__action
+        button.button.outline-button отмена
+        button.button Сохранить

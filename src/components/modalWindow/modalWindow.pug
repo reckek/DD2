@@ -1,0 +1,18 @@
+mixin modalContent
+  .modal-window__content
+    block
+
+mixin modalActions
+  .modal-window__actions
+    block
+
+mixin modalWindow(title, expand)
+  article.modal-window(class= expand ? "active" : "")
+    .modal-window__background
+    .modal-window__layout
+      .modal-window__close
+        svg(width="14" height="14" viewBox="0 0 14 14" fill="none")
+          path(d="M1 13L13 0.999999" stroke="#5F5A79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          path(d="M1 1L13 13" stroke="#5F5A79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      h2.modal-window__title=title
+      block

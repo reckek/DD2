@@ -8,7 +8,7 @@ include ../../components/blogPreview/blogPreview.pug
 include ../../components/review/review.pug
 include ../../components/footer/footer.pug
 include ../../components/input/input.pug
-include ../../components/modal-window/modal-window.pug
+include ../../components/modalWindow/modalWindow.pug
 
 
 doctype html
@@ -494,7 +494,7 @@ html(lang="ru")
               b MMR
             button.button.invert-button.border-clip Подать заявку
           img(src="../../public/images/landing/Nice.png" alt="")
-    +modal-window("Регистрация","active")
+    +modalWindow("Регистрация", true)
       .landing-modal-window__container
         form(action="")
           +input("Логин",)(type="text")
@@ -505,11 +505,10 @@ html(lang="ru")
 
         p.landing-modal-window__link-auth Есть аккаунта?!{' '}
           a(href="#") Войти
-        
         .landing-modal-window__alternative-auth
           p.landing-modal-window__alternative-auth-title Или войдите с помощью:
 
-          .landing-modal-window__alternative-auth-row 
+          .landing-modal-window__alternative-auth-row
             a(href="").landing-modal-window__alternative-auth-link
               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
                 <path d="M0.5 9.6C0.5 5.0745 0.5 2.81177 1.90589 1.40589C3.31177 0 5.5745 0 10.1 0H10.9C15.4255 0 17.6882 0 19.0941 1.40589C20.5 2.81177 20.5 5.0745 20.5 9.6V10.4C20.5 14.9255 20.5 17.1882 19.0941 18.5941C17.6882 20 15.4255 20 10.9 20H10.1C5.5745 20 3.31177 20 1.90589 18.5941C0.5 17.1882 0.5 14.9255 0.5 10.4V9.6Z" fill="#0077FF"/>
@@ -528,7 +527,7 @@ html(lang="ru")
 
 
 
-    +modal-window("Восстановление пароля")
+    +modalWindow("Восстановление пароля")
       .landing-modal-window__container
         form(action="")
           +input("Логин или электронная почта",)(type="text")
@@ -537,14 +536,14 @@ html(lang="ru")
         p.landing-modal-window__link-auth Вспомнил пароль?!{' '}
           a(href="#") Войти
 
-    +modal-window("Восстановление пароля")
+    +modalWindow("Восстановление пароля")
       .landing-modal-window__container
         form(action="")
           +input("Введите новый пароль",)(type="text")
           +input("Повторите новый пароль",)(type="text")
           button.button Отправить
 
-    +modal-window("Авторизация")
+    +modalWindow("Авторизация")
       .landing-modal-window__container
         form(action="")
           +input("Логин или электронная почта",)(type="text")
@@ -557,7 +556,7 @@ html(lang="ru")
         .landing-modal-window__alternative-auth
           p.landing-modal-window__alternative-auth-title Или войдите с помощью:
 
-          .landing-modal-window__alternative-auth-row 
+          .landing-modal-window__alternative-auth-row
             a(href="").landing-modal-window__alternative-auth-link
               <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
                 <path d="M0.5 9.6C0.5 5.0745 0.5 2.81177 1.90589 1.40589C3.31177 0 5.5745 0 10.1 0H10.9C15.4255 0 17.6882 0 19.0941 1.40589C20.5 2.81177 20.5 5.0745 20.5 9.6V10.4C20.5 14.9255 20.5 17.1882 19.0941 18.5941C17.6882 20 15.4255 20 10.9 20H10.1C5.5745 20 3.31177 20 1.90589 18.5941C0.5 17.1882 0.5 14.9255 0.5 10.4V9.6Z" fill="#0077FF"/>
