@@ -1,0 +1,42 @@
+extends ../service-catalog-layout/index.pug
+include ../../components/range/range.pug
+
+block steps
+  +steps(1)
+
+block tabsList
+  +tabs("boostDecency")
+
+block aside
+  +aside()
+
+block content
+  .rating-boost
+    +blockTitle("Буст Порядочности")
+    .rating-boost__mmr
+      .rating-boost__preview
+        +imgWithLabel("+", "Очень плохо")
+          svg(width="80" height="80" viewBox="0 0 80 80" fill="none")
+            circle(cx="40" cy="40" r="38" fill="#D63710" stroke="#21212D" stroke-width="4")
+            circle(cx="28" cy="28" r="3.5" fill="#21212D" stroke="#21212D")
+            circle(cx="52" cy="28" r="3.5" fill="#21212D" stroke="#21212D")
+            path(d="M63 61C63 51.0589 53.1503 43 41 43C28.8497 43 19 51.0589 19 61" stroke="#21212D" stroke-width="4" stroke-linecap="round")
+        +input("Ваш MMR")(type="number" value="0")
+      +range(74, 12)
+      .rating-boost__preview
+        +imgWithLabel("+", "Очень хорошо")
+          svg(width="80" height="80" viewBox="0 0 80 80" fill="none")
+            circle(cx="40" cy="40" r="38" fill="#90E161" stroke="#21212D" stroke-width="4")
+            path(d="M32 33C32 29.134 28.866 26 25 26C21.134 26 18 29.134 18 33" stroke="#21212D" stroke-width="4" stroke-linecap="round")
+            path(d="M40 59C45.5228 59 50 54.5228 50 49H30C30 54.5228 34.4772 59 40 59Z" stroke="#21212D" stroke-width="4" stroke-linecap="round")
+            path(d="M62 33C62 29.134 58.866 26 55 26C51.134 26 48 29.134 48 33" stroke="#21212D" stroke-width="4" stroke-linecap="round")
+        +input("Желаемый MMR")(type="number" value="1500")
+
+
+block services
+  +blockSubTitle("Доп услуги:")
+  +service(true, "Приоритетный заказ", 60)
+  +service(true, "Включить стрим с выполнением", 60)
+  +service(true, "Не отключать Steam Guard", 60)
+  +service(false, "Установить время для игры", 60, true)
+    input(type="date", name="time to game")

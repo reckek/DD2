@@ -19,37 +19,26 @@
   }
 }
 
-.post-info {
-  margin-bottom: 86px;
-}
+.blog-info {
+  max-width: 400px;
 
-.teams {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-
-  &__header {
+  &__container {
+    margin-bottom: 86px;
+  }
+  &__data {
     display: flex;
-    // align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-
-    > h1 {
-      text-align: right;
-      font-family: var(--font-primary);
-      font-size: 27px;
-      text-transform: uppercase;
-      font-weight: 600;
-      font-style: italic;
-      color: var(--white);
-    }
-
-    > img {
-    }
+    width: 100%;
+    gap: 23px;
+    justify-content: end;
+  }
+  &__description {
+    margin-top: 32px;
+    text-align: right;
   }
 }
 
 .post {
+  width: 100%;
   margin-top: 56px;
 
   &__bloc-hero {

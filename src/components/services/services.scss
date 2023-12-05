@@ -1,0 +1,43 @@
+@import "../checkbox/checkbox.scss";
+
+.service {
+  > label {
+    display: grid;
+    grid-template-columns: 0fr 1fr 0fr;
+    gap: 8px 12px;
+  }
+
+  &__message {
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--black);
+  }
+
+  &__service-price {
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 600;
+    text-align: right;
+    color: var(--primary);
+
+    &::before {
+      content: "+";
+    }
+    &::after {
+      content: "%";
+    }
+  }
+
+  &:has(input[type="checkbox"]:is(:checked)) .service__content {
+    display: block;
+  }
+
+  &__content {
+    display: none;
+    grid-column: 1/4;
+    margin-top: 8px;
+  }
+}

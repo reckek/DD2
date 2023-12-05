@@ -11,8 +11,9 @@ const [taskServe] = createTask("serve", () => {
       baseDir: config.dest.root,
     },
     files: [
-      `${config.src.root}/**/*.*`,
-      `${config.dest.pages}/**/*.html`,
+      `${config.src.root}/**/*.pug`,
+      `${config.src.root}/**/*.scss`,
+      `${config.src.root}/**/*.js`,
       `${config.src.public}/**/*.*`,
     ],
     open: false,

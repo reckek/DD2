@@ -1,0 +1,12 @@
+@import "../service-catalog-layout/index.scss";
+@import "../../components/range/range.scss";
+
+.regular-games {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  .input {
+    max-width: 160px;
+  }
+}

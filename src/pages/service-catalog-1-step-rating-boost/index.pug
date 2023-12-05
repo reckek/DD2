@@ -1,0 +1,37 @@
+extends ../service-catalog-layout/index.pug
+include ../../components/range/range.pug
+
+block steps
+  +steps(1)
+
+block tabsList
+  +tabs("ratingBoost")
+
+block aside
+  +aside()
+
+block content
+  .rating-boost
+    +blockTitle("Буст рейтинга")
+    .rating-boost__mmr
+      .rating-boost__preview
+        +imgWithLabel("../../../public/images/rank-1.png", "Herald II")
+        +input("Ваш MMR")(type="number" value="0")
+      +range(74, 12)
+      .rating-boost__preview
+        +imgWithLabel("../../../public/images/rank-1.png", "Immortal")
+        +input("Желаемый MMR")(type="number" value="1500")
+
+
+block services
+  +blockSubTitle("Доп услуги:")
+  +service(false, "Дуо с бустером", 60)
+  +service(true, "Приоритетный заказ", 60)
+  +service(true, "Включить стрим с выполнением", 60)
+  +service(true, "Не отключать Steam Guard", 60)
+  +service(false, "Установить время для игры", 60, true)
+    input(type="date", name="time to game")
+  +service(true, "Играть моими героями", 60, true)
+    +favoriteHeros(4)
+  +service(true, "Забанить 5 героев", 60, true)
+    +favoriteHeros(4)

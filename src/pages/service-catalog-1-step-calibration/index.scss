@@ -1,0 +1,27 @@
+@import "../service-catalog-layout/index.scss";
+@import "../../components/range/range.scss";
+@import "../../components/favoriteHeros/favoriteHeros.scss";
+
+.rating-boost {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  &__mmr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: end;
+
+    .range {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
