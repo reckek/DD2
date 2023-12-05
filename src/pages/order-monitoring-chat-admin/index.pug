@@ -1,0 +1,221 @@
+include ../../components/head/head.pug
+include ../../components/header/header.pug
+include ../../components/sectionHeader/sectionHeader.pug
+include ../../components/history/history.pug
+include ../../components/footer/footer.pug
+
+doctype html
+html(lang="ru")
+  +head('Chat')
+  body
+    +header
+    main.main
+      +sectionHeader
+        .post-header.container.container-custom
+          h1 заказ №11080
+          .post-header__buttons
+            .post-header__buttons-order-activated
+              button
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 16L18 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                | Отказать от заказа
+              button
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 16L16 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 8L16 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                | Заказ выполнен
+
+            .post-header__buttons-order-in-activated.active
+              button
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 16L18 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                | Взять заказ
+
+      .messenger__body.container.container-custom
+        section.messenger.border-clip-2
+          .messenger__order-description
+            h2 Детали заказа
+            .messenger__MMP-progress-content
+              .messenger__MMP-progress-status-MMR
+                small.title-type  СТАРТОВЫЙ ММР
+                img(src="../../public/images/order-monitoring-chat/Herald.png" alt="Herald")
+                p Herald II 2 500 MMR
+              .messenger__MMP-progress-arrow-element
+              .messenger__MMP-progress-status-MMR
+                small.title-type  ИТОГОВЫЙ ММР
+                img(src="../../public/images/order-monitoring-chat/Immorta.png" alt="Immorta")
+                p Herald II 2 500 MMR
+
+            article.progressbar-container
+              .background-line
+              .progress-line( value="50" style="width: 50%;")
+
+            .messenger__order-info
+              .row-container
+                div
+                  small.title-type  тип заказа:
+                  p Буст рейтинга
+                div
+                  small.title-type статус:
+                  p(style="color: #3E25D8;") Выполняется
+
+              .messenger__order-info-box
+                small.title-type Ожидаемое время завершения:
+                p
+                  span -
+                  | 10 октября 2023 г. в 19:48
+
+              .messenger__order-info-box
+                small.title-type Оплата
+                p 1 120 500 ₽
+
+              .messenger__order-additional-services
+                small.title-type Дополнительные услуги:
+                ul.messenger__order-additional-services-list
+                  li.messenger__order-additional-services-item.messenger__order-additional-services-item--active
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="8" cy="9" r="3" stroke="#3E25D8" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M8 14C4.81933 14 2.13414 16.1214 1.28208 19.0264C0.971198 20.0863 1.89543 21 3 21H13C14.1046 21 15.0288 20.0863 14.7179 19.0264C13.8659 16.1214 11.1807 14 8 14Z" stroke="#3E25D8" stroke-width="2" stroke-linecap="round"/>
+                      <g opacity="0.7">
+                      <circle cx="18" cy="5" r="2" stroke="#3E25D8" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M18 9C15.9294 9 14.1528 10.2586 13.3935 12.0525C12.9629 13.0697 13.8954 14 15 14H21C22.1046 14 23.0371 13.0697 22.6065 12.0525C21.8472 10.2586 20.0706 9 18 9Z" stroke="#3E25D8" stroke-width="2" stroke-linecap="round"/>
+                      </g>
+                    </svg>
+                  li.messenger__order-additional-services-item
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 6.64706L21 5L19 19" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M7 5L5 19" stroke="#3E25D8" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M12 5L10 19" stroke="#3E25D8" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M4 9L14 9" stroke="#3E25D8" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M3 15H13" stroke="#3E25D8" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  li.messenger__order-additional-services-item
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10"/>
+                      <path d="M7 7L6 6" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                      <path d="M18 18L17 17" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                      <path d="M12 5V3" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                      <path d="M12 21L12 19" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                      <path d="M18 6L17 7" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                      <path d="M7 17L6 18" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                      <path d="M5 12H3" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                      <path d="M21 12H19" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                      <path d="M14.5 9.5L12 12V16" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  li.messenger__order-additional-services-item
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L4 5.63636V11.0909C4 16.1364 7.41333 20.8545 12 22C16.5867 20.8545 20 16.1364 20 11.0909V5.63636L12 2Z" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10"/>
+                      <path d="M9 12L11 14L17 8" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  li.messenger__order-additional-services-item
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 9V15H7" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M9 9V15" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M11 9L13 15L15 9" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M19 15H17V12M17 12V9H19M17 12H19" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <rect x="2" y="5" width="20" height="14" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  li.messenger__order-additional-services-item
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="9" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10"/>
+                      <path d="M7 13.3333L9.49999 16L17 8" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  li.messenger__order-additional-services-item
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="9" stroke="#3E25D8" stroke-width="2" stroke-miterlimit="10"/>
+                      <path d="M8 8L16 16" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M8 16L16 8" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
+            .messenger__order-info
+              .row-container
+                div
+                  small.title-type ЛОГИН STEAM:
+                  p.messenger__order-info-copy-text  login421421
+                div
+                  small.title-type ПАРОЛЬ STEAM:
+                  p.messenger__order-info-copy-text  login421421
+
+              .messenger__order-info-box
+                small.title-type ЗАПАСНЫЕ КОДЫ STEAM GUARD
+                p.messenger__order-info-copy-text  qwrqr4
+
+          .messenger__chat-bloc
+            .messenger__chat-switching
+              .toggler
+                label.toggler__item.messenger__toggler-item
+                  | Мои заказы
+                  input(
+                    checked=""
+                    name="currency"
+                    type="radio"
+                    )
+                label.toggler__item.messenger__toggler-item
+                  | Свободные заказы
+                  input(
+                    name="currency"
+                    type="radio"
+                    )
+
+
+            .messenger__chat-content
+              .messenger__chat-subject
+                small ПОЖЕЛАНИЯ КЛИЕНТА:
+                p Выполните
+              .messenger__chat-messages
+                p.messenger__chat-element.messenger__chat-date
+                  | 30 Сентября
+                p.messenger__chat-element.messenger__chat-recipient-message(time="13:34")
+                  | Сообщение от бустера
+                p.messenger__chat-element.messenger__chat-sender-message(time="13:34")
+                  | Сообщение отправителя
+                p.messenger__chat-element.messenger__chat-date
+                  | 30 Сентября
+                p.messenger__chat-element.messenger__chat-recipient-message(time="13:34")
+                  | Сообщение от бустера
+                p.messenger__chat-element.messenger__chat-sender-message(time="13:34")
+                  | Сообщение отправителя
+                p.messenger__chat-element.messenger__chat-sender-message(time="13:34")
+                  | Сообщение отправителя
+                p.messenger__chat-element.messenger__chat-sender-message(time="13:34")
+                  | Сообщение отправителя
+                p.messenger__chat-element.messenger__chat-sender-message(time="13:34")
+                  | Сообщение отправителя
+                p.messenger__chat-element.messenger__chat-sender-message(time="13:34")
+                  | Сообщение отправителя
+                p.messenger__chat-element.messenger__chat-sender-message(time="13:34")
+                  | Сообщение отправителя
+                p.messenger__chat-element.messenger__chat-recipient-message(time="13:34")
+                  | Сообщение от бустера
+                p.messenger__chat-element.messenger__chat-recipient-message(time="13:34")
+                  | Сообщение от бустера
+                p.messenger__chat-element.messenger__chat-recipient-message(time="13:34")
+                  | Сообщение от бустера
+              // .messenger__chat-no-messages.active чтобы включить
+              p.messenger__chat-no-messages Чат недоступен пока вы не взяли заказ
+
+            // .messenger__chat-input.in-active для отключения
+
+            .messenger__chat-input
+              input(type="text" placeholder="Введите ваше сообщение...")
+              <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.00857142 16L18 8L0.00857142 0L0 6.22222L12.8571 8L0 9.77778L0.00857142 16Z" fill="#5F5A79"/>
+              </svg>
+
+        section.messenger__history
+          header.history.border-clip-2
+            h1.history__title Последние игры на заказе
+            +historyList
+              +historyItem("DOOM", true, 25, 0, 13, "02:58:10", 25, false)
+                svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+                  path(d="M12 4L4 12L12 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  path(d="M20 4L12 12L20 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              +historyItem("DOOM", false, 25, 0, 13, "02:58:10", -25, false)
+                svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+                  path(d="M12 4L4 12L12 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  path(d="M20 4L12 12L20 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
+  +footer
