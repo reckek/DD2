@@ -18,6 +18,9 @@ import {
   toBuildPath,
   groupWatcher,
 } from "../utils";
+import rename from "gulp-rename";
+import * as prettier from 'gulp-plugin-prettier';
+import gulpIf from "gulp-if";
 
 const sass = gulpSass(dartSass);
 
@@ -51,6 +54,49 @@ const buildStyle = ({ path, outPath }) => {
         })
       )
     )
+    .pipe(gulpIf(config.isProd, prettier.format()))
+    .pipe(rename(path => {
+        path.dirname = "../styles";
+    }))
+    .pipe(gulp.dest(outPath));
+};
+
+const buildPageStyle = ({ path, outPath }) => {
+  return gulp
+    .src(path)
+    .pipe(plumber())
+    .pipe(gulpif(config.isDev, sourcemaps.init()))
+    .pipe(sass().on("error", sass.logError))
+    .pipe(gulpif(config.isDev, sourcemaps.write()))
+    .pipe(
+      gulpif(
+        config.isProd,
+        mincss({
+          compatibility: "ie9",
+
+          level: {
+            1: {
+              removeEmpty: true,
+              removeWhitespace: true,
+            },
+            2: {
+              mergeMedia: true,
+              removeEmpty: true,
+              removeDuplicateFontRules: true,
+              removeDuplicateMediaBlocks: true,
+              removeDuplicateRules: true,
+              removeUnusedAtRules: false,
+            },
+          },
+        })
+      )
+    )
+    .pipe(gulpIf(config.isProd, prettier.format()))
+    .pipe(rename(path => {
+        const fileName = outPath.split('//')[1]
+        path.dirname = "../styles";
+        path.basename = fileName;
+    }))
     .pipe(gulp.dest(outPath));
 };
 
@@ -70,7 +116,7 @@ const [taskBuildPagesStyles, buildPagesStylesCallback] = createTask(
         const path = toBuildPath(fullPath);
         const fileNameIndex = path.lastIndexOf("/");
 
-        buildStyle({
+        buildPageStyle({
           path: fullPath,
           outPath: path.slice(0, fileNameIndex),
         });

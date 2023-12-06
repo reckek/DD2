@@ -21,10 +21,9 @@ const config = {
   dest: {
     root: destPath,
     public: `${destPath}/public`,
-    styles: destPath,
+    styles: `${destPath}/styles`,
     scripts: `${destPath}/main.js`,
-    components: `${destPath}/components`,
-    pages: `${destPath}/pages`,
+    pages: `${destPath}`,
 
     fonts: `${destPath}/assets/fonts`,
     images: `${destPath}/assets/images`,

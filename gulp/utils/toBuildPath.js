@@ -3,4 +3,4 @@
 import config from "../config";
 
 export const toBuildPath = (/** @type {string} */ path) =>
-  `${config.dest.root}/${path.split("src/")[1]}`;
+  `${config.dest.root}/${path.split("src")[1]}`.replace('/pages', '');

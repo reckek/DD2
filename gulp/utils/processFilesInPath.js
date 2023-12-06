@@ -1,6 +1,6 @@
 // @ts-check
 
-import fs, { chownSync } from "node:fs";
+import fs from "node:fs";
 import { parse } from "node:path";
 
 /**

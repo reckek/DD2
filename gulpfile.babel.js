@@ -24,7 +24,7 @@ export const build = gulp.series(
   gulp.parallel([
     taskBuildViewPages,
     groupBuildStyles,
-    groupScripts,
+    // groupScripts,
     taskBuildPublic,
   ])
 );
@@ -35,7 +35,7 @@ export const watch = gulp.series(
   build,
   taskServe,
   gulp.parallel(
-    groupWatcherScripts,
+    // groupWatcherScripts,
     groupWatchersBuildStyles,
     watcherBuildViewPages,
     watcherPublic
