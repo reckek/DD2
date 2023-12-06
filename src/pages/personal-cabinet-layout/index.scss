@@ -69,16 +69,14 @@
     text-decoration: none;
     transition: all 0.2s;
 
-    svg:not(.no-style) {
-      path,
-      circle {
-        stroke: var(--primary);
-        transition: all 0.2s;
+    path:not(.no-style),
+    circle:not(.no-style) {
+      stroke: var(--primary);
+      transition: all 0.2s;
 
-        &.is-fill {
-          stroke: none;
-          fill: var(--primary);
-        }
+      &.is-fill {
+        stroke: none;
+        fill: var(--primary);
       }
     }
 
@@ -106,15 +104,13 @@
       color: var(--white);
     }
 
-    svg:not(.no-style) {
-      path,
-      circle {
-        stroke: var(--white);
+    path:not(.no-style),
+    circle:not(.no-style) {
+      stroke: var(--white);
 
-        &.is-fill {
-          stroke: none;
-          fill: var(--white);
-        }
+      &.is-fill {
+        stroke: none;
+        fill: var(--white);
       }
     }
   }

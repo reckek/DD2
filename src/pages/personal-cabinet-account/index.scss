@@ -19,6 +19,15 @@
     gap: 4px;
     max-width: 360px;
 
+    .outline-button:hover {
+      border-color: var(--black);
+      color: var(--black);
+
+      path {
+        fill: var(--black);
+      }
+    }
+
     label {
       input {
         position: absolute;

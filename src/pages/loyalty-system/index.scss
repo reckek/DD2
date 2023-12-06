@@ -1,6 +1,8 @@
+@import "../../components/sectionHeader/sectionHeader.scss";
+
 .discount {
   width: 100%;
-  margin-top: 20px;
+  margin-top: -86px;
   margin-bottom: -50px;
   padding: 40px;
 
@@ -124,7 +126,11 @@
       width: 5%;
       height: 2px;
 
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
     }
 
     &-before {
@@ -188,7 +194,19 @@
       opacity: 0.3;
     }
   }
-}
 
-// TODO Добавить обводку для discount и изменить класс у кнопки
-// TODO увеличить отсуп у футера
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      display: block;
+      width: 635px;
+      font-family: var(--font-primary);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      color: var(--white);
+    }
+  }
+}

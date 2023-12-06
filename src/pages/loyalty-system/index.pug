@@ -1,14 +1,21 @@
 include ../../components/head/head.pug
 include ../../components/header/header.pug
+include ../../components/sectionHeader/sectionHeader.pug
+include ../../components/header/header.pug
 include ../../components/progressBar/progressBar.pug
 include ../../components/footer/footer.pug
 
 doctype html
 html(lang="ru")
-  +head('Blog')
+  +head('Система лояльности')
   body
-    main.main.container.container-custom
-      section.discount
+    +header
+    main.main
+      +sectionHeader
+        header.discount__header.container.container-custom
+          h1.section-title Система лояльности
+          p Мы рады представить Вашему вниманию новую систему вечных скидок постоянным клиентам! Эта скидка зависит от объема ваших покупок на сайте, она вечная и не сгорает. Следить за своей текущей скидкой можно прямо на этой странице (для залогиненных пользователей).
+      section.discount.container.container-custom
         .discount__content
           ul.discount__list
             li.discount__item.in-active

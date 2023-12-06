@@ -5,7 +5,7 @@ mixin favoriteHeros(count, showPlus=true)
 
   .favorite-heros()&attributes(attributes)
     while n < count
-      img.favorite-heros__item(src="=0", alt=`{{ Hero, ${n++} }}`)
+      img.favorite-heros__item(src="../../public/images/Arc_Warden_icon.png", alt=`{{ Hero, ${n++} }}`)
     button.favorite-heros__add(type="button", aria-label="Добавить героя")
       if showPlus
         svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
