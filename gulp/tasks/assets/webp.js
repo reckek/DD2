@@ -20,7 +20,7 @@ export const webpBuild = () => {
     .pipe(changed(config.dest.images))
     .pipe(
       webp(
-        gulpif(config.isProd, imageminWebp({ lossless: true, quality: 100 }))
+        gulpif(config.flags.isProd, imageminWebp({ lossless: true, quality: 100 }))
       )
     )
     .pipe(dest(config.dest.images))

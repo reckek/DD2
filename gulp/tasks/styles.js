@@ -33,7 +33,7 @@ const buildStyle = ({ path, outPath }) => {
     .pipe(gulpif(config.isDev, sourcemaps.write()))
     .pipe(
       gulpif(
-        config.isProd,
+        config.flags.isProd,
         mincss({
           compatibility: "ie9",
 
@@ -54,7 +54,7 @@ const buildStyle = ({ path, outPath }) => {
         })
       )
     )
-    .pipe(gulpIf(config.isProd, prettier.format()))
+    .pipe(gulpIf(config.flags.format, prettier.format()))
     .pipe(rename(path => {
         path.dirname = "../styles";
     }))
@@ -70,7 +70,7 @@ const buildPageStyle = ({ path, outPath }) => {
     .pipe(gulpif(config.isDev, sourcemaps.write()))
     .pipe(
       gulpif(
-        config.isProd,
+        config.flags.isProd,
         mincss({
           compatibility: "ie9",
 
@@ -91,7 +91,7 @@ const buildPageStyle = ({ path, outPath }) => {
         })
       )
     )
-    .pipe(gulpIf(config.isProd, prettier.format()))
+    .pipe(gulpIf(config.flags.format, prettier.format()))
     .pipe(rename(path => {
         const fileName = outPath.split('//')[1]
         path.dirname = "../styles";

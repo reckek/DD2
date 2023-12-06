@@ -1,7 +1,14 @@
+// @ts-check
+
 const srcPath = "src";
 const destPath = "build";
 
 const config = {
+  flags: {
+    isProd: false,
+    isDev: false,
+    format: false,
+  },
   src: {
     root: srcPath,
     public: `public`,
@@ -35,8 +42,9 @@ const config = {
   },
 
   setEnv() {
-    this.isProd = process.argv.includes("--prod");
-    this.isDev = !this.isProd;
+    this.flags.isProd = process.argv.includes("--prod");
+    this.flags.isDev = !this.isProd;
+    this.flags.format = process.argv.includes("--format");
   },
 };
 

@@ -18,7 +18,7 @@ export const imagesBuild = () => {
     .pipe(changed(config.dest.images))
     .pipe(
       gulpif(
-        config.isProd,
+        config.flags.isProd,
         imageMin(
           [
             imageMin.mozjpeg({ quality: 70, progressive: true }),

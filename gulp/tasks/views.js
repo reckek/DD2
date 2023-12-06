@@ -31,7 +31,7 @@ const buildView = ({ path, outPath }) => {
     .pipe(plumber())
     .pipe(pug())
     .pipe(useref())
-    .pipe(gulpif(config.isProd, prettier.format()))
+    .pipe(gulpif(config.flags.format, prettier.format()))
     .pipe(rename((path) => {
       const _fileName = outPath.split('//')[1]
       path.dirname = '../'

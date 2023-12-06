@@ -5,6 +5,7 @@
     "dev": "gulp watch",
     "build:dev": "gulp build",
     "build:prod": "gulp build --prod",
+    "build:prod:format": "gulp build --prod --format",
     "build:webp": "gulp webp",
     "build:gzip": "gulp zip"
   },
