@@ -5,7 +5,7 @@ mixin favoriteHeros(count, showPlus=true)
 
   .favorite-heros()&attributes(attributes)
     while n < count
-      img.favorite-heros__item(src="../../public/images/Arc_Warden_icon.png", alt=`{{ Hero, ${n++} }}`)
+      img.favorite-heros__item(src="@public/images/Arc_Warden_icon.png", alt=`{{ Hero, ${n++} }}`)
     button.favorite-heros__add(type="button", aria-label="Добавить героя")
       if showPlus
         svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
@@ -15,7 +15,7 @@ mixin favoriteHeros(count, showPlus=true)
 mixin hero(checked)
   label.hero
     input.hidden(type="checkbox", name="hero" checked=checked)
-    img(src="../../public/images/Arc_Warden_icon.png", alt="Arc Warden icon")
+    img(src="@public/images/Arc_Warden_icon.png", alt="Arc Warden icon")
     .hero__check
       .hero__check-background
         svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
@@ -29,7 +29,7 @@ mixin favoriteHerosModal(title, expand)
           li.favorite-heros-modal__category-list
             .favorite-heros-modal__category
               .favorite-heros-modal__category-title
-                img(src="../../public/images/favorite-heros-modal/power.png")
+                img(src="@public/images/favorite-heros-modal/power.png")
                 | Сила
               .favorite-heros-modal__heros
                 +hero(true)
@@ -63,7 +63,7 @@ mixin favoriteHerosModal(title, expand)
           li.favorite-heros-modal__category-list
             .favorite-heros-modal__category
               .favorite-heros-modal__category-title
-                img(src="../../public/images/favorite-heros-modal/dexterity.png")
+                img(src="@public/images/favorite-heros-modal/dexterity.png")
                 | Ловкость
               .favorite-heros-modal__heros
                 +hero(false)
@@ -97,7 +97,7 @@ mixin favoriteHerosModal(title, expand)
           li.favorite-heros-modal__category-list
             .favorite-heros-modal__category
               .favorite-heros-modal__category-title
-                img(src="../../public/images/favorite-heros-modal/intelligence.png")
+                img(src="@public/images/favorite-heros-modal/intelligence.png")
                 | Интеллект
               .favorite-heros-modal__heros
                 +hero(false)
@@ -131,7 +131,7 @@ mixin favoriteHerosModal(title, expand)
           li.favorite-heros-modal__category-list
             .favorite-heros-modal__category
               .favorite-heros-modal__category-title
-                img(src="../../public/images/favorite-heros-modal/universal.png")
+                img(src="@public/images/favorite-heros-modal/universal.png")
                 | Универсальные
               .favorite-heros-modal__heros
                 +hero(false)

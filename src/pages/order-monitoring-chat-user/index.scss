@@ -395,7 +395,7 @@
       margin-right: auto;
 
       &::before {
-        background-image: url("../../public/images/order-monitoring/recipient-message-element.svg");
+        background-image: url("@public/images/order-monitoring/recipient-message-element.svg");
 
         transform: translateX(-100%);
 
@@ -413,7 +413,7 @@
       margin-left: auto;
 
       &::before {
-        background-image: url("../../public/images/order-monitoring/sender-message-element.svg");
+        background-image: url("@public/images/order-monitoring/sender-message-element.svg");
 
         transform: translateX(100%);
 
@@ -450,7 +450,7 @@
         object-fit: cover;
         background-repeat: no-repeat;
         background-position: center;
-        background-image: url("../../public/images/order-monitoring/send-message.svg");
+        background-image: url("@public/images/order-monitoring/send-message.svg");
 
         &:hover {
           filter: brightness(150%);

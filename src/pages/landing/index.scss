@@ -44,7 +44,7 @@
   background-origin: border-box;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../../public/images/landing/Dota-logo.png");
+  background-image: url("@public/images/landing/Dota-logo.png");
 
   & .carousel-indicators {
     margin-bottom: -77px;
@@ -128,7 +128,7 @@
     padding: 64px 0;
     background-repeat: no-repeat;
     background-position: right center;
-    background-image: url("../../public/images/landing/heros.png");
+    background-image: url("@public/images/landing/heros.png");
   }
 
   &__info {
@@ -192,7 +192,7 @@
   background-origin: border-box;
   background-position: right center;
   background-repeat: no-repeat;
-  background-image: url("../../public/images/landing/necessary.png");
+  background-image: url("@public/images/landing/necessary.png");
 
   &__info {
     max-width: 445px;

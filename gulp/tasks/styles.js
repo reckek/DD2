@@ -19,6 +19,7 @@ import {
   groupWatcher,
 } from "../utils";
 import rename from "gulp-rename";
+import replace from "gulp-replace";
 import * as prettier from 'gulp-plugin-prettier';
 import gulpIf from "gulp-if";
 
@@ -58,6 +59,7 @@ const buildStyle = ({ path, outPath }) => {
     .pipe(rename(path => {
         path.dirname = "../styles";
     }))
+    .pipe(replace(new RegExp('@public/'), () => '../public/'))
     .pipe(gulp.dest(outPath));
 };
 
@@ -97,6 +99,7 @@ const buildPageStyle = ({ path, outPath }) => {
         path.dirname = "../styles";
         path.basename = fileName;
     }))
+    .pipe(replace(new RegExp('@public/'), () => '../public/'))
     .pipe(gulp.dest(outPath));
 };
 

@@ -409,7 +409,7 @@
       margin-right: auto;
 
       &::before {
-        background-image: url("../../public/images/order-monitoring-chat/recipient-message-element.svg");
+        background-image: url("@public/images/order-monitoring-chat/recipient-message-element.svg");
 
         transform: translateX(-100%);
 
@@ -427,7 +427,7 @@
       margin-left: auto;
 
       &::before {
-        background-image: url("../../public/images/order-monitoring-chat/sender-message-element.svg");
+        background-image: url("@public/images/order-monitoring-chat/sender-message-element.svg");
 
         transform: translateX(100%);
 

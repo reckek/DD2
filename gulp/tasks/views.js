@@ -40,6 +40,7 @@ const buildView = ({ path, outPath }) => {
       fileName = _fileName
     }))
     .pipe(replace(new RegExp('<link rel="stylesheet" href="index.css" />'), () => `<link rel="stylesheet" href="${config.dest.styles}/${fileName}.css" />`.replace(`${config.dest.root}/`, '')))
+    .pipe(replace(new RegExp('@public/'), () => 'public/'))
     .pipe(gulp.dest(outPath, { append: false }));
 }
 

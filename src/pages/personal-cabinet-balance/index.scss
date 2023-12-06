@@ -99,10 +99,10 @@
       background-repeat: no-repeat;
 
       &--replenishment {
-        background-image: url("../../public/images/personal-cabinet-balance/replenishment.svg");
+        background-image: url("@public/images/personal-cabinet-balance/replenishment.svg");
       }
       &--withdrawal {
-        background-image: url("../../public/images/personal-cabinet-balance/withdrawal.svg");
+        background-image: url("@public/images/personal-cabinet-balance/withdrawal.svg");
       }
     }
   }
