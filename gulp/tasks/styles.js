@@ -59,7 +59,7 @@ const buildStyle = ({ path, outPath }) => {
     .pipe(rename(path => {
         path.dirname = "../styles";
     }))
-    .pipe(replace(new RegExp('@public/'), () => '../public/'))
+    .pipe(replace(new RegExp('@public/', 'g'), () => '../public/'))
     .pipe(gulp.dest(outPath));
 };
 
