@@ -6,11 +6,14 @@ mixin modalActions
   .modal-window__actions
     block
 
-mixin modalWindow(title, expand)
-  article.modal-window(class= expand ? "active" : "")
+mixin modalWindow(title, id, expand)
+  article.modal-window(class= expand ? "show" : "", id=id)&attributes(attributes)
     .modal-window__background
     .modal-window__layout
-      .modal-window__close
+      button.icon-button.modal-window__close(
+        data-bs-toggle="collapse"
+        data-bs-target=`#${id}`
+        )
         svg(width="14" height="14" viewBox="0 0 14 14" fill="none")
           path(d="M1 13L13 0.999999" stroke="#5F5A79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
           path(d="M1 1L13 13" stroke="#5F5A79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")

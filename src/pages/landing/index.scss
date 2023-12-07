@@ -560,7 +560,8 @@
     font-family: var(--font-primary);
     font-size: 15px;
     font-weight: 400;
-    > a {
+
+    > button {
       text-decoration: none;
 
       color: var(--primary);
@@ -605,4 +606,11 @@
       font-weight: 600;
     }
   }
+}
+
+#restorePassword-login {
+  z-index: 1200;
+}
+#restorePassword-password {
+  z-index: 1201;
 }

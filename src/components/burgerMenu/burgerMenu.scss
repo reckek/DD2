@@ -8,6 +8,11 @@
   z-index: 10000;
   pointer-events: none;
 
+  &.collapse:not(.show) {
+    display: flex;
+  }
+
+
   &.show {
     pointer-events: all;
 
