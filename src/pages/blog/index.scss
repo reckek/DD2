@@ -43,23 +43,25 @@
 
   &__bloc-hero {
     display: flex;
-    > h3 {
-      margin-left: 16px;
-    }
-  }
-
-  &__bloc-hero {
+    align-items: center;
     > img {
       display: block;
 
       width: 64px;
-      height: 40px;
+      height: min-content;
 
       object-fit: cover;
-
       border-radius: 4px;
     }
     > h3 {
+      margin: 0;
+      margin-left: 16px;
+
+      color: var(--black);
+      font-family: var(--font-primary);
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
     }
   }
 
@@ -114,6 +116,7 @@
   ul > li {
     margin-top: 8px;
 
+    font-size: 15px;
     color: var(--purple);
     font-family: var(--font-text-primary);
     font-style: normal;
