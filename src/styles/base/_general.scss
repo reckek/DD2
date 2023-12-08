@@ -68,6 +68,10 @@ hr {
   text-transform: uppercase;
 }
 
+body {
+  font-family: var(--font-primary);
+}
+
 @import "./styles/buttons.scss";
 @import "./styles/toggler.scss";
 @import "./styles/clips.scss";
