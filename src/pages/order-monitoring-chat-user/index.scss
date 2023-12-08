@@ -70,16 +70,15 @@
 
 .messenger {
   display: flex;
-
   min-height: 708px;
 
-  background: var(--background-2);
+  &::after, &::before {
+    clip-path: polygon(2% 0%, 100% 0%, 100% 98%, 98% 100%, 0% 100%, 0% 3%);
+  }
 
   &__body {
     width: 100%;
     margin-top: -90px;
-
-    clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
   }
 
   &__toggler {
@@ -647,15 +646,4 @@
   height: 100%;
 
   background: var(--background-3);
-}
-.border-clip-2 {
-  &::after {
-    clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
-    background-color: var(--background-2);
-  }
-
-  &::before {
-    clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
-    background-color: var(--background-3);
-  }
 }

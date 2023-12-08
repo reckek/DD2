@@ -1,25 +1,31 @@
 .review {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  background-color: var(--primary);
 
-  &::before {
-    background-color: transparent;
-  }
-
-  &::after {
-    clip-rule: evenodd;
-    clip-path: polygon(20% 0%, 100% 0%, 100% 88%, 96% 100%, 0% 100%, 0% 14%);
-    background-color: var(--primary);
+  .border-clip-left-top, .border-clip-right-bottom {
+    --background-color: #ECEBF5;
   }
 
   &__rank {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 8px;
     padding: 32px 24px;
+    background-color: var(--background);
+
+    .border-clip-left-top {
+      --background-color: #ECEBF5;
+    }
+
+    .border-clip-right-bottom {
+      --background-color: var(--primary);
+    }
 
     &-level {
       display: flex;

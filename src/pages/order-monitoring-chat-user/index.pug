@@ -26,18 +26,16 @@ html(lang="ru")
                 <rect x="5" y="4" width="4" height="16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <rect x="15" y="4" width="4" height="16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-
               | На паузу
 
             button
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17 10.5V7C17 6.45 16.55 6 16 6H4C3.45 6 3 6.45 3 7V17C3 17.55 3.45 18 4 18H16C16.55 18 17 17.55 17 17V13.5L21 17.5V6.5L17 10.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-
               | Смотреть стрим
 
       .messenger__body.container.container-custom
-        section.messenger
+        section.messenger.border-clip-2
           .messenger__order-description
             h2 Детали заказа
             .messenger__MMP-progress-content
@@ -200,7 +198,9 @@ html(lang="ru")
               button
 
         section.messenger__history
-          header.history.border-clip-2
+          header.history
+            .border-clip-left-top
+            .border-clip-right-bottom
             h1.history__title Последние игры на заказе
             +historyList
               +historyItem("DOOM", true, 25, 0, 13, "02:58:10", 25, false)

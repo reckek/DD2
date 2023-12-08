@@ -1,8 +1,10 @@
 .team-preview {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 24px;
+  background-color: var(--background-2);
   opacity: 1;
 
   &__header {

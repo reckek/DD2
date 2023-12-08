@@ -196,7 +196,9 @@ html(lang="ru")
               </svg>
 
         section.messenger__history
-          header.history.border-clip-2
+          div.history
+            .border-clip-left-top
+            .border-clip-right-bottom
             h1.history__title Последние игры на заказе
             +historyList
               +historyItem("DOOM", true, 25, 0, 13, "02:58:10", 25, false)

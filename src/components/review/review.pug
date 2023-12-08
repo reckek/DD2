@@ -1,6 +1,10 @@
 mixin review(reviewId, reviewType, author)
-  .review.border-clip-2
-    .review__rank.border-clip-2
+  .review()&attributes(attributes)
+    .border-clip-left-top
+    .border-clip-right-bottom
+    .review__rank
+      .border-clip-left-top
+      .border-clip-right-bottom
       img(src="@public/images/rank-1.png", alt="")
       .review__rank-level
         .review__rank-current 12 000

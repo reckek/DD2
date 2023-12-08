@@ -99,7 +99,7 @@ const buildPageStyle = ({ path, outPath }) => {
         path.dirname = "../styles";
         path.basename = fileName;
     }))
-    .pipe(replace(new RegExp('@public/'), () => '../public/'))
+    .pipe(replace(new RegExp('@public/', 'g'), () => '../public/'))
     .pipe(gulp.dest(outPath));
 };
 

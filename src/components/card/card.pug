@@ -1,8 +1,12 @@
 include ../progressBar/progressBar.pug
 
 mixin card(cardId, type, start, end, progress)
-  .status-card.border-clip-2
-    .status-card__info.border-clip-2
+  .status-card
+    .border-clip-left-top
+    .border-clip-right-bottom
+    .status-card__info
+      .border-clip-left-top
+      .border-clip-right-bottom
       .status-card__info-top
         .status-card__id= cardId
         .status-card__type Тип:#{" "}

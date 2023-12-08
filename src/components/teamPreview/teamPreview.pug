@@ -1,5 +1,7 @@
 mixin teamPreview(hiddenButton)
-  li.team-preview.border-clip-2
+  li.team-preview
+    .border-clip-left-top
+    .border-clip-right-bottom
     .team-preview__header
       .team-preview__info
         img.team-preview__avatar.avatar(src="=0", alt="Аватарка {{ Никнейм }}")

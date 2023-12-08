@@ -402,7 +402,7 @@ html(lang="ru")
           +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
           +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
           +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
-        a.button.active-button.invert-button.remove-link-style(href="=0") Посмотреть все
+        a.button.active-button.invert-button.remove-link-style.border-clip(href="=0") Посмотреть все
 
       section.reviews
         .reviews__container.container.container-custom
@@ -488,7 +488,9 @@ html(lang="ru")
             +blogPreview
 
       section.join
-        .join__container.container.container-custom.border-clip-2
+        .join__container.container.container-custom
+          .border-clip-left-top
+          .border-clip-right-bottom
           .join__info
             h2 Стань частью Команды#{" "}
               b MMR

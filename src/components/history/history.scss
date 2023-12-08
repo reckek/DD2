@@ -1,7 +1,9 @@
 .history {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  background-color: var(--background-2);
 
   &__title {
     font-family: var(--font-primary);
@@ -111,7 +113,7 @@
 
   &__success,
   &__error {
-    font-family: Rubik;
+    font-family: var(--font-primary);
     font-size: 15px;
     font-style: normal;
     font-weight: 600;

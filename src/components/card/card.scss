@@ -1,28 +1,37 @@
 @import "../progressBar/progressBar.scss";
 
 .status-card {
+  position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-content: stretch;
+  background-color: var(--primary);
 
-  &::before {
-    background-color: transparent;
+  .border-clip-left-top {
+    --background-color: var(--background);
+    --border-color: transparent;
   }
 
-  &::after {
-    clip-path: polygon(10% 0%, 100% 0%, 100% 86%, 94% 100%, 0% 100%, 0% 20%);
-    background-color: var(--primary);
+  .border-clip-right-bottom {
+    --background-color: var(--background);
+    --border-color: transparent;
+    right: -1px;
   }
 
   &__info {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 24px;
+    padding: 24px;    background-color: var(--background-2);
 
-    &::after, &::before {
-      clip-path: polygon(9% 0%, 100% 0%, 100% 84%, 90% 100%, 0% 100%, 0% 14%);
+    .border-clip-left-top {
+      --background-color: var(--background);
+      --border-color: transparent;
+    }
+
+    .border-clip-right-bottom {
+      --background-color: var(--primary);
+      --border-color: transparent;
     }
   }
 
@@ -111,6 +120,7 @@
     align-items: center;
     gap: 32px;
     padding: 24px 29px;
+    margin-left: auto;
 
     &-header {
       display: flex;

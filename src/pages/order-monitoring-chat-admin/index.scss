@@ -80,9 +80,9 @@
   display: flex;
 
   min-height: 780px;
-  &::after,
-  &::before {
-    clip-path: polygon(4% 0%, 100% 0%, 100% 96%, 96% 100%, 0% 100%, 0% 4%);
+
+  &::after, &::before {
+    clip-path: polygon(2% 0%, 100% 0%, 100% 98%, 98% 100%, 0% 100%, 0% 3%);
   }
 
   &__history {
@@ -91,7 +91,6 @@
   &__body {
     width: 100%;
     margin-top: -90px;
-    padding: 40px;
   }
 
   &__order-description {
@@ -592,11 +591,6 @@
     padding: 40px;
     height: 948px;
     margin-top: -80px;
-
-    &::after,
-    &::before {
-      clip-path: polygon(4% 0%, 100% 0%, 100% 96%, 96% 100%, 0% 100%, 0% 4%);
-    }
   }
 
   &__list {
@@ -763,18 +757,6 @@
         transform: scale3d(1.5, 1.5, 1.5);
       }
     }
-  }
-}
-
-.border-clip-2 {
-  &::after {
-    clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
-    background-color: var(--background-2);
-  }
-
-  &::before {
-    clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
-    background-color: var(--background-3);
   }
 }
 

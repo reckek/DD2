@@ -27,7 +27,6 @@
   }
 }
 
-
 .border-clip-1 {
   position: relative;
 
@@ -62,7 +61,6 @@
   }
 }
 
-
 .border-clip-2 {
   position: relative;
 
@@ -96,4 +94,68 @@
     background-color: var(--background-3);
     z-index: 0;
   }
+}
+
+.border-clip-left-top {
+  --background-color: var(--background);
+  --border-color: var(--background-3);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    transform: rotate(180deg);
+  }
+
+  &::before {
+    clip-path: polygon(105% 0, 0% 105%, 105% 105%);
+    background-color: var(--background-color);
+  }
+
+  // &::after {
+  //   clip-path: polygon(99% 0, 0% 100%, 100% 99%);
+  //   background-color: var(--border-color);
+  // }
+}
+
+.border-clip-right-bottom {
+  --background-color: var(--background);
+  --border-color: var(--background-3);
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  > * {
+    z-index: 3;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+
+  &::before {
+    clip-path: polygon(105% 0, 0% 105%, 105% 105%);
+    background-color: var(--background-color);
+  }
+
+  // &::after {
+  //   clip-path: polygon(99% 0, 0% 100%, 100% 99%);
+  //   background-color: var(--border-color);
+  // }
 }

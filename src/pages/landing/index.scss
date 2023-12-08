@@ -500,16 +500,21 @@
   }
 
   &__container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding: 40px 40px 60px;
     max-height: 242px;
     margin-top: 177px;
+    background-color: var(--primary);
 
-    &::before,
-    &::after {
-      clip-path: polygon(4% 0%, 100% 0%, 100% 88%, 96% 100%, 0% 100%, 0% 12%);
-      background-color: var(--primary);
+    .border-clip-left-top {
+      --background-color: var(--background);
+      --border-color: transparent;
+    }
+    .border-clip-right-bottom {
+      --background-color: var(--black);
+      --border-color: transparent;
     }
   }
 
@@ -520,7 +525,6 @@
       font-style: italic;
       font-weight: 600;
       text-transform: uppercase;
-      max-width: 385px;
       color: rgb(255 255 255 / 0.7);
 
       b {

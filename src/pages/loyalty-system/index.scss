@@ -1,14 +1,16 @@
 @import "../../components/sectionHeader/sectionHeader.scss";
 
 .discount {
+  position: relative;
   width: 100%;
   margin-top: -86px;
-  margin-bottom: -50px;
+  margin-bottom: -60px;
   padding: 40px;
 
-  background: var(--white);
-
-  clip-path: polygon(4% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 8%);
+  &::after,
+  &::before {
+    clip-path: polygon(4% 0%, 100% 0%, 100% 96%, 96% 100%, 0% 100%, 0% 6%);
+  }
 
   &__content {
     padding: 88px 72px;
@@ -209,4 +211,8 @@
       color: var(--white);
     }
   }
+}
+
+.footer {
+  padding-top: 30px;
 }
