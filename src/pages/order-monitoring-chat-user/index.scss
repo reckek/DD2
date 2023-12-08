@@ -20,7 +20,7 @@
   justify-content: space-between;
 }
 
-.post-header {
+.messenger-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,6 +60,10 @@
       font-size: 15px;
       font-style: normal;
       font-weight: 500;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }
