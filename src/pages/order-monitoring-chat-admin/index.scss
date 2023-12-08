@@ -69,8 +69,7 @@
         font-weight: 500;
 
         &:hover {
-          color: var(--white);
-          border: solid 1px var(--white);
+          opacity: 0.8;
         }
       }
     }
@@ -93,29 +92,6 @@
     width: 100%;
     margin-top: -90px;
     padding: 40px;
-  }
-
-  &-toggler {
-    width: 100%;
-    padding: 4px;
-
-    &-item {
-      padding: 16px 49px;
-      text-align: center;
-    }
-    &-conteiner {
-      display: flex;
-      width: max-content;
-
-      border-radius: 4px;
-
-      padding: 4px;
-      margin-left: auto;
-      background: #000;
-    }
-    &--white {
-      background-color: var(--white);
-    }
   }
 
   &__order-description {
@@ -301,7 +277,7 @@
       flex-direction: column;
 
       width: 100%;
-      height: 600px;
+      max-height: 700px;
 
       overflow: auto;
 

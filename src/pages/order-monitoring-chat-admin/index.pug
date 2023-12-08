@@ -151,22 +151,6 @@ html(lang="ru")
                 p.messenger__order-info-copy-text  qwrqr4
 
           .messenger__chat-bloc
-            .messenger__chat-switching
-              .toggler.messenger-toggler
-                label.toggler__item.messenger-toggler-item
-                  | Мои заказы
-                  input(
-                    checked=""
-                    name="currency"
-                    type="radio"
-                    )
-                label.toggler__item.messenger-toggler-item
-                  | Свободные заказы
-                  input(
-                    name="currency"
-                    type="radio"
-                    )
-
 
             .messenger__chat-content
               .messenger__chat-subject
@@ -201,11 +185,10 @@ html(lang="ru")
                   | Сообщение от бустера
                 p.messenger__chat-element.messenger__chat-recipient-message(time="13:34")
                   | Сообщение от бустера
-              // .messenger__chat-no-messages.active чтобы включить
-              p.messenger__chat-no-messages Чат недоступен пока вы не взяли заказ
+              // .active чтобы включить
+              p.messenger__chat-no-messages.active Чат недоступен пока вы не взяли заказ
 
-            // .messenger__chat-input.in-active для отключения
-
+            // in-active для отключения
             .messenger__chat-input
               input(type="text" placeholder="Введите ваше сообщение...")
               <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
