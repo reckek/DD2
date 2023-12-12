@@ -11,6 +11,16 @@
 
   &__item {
     list-style: none;
-    max-width: 530px;
+  }
+}
+
+.status-card {
+  &__info {
+    width: 100%;
+  }
+
+  .border-clip-left-top,
+  .border-clip-right-bottom {
+    --background-color: var(--background-2)
   }
 }
