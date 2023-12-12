@@ -8,7 +8,7 @@ mixin historyList
 mixin historyItem(hero, victory, k, d, a, delay, mmr, showButton)
   a.history-item(href="=0")
     .history-item__info
-      img(src="=0", alt=`Изображение ${hero}`)
+      img(src="@public/images/template/hero-card.png", alt=`Изображение ${hero}`)
       .history-item__role
         span.history-item__title Герой
         p= hero

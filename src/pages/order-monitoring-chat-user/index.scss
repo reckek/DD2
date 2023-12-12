@@ -72,7 +72,8 @@
   display: flex;
   min-height: 708px;
 
-  &::after, &::before {
+  &::after,
+  &::before {
     clip-path: polygon(2% 0%, 100% 0%, 100% 98%, 98% 100%, 0% 100%, 0% 3%);
   }
 
@@ -254,6 +255,21 @@
 
       padding: 24px 24px 0 24px;
     }
+    &-no-messages {
+      display: none;
+
+      margin-top: 50%;
+      margin-left: auto;
+      margin-right: auto;
+
+      color: var(--purple);
+      font-style: normal;
+    }
+
+    &-no-messages.active {
+      display: flex;
+    }
+
     &-switching {
       display: flex;
       width: max-content;
@@ -398,7 +414,7 @@
       margin-right: auto;
 
       &::before {
-        background-image: url("@public/images/order-monitoring/recipient-message-element.svg");
+        background-image: url("@public/images/order-monitoring-chat/recipient-message-element.svg");
 
         transform: translateX(-100%);
 
@@ -416,7 +432,7 @@
       margin-left: auto;
 
       &::before {
-        background-image: url("@public/images/order-monitoring/sender-message-element.svg");
+        background-image: url("@public/images/order-monitoring-chat/sender-message-element.svg");
 
         transform: translateX(100%);
 
@@ -434,6 +450,8 @@
       display: flex;
       width: 100%;
 
+      align-items: center;
+
       padding: 20px 0;
 
       > input {
@@ -443,22 +461,28 @@
         border: none;
         background: none;
       }
-      > button {
+      > svg {
         width: 5%;
         height: 100%;
+
+        width: 18px;
+        height: 16px;
+
+        margin-left: 8px;
+
+        cursor: pointer;
 
         border: none;
         background: none;
 
-        object-fit: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-image: url("@public/images/order-monitoring/send-message.svg");
-
         &:hover {
-          filter: brightness(150%);
+          opacity: 0.5;
         }
       }
+    }
+    &-input.in-active {
+      opacity: 0.5;
+      pointer-events: none;
     }
   }
   &__alert {
