@@ -129,7 +129,7 @@ html(lang="ru")
 
             .messenger__order-info-user
               .row-container
-                img(src="@public/images/order-monitoring-chat/user-img83.png" alt="user").messenger__order-info-user-img
+                img(src="@public/images/template/user-img.png" alt="user").messenger__order-info-user-img
                 .messenger__order-info-user-alias
                   h4.messenger__order-info-user-nickname Никнейм
                   p.messenger__order-info-user-FIO ФИО
@@ -193,9 +193,16 @@ html(lang="ru")
                   | Сообщение от бустера
                 p.messenger__chat-element.messenger__chat-recipient-message(time="13:34")
                   | Сообщение от бустера
+              //  добавить class active чтобы включить
+              // при этом в чате не должно быть сообщений
+              p.messenger__chat-no-messages Чат недоступен пока заказ не принят
+
+            // in-active для отключения
             .messenger__chat-input
               input(type="text" placeholder="Введите ваше сообщение...")
-              button
+              <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.00857142 16L18 8L0.00857142 0L0 6.22222L12.8571 8L0 9.77778L0.00857142 16Z" fill="#5F5A79"/>
+              </svg>
 
         section.messenger__history
           header.history
