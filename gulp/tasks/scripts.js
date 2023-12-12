@@ -28,7 +28,9 @@ const createRollupConfig = (path, outPath) => ({
   output: {
     file: outPath,
     format: "module",
-    sourcemap: true,
+    sourcemap: config.flags.isDev,
+    compact: false,
+    strict: true,
   },
 });
 
