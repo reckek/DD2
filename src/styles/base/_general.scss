@@ -1,21 +1,6 @@
 @import "../base/fonts.scss";
 
 :root {
-  --primary: #3e25d8;
-  --black: #21212d;
-  --red: #d52b1e;
-  --red-2: #BB3C3C;
-  --white: #ffffff;
-  --purple: #5f5a79;
-
-  --background: #e4e2f1;
-  --background-2: #f9f8ff;
-  --background-3: #d2d0dd;
-  --background-hover: rgb(251 250 255 / 20%);
-
-  --border: 1px solid #d2d0dd;
-  --border-radius: 4px;
-
   --font-primary: "Rubik", sans-serif;
   --font-h1: italic 600 27px var(--font-primary);
   --font-h2: italic 600 56px var(--font-primary);
@@ -23,10 +8,29 @@
   --font-text-secondary: 600 13px var(--font-primary);
   --font-text-secondary-regular: 400 13px var(--font-primary);
   --font-button: italic 500 15px var(--font-primary);
+}
 
-  /* bootstrap */
-  --bs-body-bg: var(--background);
-  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+body {
+  &.white {
+    --primary: #3e25d8;
+    --black: #21212d;
+    --red: #d52b1e;
+    --red-2: #bb3c3c;
+    --white: #ffffff;
+    --purple: #5f5a79;
+
+    --background: #e4e2f1;
+    --background-2: #f9f8ff;
+    --background-3: #d2d0dd;
+    --background-hover: rgb(251 250 255 / 20%);
+
+    --border: 1px solid #d2d0dd;
+    --border-radius: 4px;
+
+    /* bootstrap */
+    --bs-body-bg: var(--background);
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
 }
 
 @media (min-width: 1110px) {

@@ -1,6 +1,6 @@
 mixin burgerMenu
   #burger.burger-menu.collapse-horizontal(tabindex="-1" aria-hidden="true")
-    .burger-menu__backdrop
+    .burger-menu__backdrop(aria-label="Close burger menu" type="button" data-bs-toggle="collapse" data-bs-target="#burger")
     .burger-menu__layout
       button.icon-button.burger-menu__close-button(
           aria-label="Close burger menu"

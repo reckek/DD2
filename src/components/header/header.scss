@@ -111,9 +111,8 @@
 
     opacity: 0;
     pointer-events: none;
-    transition:
-      bottom 0.4s,
-      opacity 0.2s;
+    transition: bottom 0.4s, opacity 0.2s;
+    z-index: 1;
 
     > ul {
       display: flex;

@@ -14,7 +14,7 @@ include ../../components/modalWindow/modalWindow.pug
 doctype html
 html(lang="ru")
   +head('Главная')
-  body
+  body.white
     +header(true)
     main.main
       +sectionHeader(class="first-screen-wrappers")
@@ -66,10 +66,10 @@ html(lang="ru")
                       span.border-clip -20%
                   img(src="@public/images/firstScreen-1.png" alt="")
             div.carousel-indicators
-              button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1")
-              button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2")
-              button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3")
-              button(type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4")
+              button(type="button", data-bs-target="#carouselExampleSlidesOnly", data-bs-slide-to="0", class="active", aria-current="true", aria-label="Слайд 1")
+              button(type="button", data-bs-target="#carouselExampleSlidesOnly", data-bs-slide-to="1", aria-label="Слайд 2")
+              button(type="button", data-bs-target="#carouselExampleSlidesOnly", data-bs-slide-to="2", aria-label="Слайд 3")
+              button(type="button", data-bs-target="#carouselExampleSlidesOnly", data-bs-slide-to="3", aria-label="Слайд 4")
 
       +sectionHeader(class="raffle-wrapper")
         .raffle-img
@@ -500,86 +500,69 @@ html(lang="ru")
     +footer
     +modalWindow("Авторизация", "login")
       +modalContent
-        .landing-modal-window__container
-          form(action="")
-            +input("Логин или электронная почта",)(type="text")
-            +input("Пароль",)(type="mail")
-            p.m-0.landing-modal-window__link-auth Забыли пароль?!{' '}
-              button.icon-button.reset(
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#restorePassword-login"
-                ) Восстановить
-            button.button Войти
-          p.landing-modal-window__link-auth Нет аккаунта?!{' '}
-            button.icon-button.reset(
-              data-bs-toggle="collapse"
-              data-bs-target="#registration"
-              ) Зарегистрироваться
-          .landing-modal-window__alternative-auth
-            p.landing-modal-window__alternative-auth-title Или войдите с помощью:
-            .landing-modal-window__alternative-auth-row
-              a(href="").landing-modal-window__alternative-auth-link
-                <svg width="21" height="20" viewBox="0 0 21 20" fill="none">
-                  <path d="M0.5 9.6C0.5 5.0745 0.5 2.81177 1.90589 1.40589C3.31177 0 5.5745 0 10.1 0H10.9C15.4255 0 17.6882 0 19.0941 1.40589C20.5 2.81177 20.5 5.0745 20.5 9.6V10.4C20.5 14.9255 20.5 17.1882 19.0941 18.5941C17.6882 20 15.4255 20 10.9 20H10.1C5.5745 20 3.31177 20 1.90589 18.5941C0.5 17.1882 0.5 14.9255 0.5 10.4V9.6Z" fill="#0077FF"/>
-                  <path d="M11.1416 14.409C6.58329 14.409 3.98333 11.284 3.875 6.08398H6.15833C6.23333 9.90065 7.91663 11.5173 9.24996 11.8507V6.08398H11.4V9.37565C12.7167 9.23398 14.0999 7.73398 14.5665 6.08398H16.7166C16.3582 8.11732 14.8582 9.61732 13.7916 10.234C14.8582 10.734 16.5667 12.0423 17.2167 14.409H14.8499C14.3416 12.8257 13.075 11.6007 11.4 11.434V14.409H11.1416Z" fill="white"/>
-                </svg>
-                p VK
-              a(href="").landing-modal-window__alternative-auth-link
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M20.0001 10.2296C20.0001 9.54793 19.9229 8.86625 19.8458 8.18457H10.2026V12.0474H15.6799C15.4485 13.2593 14.7542 14.3954 13.6742 15.0771V17.5766H16.9914C18.92 15.8345 20.0001 13.2593 20.0001 10.2296Z" fill="#4285F4"/>
-                  <path d="M10.2027 19.9999C12.98 19.9999 15.2943 19.091 16.9915 17.5762L13.6743 15.0767C12.7485 15.6826 11.5913 16.0613 10.2027 16.0613C7.5798 16.0613 5.26545 14.3193 4.494 11.8955H1.09961V14.4707C2.87395 17.8791 6.34548 19.9999 10.2027 19.9999Z" fill="#34A853"/>
-                  <path d="M4.49511 11.8961C4.03209 10.6842 4.03209 9.32085 4.49511 8.03323V5.45801H1.09966C-0.366554 8.26046 -0.366554 11.5931 1.09966 14.4713L4.49511 11.8961Z" fill="#FBBC04"/>
-                  <path d="M10.2027 3.94266C11.6685 3.94266 13.0571 4.47285 14.1371 5.4575L17.0687 2.5793C15.2172 0.912979 12.7485 -0.0716669 10.2799 0.00407502C6.42263 0.00407502 2.87395 2.12485 1.17676 5.53324L4.57114 8.10846C5.26545 5.68472 7.5798 3.94266 10.2027 3.94266Z" fill="#EA4335"/>
-                </svg>
-                p Google
+        form(action="")
+          +input("Логин или электронная почта")(type="text")
+          +input("Пароль")(type="mail")
+          p.m-0.landing-modal-window__link-auth Забыли пароль?!{' '}
+            button.icon-button.reset(type="button", data-expand-dialog="#restorePassword-login") Восстановить
+          button.button Войти
+        p.landing-modal-window__link-auth Нет аккаунта?!{' '}
+          button.icon-button.reset(data-expand-dialog="#registration") Зарегистрироваться
+        .landing-modal-window__alternative-auth
+          p.landing-modal-window__alternative-auth-title Или войдите с помощью:
+          .landing-modal-window__alternative-auth-row
+            a(href="").landing-modal-window__alternative-auth-link
+              <svg width="21" height="20" viewBox="0 0 21 20" fill="none">
+                <path d="M0.5 9.6C0.5 5.0745 0.5 2.81177 1.90589 1.40589C3.31177 0 5.5745 0 10.1 0H10.9C15.4255 0 17.6882 0 19.0941 1.40589C20.5 2.81177 20.5 5.0745 20.5 9.6V10.4C20.5 14.9255 20.5 17.1882 19.0941 18.5941C17.6882 20 15.4255 20 10.9 20H10.1C5.5745 20 3.31177 20 1.90589 18.5941C0.5 17.1882 0.5 14.9255 0.5 10.4V9.6Z" fill="#0077FF"/>
+                <path d="M11.1416 14.409C6.58329 14.409 3.98333 11.284 3.875 6.08398H6.15833C6.23333 9.90065 7.91663 11.5173 9.24996 11.8507V6.08398H11.4V9.37565C12.7167 9.23398 14.0999 7.73398 14.5665 6.08398H16.7166C16.3582 8.11732 14.8582 9.61732 13.7916 10.234C14.8582 10.734 16.5667 12.0423 17.2167 14.409H14.8499C14.3416 12.8257 13.075 11.6007 11.4 11.434V14.409H11.1416Z" fill="white"/>
+              </svg>
+              p VK
+            a(href="").landing-modal-window__alternative-auth-link
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M20.0001 10.2296C20.0001 9.54793 19.9229 8.86625 19.8458 8.18457H10.2026V12.0474H15.6799C15.4485 13.2593 14.7542 14.3954 13.6742 15.0771V17.5766H16.9914C18.92 15.8345 20.0001 13.2593 20.0001 10.2296Z" fill="#4285F4"/>
+                <path d="M10.2027 19.9999C12.98 19.9999 15.2943 19.091 16.9915 17.5762L13.6743 15.0767C12.7485 15.6826 11.5913 16.0613 10.2027 16.0613C7.5798 16.0613 5.26545 14.3193 4.494 11.8955H1.09961V14.4707C2.87395 17.8791 6.34548 19.9999 10.2027 19.9999Z" fill="#34A853"/>
+                <path d="M4.49511 11.8961C4.03209 10.6842 4.03209 9.32085 4.49511 8.03323V5.45801H1.09966C-0.366554 8.26046 -0.366554 11.5931 1.09966 14.4713L4.49511 11.8961Z" fill="#FBBC04"/>
+                <path d="M10.2027 3.94266C11.6685 3.94266 13.0571 4.47285 14.1371 5.4575L17.0687 2.5793C15.2172 0.912979 12.7485 -0.0716669 10.2799 0.00407502C6.42263 0.00407502 2.87395 2.12485 1.17676 5.53324L4.57114 8.10846C5.26545 5.68472 7.5798 3.94266 10.2027 3.94266Z" fill="#EA4335"/>
+              </svg>
+              p Google
     +modalWindow("Восстановление пароля", "restorePassword-login")
       +modalContent
-        .landing-modal-window__container
-          form(action="")
-            +input("Логин или электронная почта",)(type="text")
-            button.button Отправить
-          p.landing-modal-window__link-auth Вспомнил пароль?!{' '}
-            button.icon-button.reset(
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#restorePassword-login"
-            ) Войти
+        form(action="")
+          +input("Логин или электронная почта")(type="text")
+          button.button Отправить
+        p.landing-modal-window__link-auth Вспомнил пароль?!{' '}
+          button.icon-button.reset(type="button", data-expand-dialog="#login") Войти
     +modalWindow("Восстановление пароля", "restorePassword-password")
       +modalContent
-        .landing-modal-window__container
-          form(action="")
-            +input("Введите новый пароль",)(type="text")
-            +input("Повторите новый пароль",)(type="text")
-            button.button Отправить
+        form(action="")
+          +input("Введите новый пароль")(type="text")
+          +input("Повторите новый пароль")(type="text")
+          button.button Отправить
     +modalWindow("Регистрация", "registration")
       +modalContent
-        .landing-modal-window__container
-          form(action="")
-            +input("Логин",)(type="text")
-            +input("Электронная почта",)(type="mail")
-            +input("Пароль",)(type="text")
-            +input("Повторение пароля",)(type="text")
-            button.button Войти
-          p.landing-modal-window__link-auth Есть аккаунта?!{' '}
-            button.icon-button.reset(
-              data-bs-toggle="collapse"
-              data-bs-target="#registration"
-            ) Войти
-          .landing-modal-window__alternative-auth
-            p.landing-modal-window__alternative-auth-title Или войдите с помощью:
-            .landing-modal-window__alternative-auth-row
-              a(href="").landing-modal-window__alternative-auth-link
-                <svg width="21" height="20" viewBox="0 0 21 20" fill="none">
-                  <path d="M0.5 9.6C0.5 5.0745 0.5 2.81177 1.90589 1.40589C3.31177 0 5.5745 0 10.1 0H10.9C15.4255 0 17.6882 0 19.0941 1.40589C20.5 2.81177 20.5 5.0745 20.5 9.6V10.4C20.5 14.9255 20.5 17.1882 19.0941 18.5941C17.6882 20 15.4255 20 10.9 20H10.1C5.5745 20 3.31177 20 1.90589 18.5941C0.5 17.1882 0.5 14.9255 0.5 10.4V9.6Z" fill="#0077FF"/>
-                  <path d="M11.1416 14.409C6.58329 14.409 3.98333 11.284 3.875 6.08398H6.15833C6.23333 9.90065 7.91663 11.5173 9.24996 11.8507V6.08398H11.4V9.37565C12.7167 9.23398 14.0999 7.73398 14.5665 6.08398H16.7166C16.3582 8.11732 14.8582 9.61732 13.7916 10.234C14.8582 10.734 16.5667 12.0423 17.2167 14.409H14.8499C14.3416 12.8257 13.075 11.6007 11.4 11.434V14.409H11.1416Z" fill="white"/>
-                </svg>
-                p VK
-              a(href="").landing-modal-window__alternative-auth-link
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M20.0001 10.2296C20.0001 9.54793 19.9229 8.86625 19.8458 8.18457H10.2026V12.0474H15.6799C15.4485 13.2593 14.7542 14.3954 13.6742 15.0771V17.5766H16.9914C18.92 15.8345 20.0001 13.2593 20.0001 10.2296Z" fill="#4285F4"/>
-                  <path d="M10.2027 19.9999C12.98 19.9999 15.2943 19.091 16.9915 17.5762L13.6743 15.0767C12.7485 15.6826 11.5913 16.0613 10.2027 16.0613C7.5798 16.0613 5.26545 14.3193 4.494 11.8955H1.09961V14.4707C2.87395 17.8791 6.34548 19.9999 10.2027 19.9999Z" fill="#34A853"/>
-                  <path d="M4.49511 11.8961C4.03209 10.6842 4.03209 9.32085 4.49511 8.03323V5.45801H1.09966C-0.366554 8.26046 -0.366554 11.5931 1.09966 14.4713L4.49511 11.8961Z" fill="#FBBC04"/>
-                  <path d="M10.2027 3.94266C11.6685 3.94266 13.0571 4.47285 14.1371 5.4575L17.0687 2.5793C15.2172 0.912979 12.7485 -0.0716669 10.2799 0.00407502C6.42263 0.00407502 2.87395 2.12485 1.17676 5.53324L4.57114 8.10846C5.26545 5.68472 7.5798 3.94266 10.2027 3.94266Z" fill="#EA4335"/>
-                </svg>
-                p Google
+        form(action="")
+          +input("Логин")(type="text")
+          +input("Электронная почта")(type="mail")
+          +input("Пароль")(type="text")
+          +input("Повторение пароля")(type="text")
+          button.button Войти
+        p.landing-modal-window__link-auth Есть аккаунта?!{' '}
+          button.icon-button.reset(data-expand-dialog="#login") Войти
+        .landing-modal-window__alternative-auth
+          p.landing-modal-window__alternative-auth-title Или войдите с помощью:
+          .landing-modal-window__alternative-auth-row
+            a(href="").landing-modal-window__alternative-auth-link
+              <svg width="21" height="20" viewBox="0 0 21 20" fill="none">
+                <path d="M0.5 9.6C0.5 5.0745 0.5 2.81177 1.90589 1.40589C3.31177 0 5.5745 0 10.1 0H10.9C15.4255 0 17.6882 0 19.0941 1.40589C20.5 2.81177 20.5 5.0745 20.5 9.6V10.4C20.5 14.9255 20.5 17.1882 19.0941 18.5941C17.6882 20 15.4255 20 10.9 20H10.1C5.5745 20 3.31177 20 1.90589 18.5941C0.5 17.1882 0.5 14.9255 0.5 10.4V9.6Z" fill="#0077FF"/>
+                <path d="M11.1416 14.409C6.58329 14.409 3.98333 11.284 3.875 6.08398H6.15833C6.23333 9.90065 7.91663 11.5173 9.24996 11.8507V6.08398H11.4V9.37565C12.7167 9.23398 14.0999 7.73398 14.5665 6.08398H16.7166C16.3582 8.11732 14.8582 9.61732 13.7916 10.234C14.8582 10.734 16.5667 12.0423 17.2167 14.409H14.8499C14.3416 12.8257 13.075 11.6007 11.4 11.434V14.409H11.1416Z" fill="white"/>
+              </svg>
+              p VK
+            a(href="").landing-modal-window__alternative-auth-link
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M20.0001 10.2296C20.0001 9.54793 19.9229 8.86625 19.8458 8.18457H10.2026V12.0474H15.6799C15.4485 13.2593 14.7542 14.3954 13.6742 15.0771V17.5766H16.9914C18.92 15.8345 20.0001 13.2593 20.0001 10.2296Z" fill="#4285F4"/>
+                <path d="M10.2027 19.9999C12.98 19.9999 15.2943 19.091 16.9915 17.5762L13.6743 15.0767C12.7485 15.6826 11.5913 16.0613 10.2027 16.0613C7.5798 16.0613 5.26545 14.3193 4.494 11.8955H1.09961V14.4707C2.87395 17.8791 6.34548 19.9999 10.2027 19.9999Z" fill="#34A853"/>
+                <path d="M4.49511 11.8961C4.03209 10.6842 4.03209 9.32085 4.49511 8.03323V5.45801H1.09966C-0.366554 8.26046 -0.366554 11.5931 1.09966 14.4713L4.49511 11.8961Z" fill="#FBBC04"/>
+                <path d="M10.2027 3.94266C11.6685 3.94266 13.0571 4.47285 14.1371 5.4575L17.0687 2.5793C15.2172 0.912979 12.7485 -0.0716669 10.2799 0.00407502C6.42263 0.00407502 2.87395 2.12485 1.17676 5.53324L4.57114 8.10846C5.26545 5.68472 7.5798 3.94266 10.2027 3.94266Z" fill="#EA4335"/>
+              </svg>
+              p Google
+    script(src="scripts/main.js")

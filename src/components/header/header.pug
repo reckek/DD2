@@ -22,7 +22,7 @@ mixin header(isAuth)
         button.border-clip.button Каталог услуг
         aside
           .setting-language
-            button#switchTheme.setting-language__toggler(
+            button#switchLanguage.setting-language__toggler(
               aria-label="Открыть настройку языка и валюты"
               type="button"
               data-bs-toggle="collapse"
@@ -63,7 +63,6 @@ mixin header(isAuth)
                   label
                     | English
                     svg(
-                      xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 32 20"
                       height="20"
@@ -350,7 +349,7 @@ mixin header(isAuth)
                     name="currency"
                     type="radio"
                     )
-        button.icon-button(aria-label="сменить тему")
+        button#switchTheme.icon-button(aria-label="сменить тему")
           svg(
             fill="none"
             viewBox="0 0 20 21"
@@ -374,8 +373,7 @@ mixin header(isAuth)
         if isAuth
           button.header__auth-button.invert-button.button.border-clip(
               type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#login"
+              data-expand-dialog="#login"
               )
             svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
               path(d="M8 7L8 5C8 3.89543 8.89543 3 10 3L16 3C17.1046 3 18 3.89543 18 5V19C18 20.1046 17.1046 21 16 21H10C8.89543 21 8 20.1046 8 19V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
@@ -385,7 +383,6 @@ mixin header(isAuth)
           a.icon-button(aria-label="Уведомления")
             #notificationBadge.badge
               svg(
-                xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 height="24"
@@ -401,7 +398,6 @@ mixin header(isAuth)
           a.header__orders.icon-button.remove-link-style(aria-label="Заказы")
             #ordersBadge.badge
               svg(
-                xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 height="24"
@@ -433,7 +429,6 @@ mixin header(isAuth)
             | Заказы
           a.accent
             svg(
-              xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               height="24"
@@ -459,7 +454,7 @@ mixin header(isAuth)
             | 15 000 ₽
           .profile
             button.profile__preview.icon-button(
-              aria-label="Открыть настройку языка и валюты"
+              aria-label="Открыть профиль"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target=".profile__aside"
