@@ -5,7 +5,7 @@ const themes = ["white", "black"];
 let currentTheme = localStorage.getItem("theme") || themes[0];
 
 const switchTheme = () => {
-  const theme = document.body.classList.contains(themes[0])
+  const theme = currentTheme === themes[0]
     ? themes[1]
     : themes[0];
 
@@ -15,8 +15,13 @@ const switchTheme = () => {
   currentTheme = theme
 };
 
-if (!document.body.classList.contains(currentTheme)) {
-  switchTheme();
+for (const theme of document.body.classList) {
+  if (currentTheme === theme) {
+    continue
+  }
+
+  document.body.classList.remove(theme)
+  document.body.classList.add(currentTheme)
 }
 
 switcherElement?.addEventListener("click", () => {
