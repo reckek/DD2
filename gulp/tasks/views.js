@@ -33,14 +33,17 @@ const buildView = ({ path, outPath }) => {
     .pipe(useref())
     .pipe(gulpif(config.flags.format, prettier.format()))
     .pipe(rename((path) => {
-      const _fileName = outPath.split('//')[1]
-      path.dirname = '../'
-      path.basename = _fileName
+      const _fileName = outPath.split('/').at(-1)?.split('.')[0]
 
+      if (!_fileName) return
+
+      path.basename = _fileName
       fileName = _fileName
+      path.dirname = "../"
     }))
     .pipe(replace(new RegExp('<link rel="stylesheet" href="index.css" />'), () => `<link rel="stylesheet" href="${config.dest.styles}/${fileName}.css" />`.replace(`${config.dest.root}/`, '')))
     .pipe(replace(new RegExp('<link rel="stylesheet" href="index.css"/>'), () => `<link rel="stylesheet" href="${config.dest.styles}/${fileName}.css" />`.replace(`${config.dest.root}/`, '')))
+    .pipe(replace(new RegExp('@scripts/index.js'), () => `${config.dest.scripts}/${fileName}.js`.replace(`${config.dest.root}/`, '')))
     .pipe(replace(new RegExp('@public/', 'g'), 'public/'))
     .pipe(gulp.dest(outPath, { append: false }));
 }
@@ -51,12 +54,15 @@ const [taskBuildViewPages, buildViewPagesCallback] = createTask(
     processFilesInPath(
       `${config.src.pages}/**/*.pug`,
       (fullPath) => {
-        const path = toBuildPath(fullPath);
-        const fileNameIndex = path.lastIndexOf("/");
+        const buildPath = toBuildPath(fullPath);
+
+        if (!buildPath) return
+
+        const {lastDirName} = buildPath
 
         buildView({
           path: fullPath,
-          outPath: path.slice(0, fileNameIndex),
+          outPath: `${config.dest.pages}/${lastDirName}.html`,
         });
       },
       { maxNestedLevel: 1 }

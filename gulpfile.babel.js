@@ -5,7 +5,7 @@ import config from "./gulp/config";
 import { taskClear } from "./gulp/tasks/clear";
 import { taskServe } from "./gulp/tasks/server";
 
-import { groupScripts, groupWatcherScripts } from "./gulp/tasks/scripts";
+import { groupBuildScripts, groupWatcherScripts } from "./gulp/tasks/scripts";
 import { taskBuildViewPages, watcherBuildViewPages } from "./gulp/tasks/views";
 import {
   groupBuildStyles,
@@ -22,10 +22,10 @@ config.setEnv();
 export const build = gulp.series(
   taskClear,
   gulp.parallel([
-    taskBuildViewPages,
+    groupBuildScripts,
     groupBuildStyles,
-    groupScripts,
     taskBuildPublic,
+    taskBuildViewPages,
   ])
 );
 

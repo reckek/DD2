@@ -29,7 +29,7 @@ const config = {
     root: destPath,
     public: `${destPath}/public`,
     styles: `${destPath}/styles`,
-    scripts: `${destPath}/main.js`,
+    scripts: `${destPath}/scripts`,
     pages: `${destPath}`,
 
     fonts: `${destPath}/assets/fonts`,

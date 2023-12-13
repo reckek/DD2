@@ -22,81 +22,66 @@ import {
 const createRollupConfig = (path, outPath) => ({
   input: {
     input: path,
-    cache: true,
+    cache: config.flags.isDev,
     treeshake: true,
   },
   output: {
     file: outPath,
     format: "module",
-    sourcemap: config.flags.isDev,
+    sourcemap: config.flags.isDev ? "inline" : 'hidden',
     compact: false,
     strict: true,
   },
 });
 
-const [taskScripts, scriptsCallback] = createTask("scripts", () => {
+const [taskBuildMainScript, cbBuildMainScript] = createTask("buildMainScript", async () => {
   const rollupConfig = createRollupConfig(
     `${config.src.scripts}/main.js`,
-    config.dest.scripts
-  );
+    `${config.dest.scripts}/main.js`
+  )
 
-  rollup
-    .rollup(rollupConfig.input)
-    .then((builder) => builder.write(rollupConfig.output));
-});
+  const rollupBuilder = await rollup.rollup(rollupConfig.input)
 
-const [taskPagesScripts, pagesScriptsCallback] = createTask(
-  "pagesScripts",
-  () => {
-    processFilesInPath(
-      `${config.src.pages}/**/*.js`,
-      (fullPath) => {
-        const path = toBuildPath(fullPath);
-        const fileNameIndex = path.lastIndexOf("/");
+  rollupBuilder.write(rollupConfig.output)
+})
 
-        const rollupConfig = createRollupConfig(
-          fullPath,
-          path.slice(0, fileNameIndex)
-        );
+const [taskBuildPagesScripts, cbBuildScriptPages] = createTask("buildPagesScripts", () => {
+  const buildScript = async (/** @type {string} */ fullPath) => {
+    const buildPath = toBuildPath(fullPath)
 
-        rollup
-          .rollup(rollupConfig.input)
-          .then((builder) => builder.write(rollupConfig.output));
-      },
-      { maxNestedLevel: 1 }
-    );
+    if (!buildPath) return
+
+    const {lastDirName, file} = buildPath
+
+    const rollupConfig = createRollupConfig(fullPath, `${config.dest.scripts}/${lastDirName}.${file.ext.at(-1)}`)
+
+    const builder = await rollup.rollup(rollupConfig.input)
+
+    builder.write(rollupConfig.output)
   }
-);
 
-const [taskComponentsScripts, componentsScriptsCallback] = createTask(
-  "pagesScripts",
-  () => {
-    scriptsCallback();
-    pagesScriptsCallback();
-  }
-);
+  processFilesInPath(`${config.src.pages}/**/*.js`, buildScript, { maxNestedLevel: 1 })
+})
 
-const watcherScripts = createWatcher(
-  `${config.src.scripts}/main.js`,
-  scriptsCallback
-);
-const watcherPagesScripts = createWatcher(
-  `${config.src.pages}/*/*.js`,
-  pagesScriptsCallback
-);
-const watcherComponentsScripts = createWatcher(
-  `${config.src.components}/*/*.js`,
-  componentsScriptsCallback
-);
+const groupBuildScripts = groupTask([
+  taskBuildMainScript,
+  taskBuildPagesScripts
+])
 
-export const groupScripts = groupTask([
-  taskScripts,
-  taskPagesScripts,
-  taskComponentsScripts,
-]);
+const watcherMainScript = createWatcher(`${config.src.scripts}/**/*.js`, cbBuildMainScript)
+const watcherPagesScripts = createWatcher(`${config.src.pages}/**/*.js`, cbBuildScriptPages)
+const watcherComponentsScripts = createWatcher(`${config.src.components}/**/*.js`, () => {
+  cbBuildMainScript()
+  cbBuildScriptPages()
+})
 
-export const groupWatcherScripts = groupWatcher([
-  watcherScripts,
+const groupWatcherScripts = groupWatcher([
+  watcherMainScript,
   watcherPagesScripts,
-  watcherComponentsScripts,
-]);
+  watcherComponentsScripts
+])
+
+export {
+  groupBuildScripts,
+  groupWatcherScripts,
+}

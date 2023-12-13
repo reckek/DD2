@@ -17,6 +17,7 @@ import {
   processFilesInPath,
   toBuildPath,
   groupWatcher,
+  removePages,
 } from "../utils";
 import rename from "gulp-rename";
 import replace from "gulp-replace";
@@ -63,6 +64,14 @@ const buildStyle = ({ path, outPath }) => {
     .pipe(gulp.dest(outPath));
 };
 
+/**
+ *
+ * @param {{
+ *  path: string
+ *  outPath: string
+ * }} param0
+ * @returns
+ */
 const buildPageStyle = ({ path, outPath }) => {
   return gulp
     .src(path)
@@ -95,9 +104,12 @@ const buildPageStyle = ({ path, outPath }) => {
     )
     .pipe(gulpIf(config.flags.format, prettier.format()))
     .pipe(rename(path => {
-        const fileName = outPath.split('//')[1]
-        path.dirname = "../styles";
-        path.basename = fileName;
+      const fileName = outPath.split('/').at(-1)?.split('.')[0]
+
+      if (!fileName) return
+
+      path.basename = fileName
+      path.dirname = "../"
     }))
     .pipe(replace(new RegExp('@public/', 'g'), () => '../public/'))
     .pipe(gulp.dest(outPath));
@@ -116,12 +128,15 @@ const [taskBuildPagesStyles, buildPagesStylesCallback] = createTask(
     processFilesInPath(
       `${config.src.pages}/**/*.scss`,
       (fullPath) => {
-        const path = toBuildPath(fullPath);
-        const fileNameIndex = path.lastIndexOf("/");
+        const buildPath = toBuildPath(fullPath);
+
+        if (!buildPath) return
+
+        const {lastDirName} = buildPath
 
         buildPageStyle({
           path: fullPath,
-          outPath: path.slice(0, fileNameIndex),
+          outPath: `${config.dest.styles}/${lastDirName}.css`,
         });
       },
       { maxNestedLevel: 1 }
