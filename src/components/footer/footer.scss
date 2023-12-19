@@ -1,3 +1,5 @@
+@import "../../styles/helpers/mixins.scss";
+
 .footer {
   display: flex;
   align-items: center;
@@ -7,13 +9,32 @@
   color: var(--white);
   background-color: var(--black);
 
-  > .footer__flex {
-    padding: 30px 0;
+  h3 {
+    font-family: var(--font-primary);
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--white);
+    opacity: 0.7;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "pages catalog"
+      "vacancies catalog"
+      "information information";
+    gap: 32px;
+    padding: 30px 10px;
     --bs-nav-link-color: #fff;
     --bs-nav-link-hover-color: #f5f5f5d6;
 
-    @media (min-width: 768px) {
-      row-gap: 1rem !important;
+    @include md {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+        "pages catalog information"
+        "vacancies catalog information";
     }
 
     li {
@@ -26,12 +47,19 @@
     }
   }
 
-  h3 {
-    font-family: var(--font-primary);
-    font-size: 17px;
-    font-style: italic;
-    font-weight: 600;
-    color: var(--white);
-    opacity: 0.7;
+  &__information {
+    grid-area: information;
+  }
+
+  &__pages {
+    grid-area: pages;
+  }
+
+  &__vacancies {
+    grid-area: vacancies;
+  }
+
+  &__catalog {
+    grid-area: catalog;
   }
 }

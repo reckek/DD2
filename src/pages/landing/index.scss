@@ -1,3 +1,4 @@
+@import "../../styles/helpers/mixins.scss";
 @import "../../components/card/card.scss";
 @import "../../components/sectionHeader/sectionHeader.scss";
 @import "../../components/review/review.scss";
@@ -10,7 +11,6 @@
 .first-screen-wrappers.section-header {
   display: flex;
   align-items: center;
-  height: 666px;
 }
 
 .separator-land {
@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 80px auto;
+  margin: clamp(32px, 8vw, 80px) auto;
 
   &::before,
   &::after {
@@ -40,21 +40,66 @@
   }
 }
 
+.title {
+  font-family: var(--font-primary);
+  font-size: clamp(27px, 8vw, 48px);
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+
+  > b {
+    color: var(--primary);
+  }
+}
+
+.description {
+  margin-top: 20px;
+  max-width: 540px;
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 20px;
+  opacity: 0.7;
+
+  > span {
+    display: inline-block;
+  }
+}
+
 .first-screen {
   background-origin: border-box;
   background-position: center;
   background-repeat: no-repeat;
   background-image: url("@public/images/landing/Dota-logo.png");
 
+  &-wrappers {
+
+    @include md {
+      height: 666px !important;
+    }
+  }
+
   & .carousel-indicators {
-    margin-bottom: -77px;
+    margin-bottom: -30px;
+
+    @include md {
+      margin-bottom: -77px;
+    }
   }
 
   &__layout {
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
     color: var(--white);
+    gap: 24px;
+    height: 100%;
+
+    @include md {
+      display: flex !important;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   &__title {
@@ -64,19 +109,6 @@
     font-weight: 600;
     font-size: 48px;
     text-transform: uppercase;
-  }
-
-  &__description {
-    margin-top: 20px;
-    max-width: 540px;
-    font-family: var(--font-primary);
-    font-weight: 400;
-    font-size: 20px;
-    opacity: 0.7;
-
-    > span {
-      display: inline-block;
-    }
   }
 
   &__call-to-action {
@@ -146,6 +178,10 @@
 }
 
 .stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
   &__header > h2 {
     margin-bottom: 40px;
     font-family: var(--font-primary);
@@ -162,17 +198,27 @@
   }
 
   &__list {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-around;
-    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include xs {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include md {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-around;
+      margin-top: 40px;
+    }
 
     p {
       font-family: var(--font-primary);
-      font-size: 64px;
+      font-size: clamp(36px, 8vw, 64px);
       font-style: italic;
       font-weight: 600;
       text-align: center;
+      text-wrap: nowrap;
       color: var(--primary);
     }
 
@@ -189,26 +235,15 @@
   align-items: start;
   justify-content: space-between;
 
-  background-origin: border-box;
-  background-position: right center;
-  background-repeat: no-repeat;
-  background-image: url("@public/images/landing/necessary.png");
+  @include md {
+    background-origin: border-box;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-image: url("@public/images/landing/necessary.png");
+  }
 
   &__info {
     max-width: 445px;
-  }
-
-  &__title {
-    font-family: var(--font-primary);
-    font-size: 48px;
-    font-style: italic;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin: 0;
-
-    > b {
-      color: var(--primary);
-    }
   }
 
   &__list {
@@ -258,38 +293,31 @@
 .product {
   &__header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
 
-    h2 {
-      max-width: 350px;
-      font-family: var(--font-primary);
-      font-size: 48px;
-      font-style: italic;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: var(--black);
-
-      b {
-        color: var(--primary);
-      }
+    @include md {
+      flex-direction: row;
     }
 
     &-description {
-      margin-left: 60px;
-      font-family: var(--font-primary);
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 24px;
-      color: var(--purple);
+      @include md {
+        margin-left: 60px;
+      }
     }
   }
 
   &__list {
-    margin-top: 48px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 28px 30px;
+    margin-top: 48px;
+
+    @include lg {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .active-button {
@@ -306,7 +334,12 @@
 
   &__container {
     display: flex;
+    flex-direction: column;
     gap: 30px;
+
+    @include md {
+      flex-direction: row;
+    }
   }
 
   &__info {
@@ -314,19 +347,6 @@
 
     button {
       margin-top: 40px;
-    }
-  }
-
-  &__title {
-    font-family: var(--font-primary);
-    font-size: 27px;
-    font-style: italic;
-    font-weight: 600;
-    margin: 0;
-    color: var(--black);
-
-    b {
-      color: var(--primary);
     }
   }
 
@@ -385,14 +405,23 @@
   }
 
   &__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 28px 30px;
     margin-top: 40px;
+
+    @include md {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   a {
-    width: 100%;
+    width: auto;
     margin-top: 24px;
   }
 }
@@ -405,20 +434,12 @@
   &__header {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 28px;
 
-    h2 {
-      max-width: 350px;
-
-      font-size: 48px;
-      font-style: italic;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: var(--black);
-
-      b {
-        color: var(--primary);
-      }
+    @include md {
+      flex-direction: row;
     }
   }
 
@@ -442,10 +463,15 @@
   }
 
   &__layout {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-flow: dense;
+    display: flex;
+    flex-direction: column;
     gap: 28px 30px;
+
+    @include xs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: dense;
+    }
   }
 }
 
@@ -458,15 +484,6 @@
     display: flex;
     justify-content: space-between;
 
-    h2 {
-      font-family: var(--font-primary);
-      font-size: 48px;
-      font-style: italic;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: var(--primary);
-    }
-
     a {
       display: flex;
       max-width: max-content;
@@ -476,14 +493,20 @@
   &__list {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     gap: 30px;
     margin-top: 40px;
+
+    @include xl {
+      flex-direction: row;
+    }
   }
 }
 
 .join {
   position: relative;
   margin: 0 23px;
+  padding: 0 10px;
 
   &::after {
     content: "";
@@ -493,7 +516,7 @@
     height: 136px;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -1px;
     background-color: var(--black);
     z-index: -1;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
@@ -504,9 +527,12 @@
     display: flex;
     justify-content: space-between;
     padding: 40px 40px 60px;
-    max-height: 242px;
-    margin-top: 177px;
+    margin-top: clamp(32px, 8vw, 177px);
     background-color: var(--primary);
+
+    @include xl {
+      max-height: 242px;
+    }
 
     .border-clip-left-top {
       --background-color: var(--background);
@@ -520,11 +546,6 @@
 
   &__info {
     h2 {
-      font-family: var(--font-primary);
-      font-size: 48px;
-      font-style: italic;
-      font-weight: 600;
-      text-transform: uppercase;
       color: rgb(255 255 255 / 0.7);
 
       b {
@@ -543,7 +564,12 @@
   }
 
   img {
+    display: none;
     margin-top: -160px;
+
+    @include xl {
+      display: block;
+    }
   }
 }
 

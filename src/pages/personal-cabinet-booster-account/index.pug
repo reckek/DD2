@@ -22,8 +22,10 @@ block content
       +textarea("Обо мне")(placeholder="Расскажите о себе", class="booster-profile__input")
       .booster-profile__favorite-heros
         h2 Любимые герои
-        +favoriteHeros(2)
+        +favoriteHeros(2, "#favoriteHeros")
       hr
       button.button(type="submit") Сохранить данные
 
-
+block modals
+  .modals
+    +favoriteHerosModal("Выберите любимых героев", "favoriteHeros")

@@ -1,48 +1,46 @@
 // Usege:
-// ╔════════╦══════════╗ 
+// ╔════════╦══════════╗
 // ║Данные  ║ Значения ║
-// ╠════════╬══════════╣ 
+// ╠════════╬══════════╣
 // ║ sm     ║ <=576px  ║
-// ╠════════╬══════════╣ 
+// ╠════════╬══════════╣
 // ║ xs     ║ >=576px  ║
-// ╠════════╬══════════╣ 
+// ╠════════╬══════════╣
 // ║ md     ║ >=768px  ║
-// ╠════════╬══════════╣ 
+// ╠════════╬══════════╣
 // ║ lg     ║ >=992px  ║
-// ╠════════╬══════════╣ 
+// ╠════════╬══════════╣
 // ║ xl     ║ >=1200px ║
-// ╠════════╬══════════╣ 
+// ╠════════╬══════════╣
 // ║ xxl    ║ >=1400px ║
 // ╚════════╩══════════╝
-// ╔═════════════════════════════════════════════════════╗
-// ║                Использованеие                       ║
-// ╠═════════════════════════════════════════════════════╣
-// ║ @include container(BrackePoint) using ($type) {...} ║
-// ╚═════════════════════════════════════════════════════╝
-@mixin container($braeckpoint, $conent...) {
-  $value: check-braeckpoint($braeckpoint);
-  @if $is-mobile-first == true {
-    @if $braeckpoint != sm {
-      @media (min-width: $value) {
-        @content ($conent);
-      }
-    }
-    @if $braeckpoint == sm {
-      @media (max-width: $value) {
-        @content ($conent);
-      }
-    }
+
+@mixin sm {
+  @media screen and (max-width: 576px) {
+    @content
   }
-  @if $is-mobile-first == false {
-    @if $braeckpoint != sm {
-      @media (max-width: $value) {
-        @content ($conent);
-      }
-    }
-    @if $braeckpoint == sm {
-      @media (min-width: $value) {
-        @content ($conent);
-      }
-    }
+}
+
+@mixin xs {
+  @media screen and (min-width: 576px) {
+    @content
+  }
+}
+
+@mixin md {
+  @media screen and (min-width: 768px) {
+    @content
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: 992px) {
+    @content
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: 1200px) {
+    @content
   }
 }

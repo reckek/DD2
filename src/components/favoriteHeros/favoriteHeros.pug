@@ -1,16 +1,16 @@
 include ../modalWindow/modalWindow.pug
-
-mixin favoriteHeros(count, showPlus=true)
+//- TODO: Fix actions CLOSE
+mixin favoriteHeros(count, modalId)
   - var n = 0;
 
   .favorite-heros()&attributes(attributes)
     while n < count
       img.favorite-heros__item(src="@public/images/Arc_Warden_icon.png", alt=`{{ Hero, ${n++} }}`)
-    button.favorite-heros__add(type="button", aria-label="Добавить героя")
-      if showPlus
-        svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
-          path(d="M12 5V19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M5 12L19 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+    if modalId
+      button.favorite-heros__add.favorite-heros__item(type="button", aria-label="Добавить героя", data-expand-dialog=modalId)
+          svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+            path(d="M12 5V19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+            path(d="M5 12L19 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
 mixin hero(checked)
   label.hero
@@ -163,7 +163,7 @@ mixin favoriteHerosModal(title, expand)
                 +hero(false)
                 +hero(false)
     +modalActions
-      +favoriteHeros(4, false)
+      +favoriteHeros(4)
       .favorite-heros-modal__action
-        button.button.outline-button отмена
-        button.button Сохранить
+        button.button.outline-button(data-close-modal) отмена
+        button.button(data-close-modal) Сохранить

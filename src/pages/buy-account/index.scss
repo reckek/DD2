@@ -1,15 +1,7 @@
+@import "../../styles/helpers/mixins.scss";
 @import "../../components/sectionHeader/sectionHeader.scss";
 
-.main {
-  // margin-top: -152px;
-  // margin-bottom: 80px;
-}
-
 .buy-account {
-  &__header {
-    // margin-bottom: 120px;
-  }
-
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

@@ -1,12 +1,12 @@
 mixin footer
   footer.footer
-    nav.row.m-auto.nav.flex-md-row.row-gap-3.footer__flex.container.container-custom
-      .col-12.col-sm-6.col-md-4.d-md-none
+    nav.footer__layout.container.container-custom
+      .footer__information
         h3 Информация
         p Dota 2 является зарегистрированной торговой маркой Valve Corporation. Мы никаким образом не связаны и не одобрены Valve Corporation.
-      .col-12.col-sm-6.col-md-4
+      .footer__pages
         h3 Страницы
-        ul.list-group.list-group-flush.row.flex-column.column-gap-1
+        ul.list-group
           li
             a.nav-link Главная
           li
@@ -17,9 +17,9 @@ mixin footer
             a.nav-link Блог
           li
             a.nav-link F.A.Q
-      .col-12.col-sm-6.col-md-4
+      .footer__vacancies
         h3 Вакансии
-        ul.list-group.list-group-flush.row.flex-column.gap-1
+        ul.list-group
           li
             a.nav-link Главная
           li
@@ -30,12 +30,9 @@ mixin footer
             a.nav-link Блог
           li
             a.nav-link F.A.Q
-      .col-12.col-sm-6.col-md-4.d-none.d-md-block
-        h3 Информация
-        p Dota 2 является зарегистрированной торговой маркой Valve Corporation. Мы никаким образом не связаны и не одобрены Valve Corporation.
-      .col-12.col-sm-6.col-md-4
+      .footer__catalog
         h3 Каталог услуг
-        ul.list-group.list-group-flush.row.flex-column.gap-1
+        ul.list-group
           li
             a.nav-link Буст рейтинга
           li

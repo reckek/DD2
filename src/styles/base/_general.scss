@@ -4,7 +4,7 @@
   --font-primary: "Rubik", sans-serif;
   --font-h1: italic 600 27px var(--font-primary);
   --font-h2: italic 600 56px var(--font-primary);
-  --font-text-primary: 400 15px var(--font-primary);
+  --font-text-primary: 400 clamp(13px, 8vw, 15px) var(--font-primary);
   --font-text-secondary: 600 13px var(--font-primary);
   --font-text-secondary-regular: 400 13px var(--font-primary);
   --font-button: italic 500 15px var(--font-primary);

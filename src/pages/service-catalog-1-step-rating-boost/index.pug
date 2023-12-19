@@ -33,9 +33,9 @@ block services
     input(type="date", name="date time to game")
     input(type="time", name="time to game")
   +service(true, "Играть моими героями", 60, true)
-    +favoriteHeros(4)
+    +favoriteHeros(4, "#selectHeros")
   +service(true, "Забанить 5 героев", 60, true)
-    +favoriteHeros(4)
+    +favoriteHeros(4, "#banHeros")
 
 block modals
   +modals

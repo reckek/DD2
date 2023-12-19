@@ -1,8 +1,9 @@
+@import "../../styles/helpers/mixins.scss";
 @import "../../components/sectionHeader/sectionHeader.scss";
 @import "../../components/input/input.scss";
 @import "../../components/services/services.scss";
-@import "../../components/favoriteHeros/favoriteHeros.scss";
 @import "../../components/modalWindow/modalWindow.scss";
+@import "../../components/favoriteHeros/favoriteHeros.scss";
 
 .modal-window__layout {
   width: 70vw;

@@ -1,3 +1,4 @@
+@import "../../styles/helpers/mixins.scss";
 @import "../../components/sectionHeader/sectionHeader.scss";
 @import "../../components/input/input.scss";
 @import "../../components/checkbox/checkbox.scss";
@@ -10,6 +11,10 @@
   height: 560px;
   margin-top: -90px;
   margin-bottom: -60px;
+
+  &::after, &::before {
+    clip-path: polygon(3% 0%, 100% 0%, 100% 94%, 96% 100%, 0% 100%, 0% 6%)f;
+  }
 
   &__message {
     margin-top: 16px;

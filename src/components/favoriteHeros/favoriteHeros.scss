@@ -1,3 +1,12 @@
+@import "../modalWindow/modalWindow.scss";
+
+.modal-window {
+  width: unset;
+  padding: 0;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
 .favorite-heros {
   display: flex;
   flex-wrap: wrap;
@@ -23,6 +32,10 @@
     background-color: var(--background);
     padding: 0 40px;
 
+    svg {
+      pointer-events: none;
+    }
+
     path {
       stroke: var(--primary);
     }
@@ -32,11 +45,15 @@
 .favorite-heros-modal {
   &__list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 40px;
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @include lg {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__category {
@@ -65,8 +82,12 @@
 
   &__heros {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
+
+    @include md {
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
 
   &__action {

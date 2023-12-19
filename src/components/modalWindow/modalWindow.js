@@ -45,8 +45,9 @@ export const initModalWindow = () => {
     dialog
       .querySelector(".modal-window__background")
       ?.addEventListener("click", closeDialog);
-    dialog
-      .querySelector(".modal-window__actions")
-      ?.addEventListener("click", closeDialog);
+
+      dialog.querySelectorAll(".modal-window__actions button[data-close-modal]").forEach((button) => {
+        button.addEventListener("click", closeDialog)
+      });
   })
 };
