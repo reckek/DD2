@@ -161,6 +161,11 @@
     background-repeat: no-repeat;
     background-position: right center;
     background-image: url("@public/images/landing/heros.png");
+    background-size: cover;
+
+    @include md {
+      background-size: unset;
+    }
   }
 
   &__info {
@@ -168,7 +173,7 @@
 
     > h2 {
       font-family: var(--font-primary);
-      font-size: 48px;
+      font-size: clamp(27px, 8vw, 48px);
       font-style: italic;
       font-weight: 600;
       text-transform: uppercase;
@@ -199,11 +204,8 @@
 
   &__list {
     display: grid;
-    grid-template-columns: 1fr;
-
-    @include xs {
-      grid-template-columns: 1fr 1fr;
-    }
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(10px, 22vw, 30px);
 
     @include md {
       display: flex;
