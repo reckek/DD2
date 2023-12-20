@@ -1,5 +1,11 @@
-mixin range(maxValue, minValue)
-  .range(style=`--min-value: ${minValue || 0}%; --max-value: ${maxValue}%`)
-    if (minValue)
-      .range__min
+mixin range(id='', maxValue='', max='', min, minValue)
+  .range(
+    id=`${id}`
+    data-max=max
+    data-max-value=maxValue
+    data-min=min
+    data-min-value=minValue
+    )
+    .range__pointers
     .range__line
+    .range__inputs

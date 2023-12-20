@@ -3,10 +3,6 @@
 export const initModalWindow = () => {
   const dialogs = document.querySelectorAll("dialog");
 
-  if (dialogs.length === 0) {
-    throw new Error('Dialogs not founds')
-  }
-
   dialogs.forEach((dialog) => {
     const dialogId = dialog.getAttribute('id')
 

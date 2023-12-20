@@ -53,11 +53,15 @@ const [taskBuildPagesScripts, cbBuildScriptPages] = createTask("buildPagesScript
 
     const {lastDirName, file} = buildPath
 
-    const rollupConfig = createRollupConfig(fullPath, `${config.dest.scripts}/${lastDirName}.${file.ext.at(-1)}`)
+    try {
+      const rollupConfig = createRollupConfig(fullPath, `${config.dest.scripts}/${lastDirName}.${file.ext.at(-1)}`)
 
-    const builder = await rollup.rollup(rollupConfig.input)
+      const builder = await rollup.rollup(rollupConfig.input)
 
-    builder.write(rollupConfig.output)
+      builder.write(rollupConfig.output)
+    } catch (e) {
+      console.log(e?.message)
+    }
   }
 
   processFilesInPath(`${config.src.pages}/**/*.js`, buildScript, { maxNestedLevel: 1 })
