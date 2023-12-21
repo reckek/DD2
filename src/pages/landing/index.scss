@@ -13,7 +13,7 @@
   align-items: center;
 }
 
-.separator-land {
+.separator {
   position: relative;
   display: flex;
   align-items: center;
@@ -41,12 +41,8 @@
 }
 
 .title {
-  font-family: var(--font-primary);
-  font-size: clamp(27px, 8vw, 48px);
-  font-style: italic;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin: 0;
+  font-size: clamp(27px, 4vw, 48px);
+  margin-bottom: 0;
 
   > b {
     color: var(--primary);
@@ -67,10 +63,7 @@
 }
 
 .first-screen {
-  background-origin: border-box;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url("@public/images/landing/Dota-logo.png");
+  width: 100%;
 
   &-wrappers {
     @include md {
@@ -97,6 +90,10 @@
     color: var(--white);
     gap: 24px;
     height: 100%;
+    background-origin: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("@public/images/landing/Dota-logo.png");
 
     @include md {
       display: flex !important;
@@ -104,15 +101,21 @@
       align-items: center;
       justify-content: space-between;
     }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      @include md {
+        width: auto;
+        height: auto;
+      }
+    }
   }
 
-  &__title {
-    margin: 0;
-    max-width: 405px;
-    font-family: var(--font-primary);
-    font-weight: 600;
-    font-size: 48px;
-    text-transform: uppercase;
+  &__description {
+    color: var(--white-opacity);
   }
 
   &__call-to-action {
@@ -124,14 +127,12 @@
       align-items: center;
       margin-left: -10px;
       padding: 16px 9px;
-      font-family: "Inter", var(--font-primary);
-      font-size: 20px;
-      font-style: italic;
-      font-weight: 400;
-      line-height: 24px; /* 120% */
-      text-transform: uppercase;
       color: var(--white);
       background-color: var(--red-2);
+    }
+
+    .border-clip:first-child {
+      width: 100%;
     }
   }
 
@@ -176,11 +177,8 @@
     max-width: 500px;
 
     > h2 {
-      font-family: var(--font-primary);
       font-size: clamp(27px, 7vw, 48px);
       font-style: italic;
-      font-weight: 600;
-      text-transform: uppercase;
       color: var(--white);
     }
   }
@@ -190,21 +188,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  &__header > h2 {
-    margin-bottom: 40px;
-    font-family: var(--font-primary);
-    font-size: 27px;
-    font-style: italic;
-    font-weight: 600;
-    color: var(--black);
-    text-align: center;
-    margin: 0;
-
-    span {
-      color: var(--primary);
-    }
-  }
 
   &__list {
     display: grid;
@@ -299,11 +282,6 @@
     }
 
     & li {
-      list-style: initial;
-      font-family: var(--font-primary);
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 400;
       color: var(--purple);
     }
   }
@@ -318,12 +296,7 @@
 
     @include md {
       flex-direction: row;
-    }
-
-    &-description {
-      @include md {
-        margin-left: 60px;
-      }
+      gap: calc(20px + 60px);
     }
   }
 
@@ -372,16 +345,8 @@
   }
 
   &__description {
-    margin: 24px 0 0;
-
-    span {
-      display: block;
-      margin: 4px 0;
-      font-family: var(--font-primary);
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 400;
-    }
+    margin-top: 24px;
+    color: var(--purple);
   }
 
   &__list {
@@ -411,18 +376,7 @@
     margin: 0 auto;
     margin-top: 24px;
     max-width: 920px;
-
-    p {
-      font-family: var(--font-primary);
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 400;
-      text-align: center;
-
-      &:not(:first-child) {
-        padding-top: 6px;
-      }
-    }
+    color: var(--purple);
   }
 
   &__list {
@@ -462,25 +416,17 @@
     @include md {
       flex-direction: row;
     }
+
+    > div {
+      button {
+        gap: 12px;
+        margin-top: 24px;
+      }
+    }
   }
 
   &__description {
-    p {
-      font-family: var(--font-primary);
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 400;
-
-      &:not(:first-child) {
-        padding-top: 6px;
-      }
-    }
-
-    button {
-      display: flex;
-      gap: 12px;
-      margin-top: 24px;
-    }
+    color: var(--purple);
   }
 
   &__layout {

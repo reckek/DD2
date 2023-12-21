@@ -28,8 +28,8 @@ html(lang="ru")
                     p.first-screen__description
                       span Калибровка и перекалибровка аккаунта.
                       span Средний винрейт ~92%. Быстро и безопасно.
-                    a.first-screen__call-to-action.remove-link-style
-                      .first-screen__button.button.border-clip(href="=0") Заказать калибровку
+                    a.first-screen__call-to-action
+                      span.first-screen__button.button.border-clip(href="=0") Заказать калибровку
                       span.border-clip -20%
                   img(src="@public/images/firstScreen-1.png" alt="")
               div.carousel-item(data-bs-interval="6000")
@@ -39,8 +39,8 @@ html(lang="ru")
                     p.first-screen__description
                       span Калибровка и перекалибровка аккаунта.
                       span Средний винрейт ~92%. Быстро и безопасно.
-                    a.first-screen__call-to-action.remove-link-style
-                      .first-screen__button.button.border-clip(href="=0") Заказать калибровку
+                    a.first-screen__call-to-action
+                      span.first-screen__button.button.border-clip(href="=0") Заказать калибровку
                       span.border-clip -20%
                   img(src="@public/images/firstScreen-1.png" alt="")
               div.carousel-item(data-bs-interval="6000")
@@ -50,8 +50,8 @@ html(lang="ru")
                     p.first-screen__description
                       span Калибровка и перекалибровка аккаунта.
                       span Средний винрейт ~92%. Быстро и безопасно.
-                    a.first-screen__call-to-action.remove-link-style
-                      .first-screen__button.button.border-clip(href="=0") Заказать калибровку
+                    a.first-screen__call-to-action
+                      span.first-screen__button.button.border-clip(href="=0") Заказать калибровку
                       span.border-clip -20%
                   img(src="@public/images/firstScreen-1.png" alt="")
               div.carousel-item(data-bs-interval="6000")
@@ -61,8 +61,8 @@ html(lang="ru")
                     p.first-screen__description
                       span Калибровка и перекалибровка аккаунта.
                       span Средний винрейт ~92%. Быстро и безопасно.
-                    a.first-screen__call-to-action.remove-link-style
-                      .first-screen__button.button.border-clip(href="=0") Заказать калибровку
+                    a.first-screen__call-to-action
+                      span.first-screen__button.button.border-clip(href="=0") Заказать калибровку
                       span.border-clip -20%
                   img(src="@public/images/firstScreen-1.png" alt="")
             div.carousel-indicators
@@ -79,9 +79,9 @@ html(lang="ru")
               button.button.border-clip Принять участие
 
       section.stats.container.container-custom
-        header.stats__header
-          h2
-            span СТАТИСТИКА#{' '}
+        header
+          h2.title.text-center
+            b СТАТИСТИКА#{' '}
             | за последние 30 дней
         .stats__list
           .stat
@@ -97,7 +97,7 @@ html(lang="ru")
             p 118 758
             span Рейтинга прокачано
 
-      .separator-land.container.container-custom
+      .separator.container.container-custom
         svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
           path(fill-rule="evenodd" clip-rule="evenodd" d="M0 23L1 18L0 15V12L1 13L0 7L1 3L0 0H6L9 1L11 0L13 1H16L17 0L21 1L24 0L23 5L24 8L23 9.5L23.5 11L23 14L24 15V23L22 22L18 23L10 24L5 23H0ZM2 4L4 3L22 15L20 20H17L2 4ZM19 9L14 5L18 4L20 5L19 9ZM3 18L4 14L9 19L6 21L3 18Z" fill="#C4C1D2")
 
@@ -380,7 +380,7 @@ html(lang="ru")
                   li Команда ТОП-500 Бустеров
                   li Онлайн контроль и чат на заказе
         img(src="@public/images/landing/necessary.png", alt="")
-      .separator-land
+      .separator
         svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
           path(fill-rule="evenodd" clip-rule="evenodd" d="M0 23L1 18L0 15V12L1 13L0 7L1 3L0 0H6L9 1L11 0L13 1H16L17 0L21 1L24 0L23 5L24 8L23 9.5L23.5 11L23 14L24 15V23L22 22L18 23L10 24L5 23H0ZM2 4L4 3L22 15L20 20H17L2 4ZM19 9L14 5L18 4L20 5L19 9ZM3 18L4 14L9 19L6 21L3 18Z" fill="#C4C1D2")
 
@@ -390,10 +390,10 @@ html(lang="ru")
             | Самый#{" "}
             b прозрачный#{" "}
             | сервис
-          .product__header-description
-            p Мы реализовали подгрузку матчей с наших заказов прямо на сайт с помощью официального Steam API. Благодаря этому, вы можете зайти абсолютно в любой заказ на сайте и посмотреть нашу работу и ход выполнения заказа.
-            p В разделе активные заказы вы сможете посмотреть все наши текущие заказы по бустингу в Доте 2, которые находятся в работе, последние 50 игр на наших заказах с детальной статистикой по каждому матчу и последние 25 завершенных заказов.
-            p Также в завершенных заказах вы сможете увидеть отзыв клиента, если он его оставил.
+          p.product__header-description
+            span Мы реализовали подгрузку матчей с наших заказов прямо на сайт с помощью официального Steam API. Благодаря этому, вы можете зайти абсолютно в любой заказ на сайте и посмотреть нашу работу и ход выполнения заказа.
+            span В разделе активные заказы вы сможете посмотреть все наши текущие заказы по бустингу в Доте 2, которые находятся в работе, последние 50 игр на наших заказах с детальной статистикой по каждому матчу и последние 25 завершенных заказов.
+            span Также в завершенных заказах вы сможете увидеть отзыв клиента, если он его оставил.
         .product__list
           +card("11080", "Буст рейтинга", "3 377", "13 377", 50)
           +card(2, "Буст рейтинга", "~4 500", "5 377", 50)
@@ -413,7 +413,7 @@ html(lang="ru")
             p.reviews__description
               span После выполнения каждого заказа, вам приходит уведомление, информирующее о закрытии заказа, а так же с просьбой оставить нам отзыв о нашей работе.
               span Через любой отзыв вы можете перейти к заказу, в котором был оставлен данный отзыв и посмотреть полную информацию по этому заказу.
-              span вы можете ознакомиться на отдельной странице, кликнув по кнопке ниже.
+              span Со всеми остальными отзывами о нашей работе вы можете ознакомиться на отдельной странице, кликнув по кнопке ниже.
             button.button.border-clip Стать клиентом MMR.ru
           .reviews__list
             +review("11080", "Буст рейтинга", "danielvfrcbv:")
@@ -423,10 +423,10 @@ html(lang="ru")
 
       section.teams.container.container-custom
         h1.title.teams__title НАША КОМАНДА
-        .teams__description
-          p Мы тщательно отбираем бустеров и тренеров в команду BoostMMR.ru. Проверяем ребят на адекватность, стрессоустойчивость и скилл. Также обязательным пунктом работы на нашем сайте является предоставление паспортных данных.
-          p По итогу в нашей команде находятся только настоящие профессионалы своего дела с рейтингом вплоть до ТОП-200 европы. Молодые, открытые и приятные в общении ребята, готовые выполнить заказ любой сложности в любое время.
-          p Мы просим наших бустеров написать немного о себе, а так же записываем их статистику после каждой игры. Ознакомиться с профилями наших бустеров можно, кликнув по кнопке ниже.
+        p.teams__description
+          span.text-center Мы тщательно отбираем бустеров и тренеров в команду BoostMMR.ru. Проверяем ребят на адекватность, стрессоустойчивость и скилл. Также обязательным пунктом работы на нашем сайте является предоставление паспортных данных.
+          span.text-center По итогу в нашей команде находятся только настоящие профессионалы своего дела с рейтингом вплоть до ТОП-200 европы. Молодые, открытые и приятные в общении ребята, готовые выполнить заказ любой сложности в любое время.
+          span.text-center Мы просим наших бустеров написать немного о себе, а так же записываем их статистику после каждой игры. Ознакомиться с профилями наших бустеров можно, кликнув по кнопке ниже.
         .teams__list
           +teamPreview(true)
           +teamPreview(true)
@@ -439,7 +439,7 @@ html(lang="ru")
           +teamPreview(true)
         a.button.invert-button.remove-link-style.border-clip(href="=0") Посмотреть все
 
-      .separator-land
+      .separator
         svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
           path(fill-rule="evenodd" clip-rule="evenodd" d="M0 23L1 18L0 15V12L1 13L0 7L1 3L0 0H6L9 1L11 0L13 1H16L17 0L21 1L24 0L23 5L24 8L23 9.5L23.5 11L23 14L24 15V23L22 22L18 23L10 24L5 23H0ZM2 4L4 3L22 15L20 20H17L2 4ZM19 9L14 5L18 4L20 5L19 9ZM3 18L4 14L9 19L6 21L3 18Z" fill="#C4C1D2")
 
@@ -448,10 +448,11 @@ html(lang="ru")
           h2.title
             | Часто задаваемые#{" "}
             b вопросы
-          .questions__description
-            p Специально для Вас мы собрали 5 самых популярных вопросов.
-            p Также Вы можете задать свой вопрос напрямую нашей службе онлайн-поддержки.
-            p Мы работаем с 7:00 до 23:00 по МСК. Кнопка онлайн-чата находится справа внизу.
+          div
+            p.questions__description
+              span Специально для Вас мы собрали 5 самых популярных вопросов.
+              span Также Вы можете задать свой вопрос напрямую нашей службе онлайн-поддержки.
+              span Мы работаем с 7:00 до 23:00 по МСК. Кнопка онлайн-чата находится справа внизу.
             button.button.border-clip
               svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
                 path(id="Vector 4" d="M9 19H11.8902C12.6064 19 13.2989 18.7438 13.8426 18.2778L15.9524 16.4694C16.6173 15.8994 17 15.0674 17 14.1916V11" stroke="white" stroke-linecap="round" stroke-linejoin="round")
