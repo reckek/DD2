@@ -30,9 +30,9 @@ const buildStyle = ({ path, outPath }) => {
   return gulp
     .src(path)
     .pipe(plumber())
-    .pipe(gulpif(config.isDev, sourcemaps.init()))
+    .pipe(gulpif(config.flags.isDev, sourcemaps.init()))
     .pipe(sass().on("error", sass.logError))
-    .pipe(gulpif(config.isDev, sourcemaps.write()))
+    .pipe(gulpif(config.flags.isDev, sourcemaps.write()))
     .pipe(
       gulpif(
         config.flags.isProd,
