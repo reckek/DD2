@@ -5,22 +5,16 @@
   background-color: var(--background-2);
 
   > .accordion-header button {
+    width: 100%;
     padding: 24px;
-    font-family: var(--font-primary);
     font-size: 20px;
-    font-style: normal;
     font-weight: 600;
     color: var(--black);
-    box-shadow: none;
+    box-shadow: unset;
     background-color: var(--background-2);
   }
 
   .accordion-body {
-    font-family: var(--font-primary);
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
     padding: 0 24px 24px;
-    color: var(--black);
   }
 }

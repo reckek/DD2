@@ -1,7 +1,7 @@
 mixin accordion(title, id, parent)
   .accordion-item
     h3.accordion-header
-      button.accordion-button.collapsed(
+      button.accordion-button.button.collapsed(
         aria-controls= id
         aria-expanded="false"
         data-bs-target= `#${id}`

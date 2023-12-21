@@ -55,7 +55,7 @@ body, input, textarea, img, button {
 h1, .h1 {
   font-style: italic;
   font-weight: 600;
-  font-size: clamp(24px, 8vw, 48px);
+  font-size: clamp(24px, 4vw, 48px);
   text-transform: uppercase;
 }
 
@@ -68,12 +68,17 @@ h2, .h2 {
 h3, .h3 {
   font-weight: 600;
   font-size: 20px;
+  font-size: clamp(17px, 4vw, 27px);
   text-transform: uppercase;
 }
 
 h4, .h4 {
   font-weight: 600;
   font-size: 17px;
+
+  > b {
+    color: var(--primary);
+  }
 }
 
 span, .span {
@@ -88,6 +93,18 @@ span, .span {
 p, .paragraph {
   font-weight: 400;
   font-size: clamp(13px, 2vw, 15px);
+
+  > span {
+    display: inline-block;
+    font-style: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+  }
+
+  > span:not(:last-child) + span {
+    margin-top: 0.4em;
+  }
 }
 
 a, .link {
@@ -100,4 +117,11 @@ a, .link {
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
+}
+
+ul > li {
+  font-size: clamp(13px, 2vw, 15px);
+  font-style: normal;
+  font-weight: 400;
+  list-style: initial;
 }
