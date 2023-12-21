@@ -13,11 +13,14 @@ html(lang="ru")
       section.team-member
         +sectionHeader
           header.team-member__header.container.container-custom
-            .team-member__profile
-              img(src="@public/images/template/logo.svg", alt="Avatar")
-              .team-member__name
-                h1 NICKNAME
-                span ФИО
+            .profile
+              .profile__content
+                img.profile__avatar(src="@public/images/template/logo.svg", alt="Avatar")
+                .profile__name
+                  h1 NICKNAME
+                  span ФИО
+              img.profile__rank(src="@public/images/rank-1.png", alt="")
+
             .team-member__stats
               .team-member__stat
                 p 13 377

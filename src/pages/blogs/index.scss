@@ -21,15 +21,6 @@
     gap: 40px;
   }
 
-  &__description > p {
-    font: var(--font-text-primary);
-    color: var(--purple);
-
-    &:not(:first-child) {
-      margin-top: 6px;
-    }
-  }
-
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

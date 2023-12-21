@@ -8,14 +8,30 @@
   margin-bottom: -60px;
   padding: 40px;
 
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+      color: var(--white-opacity);
+    }
+    @include md {
+      flex-direction: row;
+
+      p {
+        width: 635px;
+      }
+    }
+  }
+
   &::after,
   &::before {
     clip-path: polygon(4% 0%, 100% 0%, 100% 96%, 96% 100%, 0% 100%, 0% 6%);
   }
 
   &__content {
-    padding: 88px 72px;
-
+    padding: 8px 20px;
     border-radius: 4px;
     background: radial-gradient(
         243.79% 141.42% at 100% 100%,
@@ -24,6 +40,14 @@
         rgba(101, 61, 153, 0.5) 100%
       ),
       #21212d;
+
+    @include md {
+      padding: 16px 35px;
+    }
+
+    @include lg {
+      padding: 72px 74px;
+    }
   }
 
   &__list {
@@ -36,13 +60,10 @@
 
   &__item {
     max-width: 90px;
-
-    list-style-type: none;
-
-    opacity: 0.7;
-
-    color: var(--white);
+    list-style: none;
     text-align: center;
+    color: var(--white);
+    opacity: 0.7;
 
     &.active {
       opacity: 1;
@@ -67,23 +88,18 @@
     > img {
       width: 100%;
       display: block;
-
-      object-fit: cover;
       border-radius: 100%;
+      object-fit: cover;
     }
 
     > h2 {
       margin-top: 20px;
-
-      font-family: var(--font-primary);
       font-size: 15px;
       font-style: italic;
       font-weight: 600;
-      text-transform: uppercase;
     }
 
     > small {
-      font-family: var(--font-primary);
       font-size: 10px;
       font-style: normal;
       font-weight: 400;
@@ -91,8 +107,6 @@
 
     > p {
       margin-top: 0;
-
-      font-family: var(--font-primary);
       font-size: 13px;
       font-style: normal;
       font-weight: 500;
@@ -195,21 +209,6 @@
 
       background: white;
       opacity: 0.3;
-    }
-  }
-
-  &__header {
-    display: flex;
-    justify-content: space-between;
-
-    p {
-      display: block;
-      width: 635px;
-      font-family: var(--font-primary);
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 400;
-      color: var(--white);
     }
   }
 }

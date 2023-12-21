@@ -54,9 +54,13 @@ body, input, textarea, img, button {
 
 h1, .h1 {
   font-style: italic;
-  font-weight: 600;
+  font-weight: 400;
   font-size: clamp(24px, 4vw, 48px);
   text-transform: uppercase;
+
+  @include md {
+    font-weight: 600;
+  }
 }
 
 h2, .h2 {

@@ -8,9 +8,14 @@
   }
 
   &__body {
-    display: grid;
-    grid-template-columns: 0.4fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 30px;
+
+    @include md {
+      display: grid;
+      grid-template-columns: 0.4fr 1fr;
+    }
   }
 
   &__aside {
@@ -19,8 +24,12 @@
     align-items: start;
     gap: 24px;
 
-    > button {
+    button {
       width: 100%;
+
+      @include md {
+        width: unset;
+      }
     }
   }
 

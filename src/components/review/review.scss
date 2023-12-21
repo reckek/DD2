@@ -53,7 +53,7 @@
 
     &-current {
       font-family: var(--font-primary);
-      font-size: clmap(17px, 6vw, 15px);
+      font-size: clamp(17px, 6vw, 15px);
       font-style: italic;
       font-weight: 600;
       white-space: nowrap;
