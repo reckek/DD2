@@ -1,0 +1,103 @@
+@import "../_fonts.scss";
+
+:root {
+  --font-primary: "Rubik", sans-serif;
+}
+
+body, input, textarea, img, button {
+  font-family: var(--font-primary);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.no-italic {
+  font-style: normal;
+}
+
+.normal {
+  font-weight: 400;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.ttu {
+  text-transform: uppercase;
+}
+
+.ttl {
+  text-transform: lowercase;
+}
+
+.tdn {
+  text-decoration: none;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+h1, .h1 {
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(24px, 8vw, 48px);
+  text-transform: uppercase;
+}
+
+h2, .h2 {
+  font-weight: 600;
+  font-size: clamp(20px, 4vw, 27px);
+  text-transform: uppercase;
+}
+
+h3, .h3 {
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+h4, .h4 {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+span, .span {
+  font-size: clamp(15px, 2vw, 20px);
+}
+
+.mini-span {
+  font-weight: 400;
+  font-size: 10px;
+}
+
+p, .paragraph {
+  font-weight: 400;
+  font-size: clamp(13px, 2vw, 15px);
+}
+
+a, .link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.button {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+}

@@ -1,15 +1,3 @@
-@import "../base/fonts.scss";
-
-:root {
-  --font-primary: "Rubik", sans-serif;
-  --font-h1: italic 600 27px var(--font-primary);
-  --font-h2: italic 600 56px var(--font-primary);
-  --font-text-primary: 400 clamp(13px, 8vw, 15px) var(--font-primary);
-  --font-text-secondary: 600 13px var(--font-primary);
-  --font-text-secondary-regular: 400 13px var(--font-primary);
-  --font-button: italic 500 15px var(--font-primary);
-}
-
 body {
   &.white {
     --primary: #3e25d8;
@@ -47,16 +35,6 @@ p {
   margin: 0;
 }
 
-.section-title {
-  font-family: var(--font-primary);
-  font-size: 48px;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-style: italic;
-  line-height: 56px;
-  color: var(--white);
-}
-
 hr {
   display: block;
   width: 100%;
@@ -72,14 +50,11 @@ hr {
   text-transform: uppercase;
 }
 
-body {
-  font-family: var(--font-primary);
-}
-
-@import "./styles/buttons.scss";
-@import "./styles/toggler.scss";
-@import "./styles/clips.scss";
-@import "./styles/stat.scss";
-@import "./styles/input.scss";
+@import "./components/typography.scss";
+@import "./components/buttons.scss";
+@import "./components/toggler.scss";
+@import "./components/clips.scss";
+@import "./components/stat.scss";
+@import "./components/input.scss";
 @import "../../components/header/header.scss";
 @import "../../components/footer/footer.scss";

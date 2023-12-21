@@ -7,15 +7,16 @@ button.reset {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   width: max-content;
   padding: 12px 16px;
   border: none;
   border-radius: var(--border-radius);
-  font: var(--font-button);
   text-transform: uppercase;
   color: var(--white);
   background-color: var(--primary);
-  transition: all 0.2s ease-out;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
 
   &:hover {
     color: var(--white);
@@ -24,11 +25,8 @@ button.reset {
 }
 
 .invert-button {
-  padding: 12px 16px;
-  border: none;
   color: var(--primary);
   background-color: var(--white);
-  transition: all 0.2s ease-out;
 
   &:hover {
     color: var(--white);
@@ -36,18 +34,10 @@ button.reset {
   }
 }
 
-.remove-link-style {
-  text-decoration: none;
-}
-
 .icon-button {
-  border-radius: var(--border-radius);
   border: unset;
   padding: 4px 6px;
-  border-radius: var(--border-radius);
-  background-color: transparent;
-  transition: all 0.2s ease-out;
-  cursor: pointer;
+  background-color: rgb(255 255 255 / 0);
 
   &:hover {
     background-color: var(--background-hover);
