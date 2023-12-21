@@ -4,6 +4,11 @@
   justify-content: space-between;
   align-items: stretch;
   background-color: var(--primary);
+  flex-direction: column;
+
+  @include md {
+    flex-direction: row;
+  }
 
   .border-clip-left-top, .border-clip-right-bottom {
     --background-color: #ECEBF5;
@@ -12,12 +17,19 @@
   &__rank {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 32px 24px;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px;
     background-color: var(--background);
+
+    @include md {
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      padding: 32px 24px;
+    }
 
     .border-clip-left-top {
       --background-color: #ECEBF5;
@@ -29,14 +41,19 @@
 
     &-level {
       display: flex;
+      flex: 1 1 auto;
       justify-content: space-between;
       align-items: center;
       gap: 8px;
+
+      @include md {
+        flex: unset;
+      }
     }
 
     &-current {
       font-family: var(--font-primary);
-      font-size: 15px;
+      font-size: clmap(17px, 6vw, 15px);
       font-style: italic;
       font-weight: 600;
       white-space: nowrap;
@@ -54,10 +71,15 @@
 
     img {
       display: block;
-      width: 104px;
-      height: 104px;
+      width: 40px;
+      height: 40px;
       padding: 1px;
       object-fit: cover;
+
+      @include md {
+        width: 104px;
+        height: 104px;
+      }
     }
   }
 

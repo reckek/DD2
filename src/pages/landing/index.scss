@@ -73,17 +73,21 @@
   background-image: url("@public/images/landing/Dota-logo.png");
 
   &-wrappers {
-
     @include md {
       height: 666px !important;
     }
   }
 
-  & .carousel-indicators {
-    margin-bottom: -30px;
+  & .carousel {
+    &-item {
+      overflow-x: hidden;
+    }
+    &-indicators {
+      margin-bottom: -30px;
 
-    @include md {
-      margin-bottom: -77px;
+      @include md {
+        margin-bottom: -77px;
+      }
     }
   }
 
@@ -173,7 +177,7 @@
 
     > h2 {
       font-family: var(--font-primary);
-      font-size: clamp(27px, 8vw, 48px);
+      font-size: clamp(27px, 7vw, 48px);
       font-style: italic;
       font-weight: 600;
       text-transform: uppercase;
@@ -232,16 +236,29 @@
 }
 
 .necessary {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: start;
   justify-content: space-between;
+  overflow: hidden;
 
-  @include md {
-    background-origin: border-box;
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-image: url("@public/images/landing/necessary.png");
+  > img {
+    position: absolute;
+    display: none;
+
+    @include md {
+      right: -50%;
+      display: block;
+    }
+
+    @include lg {
+      right: -15%;
+    }
+
+    @include xl {
+      right: 0;
+    }
   }
 
   &__info {
@@ -316,7 +333,7 @@
     gap: 28px 30px;
     margin-top: 48px;
 
-    @include lg {
+    @include xl {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
@@ -339,13 +356,15 @@
     flex-direction: column;
     gap: 30px;
 
-    @include md {
+    @include lg {
       flex-direction: row;
     }
   }
 
   &__info {
-    max-width: 350px;
+    @include lg {
+      max-width: 350px;
+    }
 
     button {
       margin-top: 40px;
@@ -372,7 +391,7 @@
     width: 100%;
 
     a {
-      width: 100%;
+      width: auto;
       background-color: var(--background-2);
     }
   }

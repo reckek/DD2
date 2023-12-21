@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   margin: 32px;
-  padding: 36px;
+  padding: 36px clamp(16px, 4vw, 36px);
   min-height: 324px;
   padding-top: calc(36px + 48px + 39px);
   border-radius: var(--border-radius);
