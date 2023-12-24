@@ -1,0 +1,88 @@
+include ../../components/head/head.pug
+include ../../components/header/header.pug
+include ../../components/sectionHeader/sectionHeader.pug
+include ../../components/history/history.pug
+include ../../components/footer/footer.pug
+include ../../components/input/input.pug
+include ../../components/modalWindow/modalWindow.pug
+include ../../components/progressBar/progressBar.pug
+
+mixin chatMessage(type="me", date)
+  .message(class=`${type === me ? "chat__message--me" : "chat__message--other"}`)
+    .message__text
+      block
+    span.message__date= date
+
+mixin chatDate(date)
+  .message.message--date
+    p.message__text= date
+
+mixin blockHistory
+  section.messenger__history
+    div.history
+      .border-clip-left-top
+      .border-clip-right-bottom
+      h1.history__title Последние игры на заказе
+      +historyList
+        +historyItem("DOOM", true, 25, 0, 13, "02:58:10", 25, false)
+          svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+            path(d="M12 4L4 12L12 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+            path(d="M20 4L12 12L20 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        +historyItem("DOOM", false, 25, 0, 13, "02:58:10", -25, false)
+          svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+            path(d="M12 4L4 12L12 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+            path(d="M20 4L12 12L20 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
+mixin orderMMP
+    .mmp.order__mmp
+    .mmp__content
+      .mmp__status-MMR
+        span.mini-span  СТАРТОВЫЙ ММР
+        img(src="@public/images/order-monitoring-chat/Herald.png" alt="Herald")
+        p.span.text-center
+          span Herald II
+          span 2 500 MMR
+      svg.mmp__arrow(width="47" height="26" viewBox="0 0 47 26" fill="none")
+        path(d="M1 13H45M45 13L32.9091 25M45 13L32.9091 1" stroke-width="2" stroke-linecap="round")
+      .mmp__status-MMR
+        span.mini-span  ИТОГОВЫЙ ММР
+        img(src="@public/images/order-monitoring-chat/Immorta.png" alt="Immorta")
+        p.span.text-center
+          span Herald II
+          span 2 500 MMR
+    .mmp__progressbar-container
+      +progressBar(50)
+
+doctype html
+html(lang="ru")
+  +head('Чат бустера')
+  body.white
+    +header
+    main.main
+      +sectionHeader
+        .messenger__header.container.container-custom
+          h1 заказ №11080
+          .messenger__actions
+            block actions
+      section.messenger.container.container-custom.border-clip-2
+        section.messenger__order.order
+          h2 Детали заказа
+          .order__content
+            block order
+        .messenger__chat
+          block chatTabs
+          .chat
+            .chat__wishes.wishes.show
+              h2.wishes__title.mini-span ПОЖЕЛАНИЯ КЛИЕНТА:
+              p.wishes__description
+                block chatWishes
+            .chat__content
+              block chatMessages
+            .chat__input
+              textarea#chat-input(type="text" placeholder="Введите ваше сообщение..." maxlength="400")
+              button.chat__submit.button.icon-button
+                svg(width="18" height="16" viewBox="0 0 18 16" fill="none")
+                  path(d="M0.00857142 16L18 8L0.00857142 0L0 6.22222L12.8571 8L0 9.77778L0.00857142 16Z")
+      block history
+    +footer
+    script(src="scripts/main.js")

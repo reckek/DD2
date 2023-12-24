@@ -2,17 +2,16 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
   background-color: var(--background-2);
 
+  @include lg {
+    gap: 20px;
+  }
+
   &__title {
-    font-family: var(--font-primary);
-    font-size: 27px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-style: italic;
+    margin-bottom: 0;
     color: var(--black);
-    margin-bottom: 20px;
   }
 
   &__list {
@@ -31,26 +30,46 @@
 }
 
 .history-item {
-  display: grid;
-  grid-template-columns: 3fr repeat(3, 1fr) repeat(2, 0.4fr);
-  grid-template-rows: 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-items: stretch;
+  gap: 8px;
   text-decoration: none;
   padding: 16px 20px;
   border-radius: var(--border-radius);
   background-color: var(--background);
+  overflow-x: hidden;
+
+  @include md {
+    flex-direction: row;
+  }
 
   &__info {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 16px;
+    width: 100%;
+    flex: 1;
 
     > img {
       padding: 1px;
       width: 88px;
       height: 52px;
     }
+
+    @include md {
+      width: unset;
+      margin-right: 35px;
+    }
+  }
+
+  &__hero-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
   }
 
   &__role {
@@ -75,13 +94,27 @@
     }
   }
 
+  &__stats-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 16px;
+    width: 100%;
+
+    @include md {
+      width: unset;
+    }
+  }
+
   &__stats {
     display: flex;
     justify-content: center;
-    // gap: 8px;
+    gap: 8px;
 
-    > div {
-      width: 64px;
+    @include md {
+      > div {
+        min-width: 64px;
+      }
     }
   }
 
@@ -90,6 +123,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    &--game-result {
+      min-width: 90px;
+    }
 
     > * {
       margin: 0;
@@ -107,7 +144,6 @@
 
   &__description {
     font: var(--font-text-primary);
-
     font-weight: 500;
   }
 
@@ -130,17 +166,27 @@
     display: flex;
     width: 100%;
     height: 100%;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
+    transform: translateX(20px);
+    transition: all 0.3s;
+    opacity: 0;
 
-    &:not(.show) {
-      transform: translateX(20px);
-      opacity: 0;
-      transition: all .2s;
+    path {
+      stroke: var(--primary);
+    }
+
+    @include md {
+      justify-content: center;
+    }
+
+    &.show {
+      transform: translateX(0px);
+      opacity: 1;
     }
   }
 
-  &:hover > &__btn:not(.show) {
+  &:hover .history-item__btn {
     transform: translateX(0px);
     opacity: 1;
   }

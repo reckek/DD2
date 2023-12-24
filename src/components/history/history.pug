@@ -8,35 +8,37 @@ mixin historyList
 mixin historyItem(hero, victory, k, d, a, delay, mmr, showButton)
   a.history-item(href="=0")
     .history-item__info
-      img(src="@public/images/template/hero-card.png", alt=`Изображение ${hero}`)
-      .history-item__role
-        span.history-item__title Герой
-        p= hero
-    .history-item__stat
-      p.history-item__title Результат
-      if victory
-        p.history-item__success Победа
-      else
-        p.history-item__error Поражение
-    .history-item__stats
+      .history-item__hero-wrapper
+        img(src="@public/images/template/hero-card.png", alt=`Изображение ${hero}`)
+        .history-item__role
+          span.history-item__title Герой
+          p= hero
+      .history-item__stat.history-item__stat--game-result
+        p.history-item__title Результат
+        if victory
+          p.history-item__success Победа
+        else
+          p.history-item__error Поражение
+    .history-item__stats-wrapper
+      .history-item__stats
+        .history-item__stat
+          p.history-item__title K
+          p.history-item__description= k
+        .history-item__stat
+          p.history-item__title D
+          p.history-item__description= d
+        .history-item__stat
+          p.history-item__title A
+          p.history-item__description= a
       .history-item__stat
-        p.history-item__title K
-        p.history-item__description= k
+        p.history-item__title Длительность
+        p.history-item__description= delay
       .history-item__stat
-        p.history-item__title D
-        p.history-item__description= d
-      .history-item__stat
-        p.history-item__title A
-        p.history-item__description= a
-    .history-item__stat
-      p.history-item__title Длительность
-      p.history-item__description= delay
-    .history-item__stat
-      if mmr > 0
-        p.history-item__title MMR
-        p.history-item__success= mmr
-      else
-        p.history-item__title MMR
-        p.history-item__error= mmr
-    .history-item__btn(className= showButton && 'show')
-      block
+        if mmr > 0
+          p.history-item__title MMR
+          p.history-item__success= mmr
+        else
+          p.history-item__title MMR
+          p.history-item__error= mmr
+      .history-item__btn(className= showButton && 'show')
+        block

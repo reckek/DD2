@@ -33,14 +33,32 @@
   }
 }
 
+@mixin imd {
+  @media screen and (max-width: 768px) {
+    @content
+  }
+}
+
 @mixin lg {
   @media screen and (min-width: 992px) {
     @content
   }
 }
 
+@mixin ilg {
+  @media screen and (max-width: 992px) {
+    @content
+  }
+}
+
 @mixin xl {
   @media screen and (min-width: 1200px) {
+    @content
+  }
+}
+
+@mixin ixl {
+  @media screen and (max-width: 1200px) {
     @content
   }
 }
