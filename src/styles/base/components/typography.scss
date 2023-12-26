@@ -124,8 +124,13 @@ a, .link {
 }
 
 ul > li {
-  font-size: clamp(13px, 2vw, 15px);
   font-style: normal;
   font-weight: 400;
-  list-style: initial;
+  font-size: clamp(13px, 2vw, 15px);
+}
+
+input, .input {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
 }

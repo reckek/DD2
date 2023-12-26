@@ -9,9 +9,14 @@
   gap: 20px;
 
   &__form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 12px;
+
+    @include md {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     .input:first-child {
       grid-column: 1/2;
@@ -25,7 +30,6 @@
     }
 
     p {
-      font: var(--font-text-primary);
       color: var(--purple);
     }
   }

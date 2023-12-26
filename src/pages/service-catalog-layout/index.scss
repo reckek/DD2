@@ -21,13 +21,25 @@
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+
+    svg {
+      display: none;
+
+      @include md {
+        display: block;
+      }
+    }
   }
 
   &__content-layout {
     display: grid;
     grid-template-columns: 1fr 0.45fr;
     gap: 30px;
-    padding: 40px;
+    padding: 24px 15px;
+
+    @include lg {
+      padding: 40px;
+    }
 
     &::after,
     &::before {
@@ -84,94 +96,105 @@
 }
 
 .tabs {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
-  padding: 16px 20px;
+  // display: flex;
+  // flex-direction: column;
+  // gap: 6px;
+  // padding: 16px 20px;
 
-  &::after,
-  &::before {
-    clip-path: polygon(2% 0%, 100% 0%, 100% 88%, 98% 100%, 0% 100%, 0% 14%);
-    background-color: var(--background);
-  }
+  // @include md {
+  //   display: grid;
+  //   grid-template-columns: repeat(3, 1fr);
+  // }
 
-  &__item {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    width: 100%;
-    text-decoration: unset;
+  // @include lg {
+  //   grid-template-columns: repeat(4, 1fr);
+  // }
 
-    path,
-    circle {
-      stroke: var(--purple);
+  // &::after,
+  // &::before {
+  //   clip-path: polygon(2% 0%, 100% 0%, 100% 88%, 98% 100%, 0% 100%, 0% 14%);
+  //   background-color: var(--background);
+  // }
 
-      &.fill {
-        stroke: unset;
-        fill: var(--purple);
-      }
-    }
+  // &__item {
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 0;
+  //   width: 100%;
+  //   text-decoration: unset;
 
-    &::after,
-    &::before {
-      background-color: var(--unset);
-      clip-path: polygon(22% 0%, 100% 0%, 100% 76%, 96% 100%, 0% 100%, 0% 100%);
-    }
+  //   path,
+  //   circle {
+  //     stroke: var(--purple);
 
-    &--current {
-      &::after {
-        background-color: var(--background-2);
-      }
+  //     &.fill {
+  //       stroke: unset;
+  //       fill: var(--purple);
+  //     }
+  //   }
 
-      .tabs__icon::after {
-        background-color: var(--primary);
-      }
+  //   &::after,
+  //   &::before {
+  //     background-color: var(--unset);
+  //     clip-path: polygon(22% 0%, 100% 0%, 100% 76%, 96% 100%, 0% 100%, 0% 100%);
+  //   }
 
-      .tabs__icon::before {
-        background-color: unset;
-      }
+  //   &--current {
+  //     order: -1;
 
-      .tabs__label {
-        color: var(--primary);
-      }
+  //     &::after {
+  //       background-color: var(--background-2);
+  //     }
 
-      path,
-      circle {
-        stroke: var(--white);
+  //     .tabs__icon::after {
+  //       background-color: var(--primary);
+  //     }
 
-        &.fill {
-          stroke: unset;
-          fill: var(--white);
-        }
-      }
-    }
-  }
+  //     .tabs__icon::before {
+  //       background-color: unset;
+  //     }
 
-  &__icon {
-    padding: 16px;
-    height: 100%;
+  //     .tabs__label {
+  //       color: var(--primary);
+  //     }
 
-    &::after,
-    &::before {
-      background-color: unset;
-      clip-path: polygon(45% 0%, 101% 0%, 100% 55%, 45% 100%, 0% 100%, 0% 45%);
-    }
-  }
+  //     path,
+  //     circle {
+  //       stroke: var(--white);
 
-  &__label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 12px;
+  //       &.fill {
+  //         stroke: unset;
+  //         fill: var(--white);
+  //       }
+  //     }
+  //   }
+  // }
 
-    font-family: var(--font-primary);
-    font-size: 15px;
-    font-style: italic;
-    font-weight: 600;
-    text-transform: uppercase;
-    line-height: 20px;
-    color: var(--purple);
-  }
+  // &__icon {
+  //   padding: 16px;
+  //   height: 100%;
+
+  //   &::after,
+  //   &::before {
+  //     background-color: unset;
+  //     clip-path: polygon(45% 0%, 101% 0%, 100% 55%, 45% 100%, 0% 100%, 0% 45%);
+  //   }
+  // }
+
+  // &__label {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   padding-left: 12px;
+
+  //   font-family: var(--font-primary);
+  //   font-size: 15px;
+  //   font-style: italic;
+  //   font-weight: 600;
+  //   text-transform: uppercase;
+  //   line-height: 20px;
+  //   color: var(--purple);
+  // }
 }
 
 .step {

@@ -6,57 +6,42 @@
   &__table {
     &-row {
       display: grid;
-
-      padding: 20px 0;
-      border-bottom: solid 1px #d2d0dd;
-
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: 1fr;
       grid-column-gap: 0px;
       grid-row-gap: 0px;
+      border-bottom: solid 1px #d2d0dd;
+      padding: 20px 0;
     }
 
     &-header {
       text-align: center;
-
       color: #5f5a79;
-      font-family: Rubik;
-      font-size: 13px;
-      font-style: normal;
-      font-weight: 400;
     }
+
     &-title {
+      grid-area: 1 / 1 / 2 / 3;
       display: grid;
       align-items: center;
-
       color: #5f5a79;
-      font-family: Rubik;
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 600;
-
-      grid-area: 1 / 1 / 2 / 3;
     }
+
     &-cell {
       display: grid;
       place-items: center;
     }
   }
+
   &__telegram {
     &-link {
       display: flex;
       text-decoration: none;
     }
+
     &-link-text {
       margin-left: 8px;
-
       text-decoration: none;
-
       color: #31a8df;
-      font-family: Rubik;
-      font-size: 13px;
-      font-style: normal;
-      font-weight: 600;
 
       &--red {
         color: #bb3c3c;
@@ -72,9 +57,9 @@
       margin-top: 8px;
     }
   }
+
   &__save-settings {
     margin-top: 12px;
     border-radius: 4px;
   }
 }
-

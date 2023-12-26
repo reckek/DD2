@@ -11,7 +11,17 @@
   &__avatar {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: clamp(12px, 6vw, 24px);
+
+    &-img {
+      width: 80px;
+      height: 80px;
+
+      @include md {
+        width: 104px;
+        height: 104px;
+      }
+    }
   }
 
   &__upload {
@@ -36,24 +46,29 @@
     }
 
     p {
-      font: var(--font-text-secondary-regular);
-      color: var(--black);
+      font-size: 13px;
     }
   }
 
   &__input {
     &-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-direction: column;
       gap: 12px;
 
-      hr {
-        grid-column: 1/3;
-        margin: 10px 0;
+      @include md {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        hr {
+          grid-column: 1/3;
+          margin: 10px 0;
+        }
       }
     }
 
-    &-login, &-link {
+    &-login,
+    &-links {
       grid-column: 1/3;
     }
 

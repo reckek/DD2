@@ -10,7 +10,7 @@ block content
   +content("Аккаунт")
   .account
     .account__avatar
-      +avatar
+      +avatar(class="account__avatar-img")
       .account__upload
         label
           p.outline-button
@@ -26,6 +26,6 @@ block content
       +input("Номер телефона", {class: "account__input-tel"})(type="tel", placeholder="Введите номер телефона", required="true")
       +input("Соц. сеть для быстрой связи (TG, VK, FB и т.д.)", {class: "account__input-links"})(type="text", required="true")
       hr
-      +input("Новый пароль", {class: "account__input-password"})(type="password")
-      +input("Повторите новый пароль", {class: "account__input-password"})(type="password")
+      +input("Новый пароль", {class: "account__input-password"})(type="password" required="true")
+      +input("Повторите новый пароль", {class: "account__input-password"})(type="password" required="true")
       button(type="submit").button Изменить пароль
