@@ -15,13 +15,13 @@ block content
   .rating-boost
     +blockTitle("Калибровка/реКалибровка")
     .rating-boost__mmr
-      .rating-boost__preview
+      .rating-boost__previews
         +imgWithLabel("@public/images/rank-1.png", "Herald II")
-        +input("Ваш рейтинг")(type="number" value="0")
-      +input("Кол-во игр")(type="number" value="1")
-      .rating-boost__preview
         +imgWithLabel("@public/images/rank-1.png", "Immortal")
-        +input("Возмож. ранг (MMR)")(type="number" value="1500")
+      .rating-boost__inputs
+        +input("Ваш рейтинг")(type="number" value="0")
+        +input("Кол-во игр")(type="number" value="1")
+        +input("Возмож. ранг (MMR)")(type="number" value="1500" aria-disabled="true")
 
 block services
   +blockSubTitle("Доп услуги:")

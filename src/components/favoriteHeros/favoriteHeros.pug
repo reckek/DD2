@@ -1,4 +1,5 @@
 include ../modalWindow/modalWindow.pug
+
 //- TODO: Fix actions CLOSE
 mixin favoriteHeros(count, modalId)
   - var n = 0;
@@ -11,6 +12,19 @@ mixin favoriteHeros(count, modalId)
           svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
             path(d="M12 5V19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
             path(d="M5 12L19 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
+mixin selectedFavoriteHeros(count, modalId)
+  - var n = 0;
+
+  .list-favorite-heros()&attributes(attributes)
+    while n < count
+      .list-favorite-heros__item
+        img.list-favorite-heros__img(src="@public/images/Arc_Warden_icon.png", alt=`{{ Hero, ${n++} }}`)
+        button.list-favorite-heros__remove.icon-button.button(aria-label="Удалить героя")
+          svg(width="10" height="10" viewBox="0 0 10 10" fill="none")
+            path(d="M1 9L9 1" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+            path(d="M1 1L9 9" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+    div.list-favorite-heros__item.list-favorite-heros__item--empty
 
 mixin hero(checked)
   label.hero
@@ -163,7 +177,7 @@ mixin favoriteHerosModal(title, expand)
                 +hero(false)
                 +hero(false)
     +modalActions
-      +favoriteHeros(4)
+      +selectedFavoriteHeros(4)
       .favorite-heros-modal__action
         button.button.outline-button(data-close-modal) отмена
         button.button(data-close-modal) Сохранить

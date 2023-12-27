@@ -14,7 +14,7 @@ block aside
 block content
   +blockTitle("Тренировка")
   .training
-    +imgWithLabel("@public/images/rank-1.png", "Archon IV")
+    +imgWithLabel("@public/images/rank-1.png", "Archon IV")(class="row rank-img")
     +input("Ваш рейтинг")(type="text")
     +select("Ваша роль")
       option Carry (1)
@@ -22,7 +22,7 @@ block content
       option Offlaner (3)
       option Soft support (4)
       option Hard support (5)
-    +input("Кол-во часов")(type="number")
+    +input("Кол-во часов", {class: "row"})(type="number")
 
 block services
   +service(true, "Приоритетный заказ", 60)

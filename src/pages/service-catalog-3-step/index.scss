@@ -10,10 +10,19 @@
 
   &__row {
     display: flex;
+    flex-direction: column;
     gap: 12px;
 
     > * {
-      width: 49%;
+      width: 100%;
+    }
+
+    @include md {
+      flex-direction: row;
+
+      > * {
+        width: 49%;
+      }
     }
   }
 

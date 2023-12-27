@@ -14,6 +14,10 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @include ilg {
+      padding: 0;
+    }
   }
 
   &__steps {
@@ -21,6 +25,10 @@
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+
+    @include ilg {
+      padding: 0 30px;
+    }
 
     svg {
       display: none;
@@ -32,18 +40,27 @@
   }
 
   &__content-layout {
-    display: grid;
-    grid-template-columns: 1fr 0.45fr;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     gap: 30px;
-    padding: 24px 15px;
+    padding: 24px 30px;
+    background-color: var(--background-2);
 
-    @include lg {
-      padding: 40px;
+    > .border-clip-left-top,
+    > .border-clip-right-bottom {
+      --background-color: var(--background-2);
     }
 
-    &::after,
-    &::before {
-      clip-path: polygon(2% 0%, 100% 0%, 100% 96%, 98% 100%, 0% 100%, 0% 4%);
+    @include lg {
+      display: grid;
+      grid-template-columns: 1fr 0.45fr;
+      padding: 40px;
+
+      > .border-clip-left-top,
+      > .border-clip-right-bottom {
+        --background-color: var(--background);
+      }
     }
   }
 
@@ -55,6 +72,16 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  &__aside {
+    position: relative;
+    background-color: var(--background);
+
+    > .border-clip-left-top,
+    > .border-clip-right-bottom {
+      --background-color: var(--background-2);
+    }
   }
 
   &__title {
@@ -96,105 +123,163 @@
 }
 
 .tabs {
-  // display: flex;
-  // flex-direction: column;
-  // gap: 6px;
-  // padding: 16px 20px;
+  position: relative;
+  padding: 14px;
+  max-height: 90px;
+  background-color: var(--background);
+  overflow: hidden;
+  transition: all .3s ease-out;
+  z-index: 10;
 
-  // @include md {
-  //   display: grid;
-  //   grid-template-columns: repeat(3, 1fr);
-  // }
+  .border-clip-left-top,
+  .border-clip-right-bottom {
+    --background-color: var(--background-2);
+  }
 
-  // @include lg {
-  //   grid-template-columns: repeat(4, 1fr);
-  // }
+  &--open {
+    max-height: 100%;
+  }
 
-  // &::after,
-  // &::before {
-  //   clip-path: polygon(2% 0%, 100% 0%, 100% 88%, 98% 100%, 0% 100%, 0% 14%);
-  //   background-color: var(--background);
-  // }
+  @include md {
+    max-height: unset;
+    overflow: unset;
+  }
 
-  // &__item {
-  //   display: flex;
-  //   align-items: center;
-  //   gap: 0;
-  //   width: 100%;
-  //   text-decoration: unset;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 14px;
+    list-style: none;
 
-  //   path,
-  //   circle {
-  //     stroke: var(--purple);
+    @include md {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
 
-  //     &.fill {
-  //       stroke: unset;
-  //       fill: var(--purple);
-  //     }
-  //   }
+    @include lg {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 
-  //   &::after,
-  //   &::before {
-  //     background-color: var(--unset);
-  //     clip-path: polygon(22% 0%, 100% 0%, 100% 76%, 96% 100%, 0% 100%, 0% 100%);
-  //   }
+  &__item {
+    position: relative;
+    display: flex;
+    gap: 12px;
+  }
 
-  //   &--current {
-  //     order: -1;
+  &__close {
+    display: none;
+  }
 
-  //     &::after {
-  //       background-color: var(--background-2);
-  //     }
+  &__link {
+    position: relative;
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--purple);
+    text-transform: uppercase;
+    background-color: var(--background-2);
 
-  //     .tabs__icon::after {
-  //       background-color: var(--primary);
-  //     }
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 99%;
+      height: 99%;
+      left: 99%;
+      right: 99%;
+      background-color: var(--background-3);
+      z-index: -1;
+    }
 
-  //     .tabs__icon::before {
-  //       background-color: unset;
-  //     }
+    .border-clip-left-top,
+    .border-clip-right-bottom {
+      --background-color: var(--background);
 
-  //     .tabs__label {
-  //       color: var(--primary);
-  //     }
+      &::after,
+      &::before {
+        width: 20px;
+        height: 20px;
+      }
+    }
 
-  //     path,
-  //     circle {
-  //       stroke: var(--white);
+    path, circle {
+      stroke: var(--purple);
+    }
 
-  //       &.fill {
-  //         stroke: unset;
-  //         fill: var(--white);
-  //       }
-  //     }
-  //   }
-  // }
+    @include md {
+      background-color: unset;
 
-  // &__icon {
-  //   padding: 16px;
-  //   height: 100%;
+      .tabs__icon {
+        .border-clip-right-bottom {
+          --background-color: transparent;
+        }
+      }
+    }
+  }
 
-  //   &::after,
-  //   &::before {
-  //     background-color: unset;
-  //     clip-path: polygon(45% 0%, 101% 0%, 100% 55%, 45% 100%, 0% 100%, 0% 45%);
-  //   }
-  // }
+  &__label {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 6px;
+    padding-right: 12px;
+  }
 
-  // &__label {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   padding-left: 12px;
+  &__icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
 
-  //   font-family: var(--font-primary);
-  //   font-size: 15px;
-  //   font-style: italic;
-  //   font-weight: 600;
-  //   text-transform: uppercase;
-  //   line-height: 20px;
-  //   color: var(--purple);
-  // }
+    .border-clip-left-top {
+      --background-color: var(--background);
+    }
+
+    .border-clip-right-bottom {
+      --background-color: var(--background-2);
+    }
+  }
+
+  &__item--current {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    order: -1;
+
+    & .tabs__link {
+      pointer-events: none;
+      gap: 10px;
+      background-color: var(--background-2);
+    }
+
+
+    & .tabs__icon {
+      background-color: var(--primary);
+
+      path, circle {
+        stroke: var(--white);
+      }
+
+      .border-clip-right-bottom {
+        --background-color: var(--background-2);
+      }
+    }
+
+    @include imd {
+      & .tabs__close {
+        display: block;
+      }
+    }
+  }
 }
 
 .step {
@@ -223,12 +308,9 @@
   flex-direction: column;
   gap: 20px;
   padding: 22px;
-  height: 686px;
 
-  &::after,
-  &::before {
-    clip-path: polygon(6% 0%, 100% 0%, 100% 96%, 92% 100%, 0% 100%, 0% 4%);
-    background-color: var(--background);
+  @include lg {
+    height: 686px;
   }
 
   &-row {

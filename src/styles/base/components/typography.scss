@@ -4,7 +4,7 @@
   --font-primary: "Rubik", sans-serif;
 }
 
-body, input, textarea, img, button {
+body, input, select, textarea, img, button {
   font-family: var(--font-primary);
 }
 
@@ -129,7 +129,7 @@ ul > li {
   font-size: clamp(13px, 2vw, 15px);
 }
 
-input, .input {
+input, select,.input {
   font-style: normal;
   font-weight: 400;
   font-size: 15px;

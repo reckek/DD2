@@ -14,7 +14,7 @@ mixin blockSubTitle(message)
   h3.service-catalog__subtitle= message
 
 mixin imgWithLabel(img, label)
-  .img-with-label
+  .img-with-label&attributes(attributes)
     if block
       block
     else
@@ -38,76 +38,144 @@ mixin steps(currentStep)
 
 //- ratingBoost, calibration, boostDecency, LP washout, winningTheBattleCup, training, regularGames, girlGames
 mixin tabs(currentTab)
-  .service-catalog__tabs.tabs.border-clip-2
-    a.tabs__item.border-clip-2(href="=0", class=currentTab === "ratingBoost" && "tabs__item--current")
-      .tabs__icon.border-clip-2
-        svg(width="30" height="16" viewBox="0 0 30 16" fill="none")
-          path(d="M1 15L15 1L29 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M6 15L15 6L24 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M11 15L15 11L19 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-      span.tabs__label Буст рейтинга
-    a.tabs__item.border-clip-2(href="=0", class=currentTab === "calibration" && "tabs__item--current")
-      .tabs__icon.border-clip-2
-        svg(width="26" height="26" viewBox="0 0 26 26" fill="none")
-          path(d="M1 13L13 1L25 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M22 11L20 13L22 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M4 11L6 13L4 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M25 13L13 25L1 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path.fill(d="M12.3115 15.8225C12.2262 15.8225 12.1515 15.7944 12.0875 15.738C12.0235 15.6704 11.9915 15.5859 11.9915 15.4845C11.9915 15.3944 11.9915 15.3042 11.9915 15.2141C11.9915 15.1239 11.9915 15.0338 11.9915 14.9437C12.0342 14.5042 12.1462 14.1155 12.3275 13.7775C12.5195 13.4282 12.7381 13.1127 12.9834 12.831C13.2393 12.538 13.49 12.262 13.7353 12.0028C13.9912 11.7437 14.2045 11.4901 14.3752 11.2423C14.5565 10.9831 14.6631 10.7183 14.6951 10.4479C14.7271 10.1211 14.6631 9.84507 14.5032 9.61972C14.3538 9.39437 14.1459 9.22535 13.8792 9.11268C13.6233 8.98873 13.3513 8.92676 13.0634 8.92676C12.5621 8.92676 12.1515 9.05634 11.8316 9.31549C11.5116 9.57465 11.293 9.99155 11.1757 10.5662C11.1437 10.7014 11.0903 10.8028 11.0157 10.8704C10.941 10.9268 10.8397 10.9549 10.7117 10.9549H9.35195C9.25596 10.9549 9.17064 10.9211 9.09599 10.8535C9.032 10.7746 9 10.6732 9 10.5493C9.01067 10.0986 9.10665 9.66479 9.28796 9.24789C9.47993 8.81972 9.75188 8.43662 10.1038 8.09859C10.4664 7.76056 10.9037 7.49577 11.4156 7.30423C11.9275 7.10141 12.5141 7 13.1754 7C13.9006 7 14.5085 7.10141 14.9991 7.30423C15.5003 7.49577 15.8949 7.7493 16.1829 8.06479C16.4815 8.38028 16.6948 8.72394 16.8228 9.09577C16.9508 9.45634 17.0094 9.81127 16.9988 10.1606C16.9774 10.5887 16.8868 10.9718 16.7268 11.3099C16.5668 11.6479 16.3695 11.9634 16.1349 12.2563C15.9003 12.538 15.6603 12.8197 15.415 13.1014C15.1697 13.3718 14.9511 13.6479 14.7591 13.9296C14.5778 14.2113 14.4552 14.5099 14.3912 14.8254C14.3698 14.9268 14.3538 15.0282 14.3432 15.1296C14.3325 15.2197 14.3218 15.3099 14.3112 15.4C14.2685 15.5352 14.2152 15.6423 14.1512 15.7211C14.0872 15.7887 13.9966 15.8225 13.8792 15.8225H12.3115ZM12.2635 19C12.1568 19 12.0662 18.9606 11.9915 18.8817C11.9169 18.8028 11.8796 18.707 11.8796 18.5944V17.1239C11.8796 17 11.9169 16.8986 11.9915 16.8197C12.0662 16.7408 12.1568 16.7014 12.2635 16.7014H13.8153C13.9326 16.7014 14.0286 16.7408 14.1032 16.8197C14.1779 16.8986 14.2152 17 14.2152 17.1239V18.5944C14.2152 18.707 14.1779 18.8028 14.1032 18.8817C14.0286 18.9606 13.9326 19 13.8153 19H12.2635Z")
-      span.tabs__label Калибровка/реКалибровка
-    a.tabs__item.border-clip-2(href="=0", class=currentTab === "boostDecency" && "tabs__item--current")
-      .tabs__icon.border-clip-2
-        svg(width="26" height="26" viewBox="0 0 26 26" fill="none")
-          circle(cx="13" cy="13" r="12" stroke-width="2")
-          path(d="M10.4738 10.7895C10.4738 9.56867 9.4841 8.57898 8.26326 8.57898C7.04242 8.57898 6.05273 9.56867 6.05273 10.7895" stroke-width="2" stroke-linecap="round")
-          path(d="M12.9998 19C14.7439 19 16.1577 17.5862 16.1577 15.8421H9.84193C9.84193 17.5862 11.2558 19 12.9998 19Z" stroke-width="2" stroke-linecap="round")
-          path(d="M19.9474 10.7895C19.9474 9.56867 18.9577 8.57898 17.7369 8.57898C16.5161 8.57898 15.5264 9.56867 15.5264 10.7895" stroke-width="2" stroke-linecap="round")
-      span.tabs__label Буст Порядочности
-    a.tabs__item.border-clip-2(href="=0", class=currentTab === "LP washout" && "tabs__item--current")
-      .tabs__icon.border-clip-2
-        svg(width="32" height="32" viewBox="0 0 32 32" fill="none")
-          path(d="M4 4V28H14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M18 28V21M18 21V4H28V15L18 21Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M7 16V25H12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-        path(d="M21 15.5V7H25V13L21 15.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-      span.tabs__label Отмыв ЛП
-    a.tabs__item.border-clip-2(href="=0", class=currentTab === "winningTheBattleCup" && "tabs__item--current")
-      .tabs__icon.border-clip-2
-        svg(width="26" height="26" viewBox="0 0 26 26" fill="none")
-          path(d="M20 13L25 9V4H20V1M20 13V1M20 13L13 18.4545M20 1H13H6V4M13 18.4545V25M13 18.4545L6 13M13 25H19.5455M13 25H6.45455M6 13L1 9V4H6M6 13V4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M9.80005 4.7998L16.2001 11.1998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M14 4L17 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M9 9L12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-      span.tabs__label Победа в боевом кубке
-    a.tabs__item.border-clip-2(href="=0", class=currentTab === "training" && "tabs__item--current")
-      .tabs__icon.border-clip-2
-        svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
-          path(d="M1 0.999816L12 11.9998L1 22.9998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M1 5.99982L7 11.9998L1 17.9998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M23 5.99982L17 11.9998L23 17.9998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M18 0.999878L12 6.99988L6 0.999877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M18 22.9998L12 16.9998L6 22.9998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M23 0.999816L12 11.9998L23 22.9998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-      span.tabs__label Тренировка
-    a.tabs__item.border-clip-2(href="=0", class=currentTab === "regularGames" && "tabs__item--current")
-      .tabs__icon.border-clip-2
-        svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
-          path(d="M1 6.13333V1H6.13333L23 17.8667V23H17.8667L1 6.13333Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M1 12V19.3333L4.66667 23H12L1 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M23 12V4.66667L19.3333 1H12L23 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-      span.tabs__label Обычные игры/Turbo
-    a.tabs__item.border-clip-2(href="=0", class=currentTab === "girlGames" && "tabs__item--current")
-      .tabs__icon.border-clip-2
-        svg(width="14" height="24" viewBox="0 0 14 24" fill="none")
-          path(d="M5 23V19H9V23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M12 19H2L7 7L12 19Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          circle(cx="7" cy="3" r="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M4 7L1 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-          path(d="M10 7L13 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-      span.tabs__label игры с девочкой
+  .service-catalog__tabs.tabs
+    .border-clip-left-top
+    .border-clip-right-bottom
+
+    ul.tabs__list
+      li.tabs__item(class=currentTab === "ratingBoost" && "tabs__item--current")
+        a.tabs__link(href="=0")
+          .border-clip-left-top
+          .border-clip-right-bottom
+          .tabs__icon
+            .border-clip-left-top
+            .border-clip-right-bottom
+            svg(width="30" height="16" viewBox="0 0 30 16" fill="none")
+              path(d="M1 15L15 1L29 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M6 15L15 6L24 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M11 15L15 11L19 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          span.tabs__label Буст рейтинга
+        button.tabs__close.icon-button.button(aria-label="Закрыть список табов")
+          svg(width="10" height="6" viewBox="0 0 10 6" fill="none")
+            path(d="M1 1L5 5L9 1" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      li.tabs__item(class=currentTab === "calibration" && "tabs__item--current")
+        a.tabs__link(href="=0")
+          .border-clip-left-top
+          .border-clip-right-bottom
+          .tabs__icon
+            .border-clip-left-top
+            .border-clip-right-bottom
+            svg(width="26" height="26" viewBox="0 0 26 26" fill="none")
+              path(d="M1 13L13 1L25 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M22 11L20 13L22 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M4 11L6 13L4 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M25 13L13 25L1 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path.fill(d="M12.3115 15.8225C12.2262 15.8225 12.1515 15.7944 12.0875 15.738C12.0235 15.6704 11.9915 15.5859 11.9915 15.4845C11.9915 15.3944 11.9915 15.3042 11.9915 15.2141C11.9915 15.1239 11.9915 15.0338 11.9915 14.9437C12.0342 14.5042 12.1462 14.1155 12.3275 13.7775C12.5195 13.4282 12.7381 13.1127 12.9834 12.831C13.2393 12.538 13.49 12.262 13.7353 12.0028C13.9912 11.7437 14.2045 11.4901 14.3752 11.2423C14.5565 10.9831 14.6631 10.7183 14.6951 10.4479C14.7271 10.1211 14.6631 9.84507 14.5032 9.61972C14.3538 9.39437 14.1459 9.22535 13.8792 9.11268C13.6233 8.98873 13.3513 8.92676 13.0634 8.92676C12.5621 8.92676 12.1515 9.05634 11.8316 9.31549C11.5116 9.57465 11.293 9.99155 11.1757 10.5662C11.1437 10.7014 11.0903 10.8028 11.0157 10.8704C10.941 10.9268 10.8397 10.9549 10.7117 10.9549H9.35195C9.25596 10.9549 9.17064 10.9211 9.09599 10.8535C9.032 10.7746 9 10.6732 9 10.5493C9.01067 10.0986 9.10665 9.66479 9.28796 9.24789C9.47993 8.81972 9.75188 8.43662 10.1038 8.09859C10.4664 7.76056 10.9037 7.49577 11.4156 7.30423C11.9275 7.10141 12.5141 7 13.1754 7C13.9006 7 14.5085 7.10141 14.9991 7.30423C15.5003 7.49577 15.8949 7.7493 16.1829 8.06479C16.4815 8.38028 16.6948 8.72394 16.8228 9.09577C16.9508 9.45634 17.0094 9.81127 16.9988 10.1606C16.9774 10.5887 16.8868 10.9718 16.7268 11.3099C16.5668 11.6479 16.3695 11.9634 16.1349 12.2563C15.9003 12.538 15.6603 12.8197 15.415 13.1014C15.1697 13.3718 14.9511 13.6479 14.7591 13.9296C14.5778 14.2113 14.4552 14.5099 14.3912 14.8254C14.3698 14.9268 14.3538 15.0282 14.3432 15.1296C14.3325 15.2197 14.3218 15.3099 14.3112 15.4C14.2685 15.5352 14.2152 15.6423 14.1512 15.7211C14.0872 15.7887 13.9966 15.8225 13.8792 15.8225H12.3115ZM12.2635 19C12.1568 19 12.0662 18.9606 11.9915 18.8817C11.9169 18.8028 11.8796 18.707 11.8796 18.5944V17.1239C11.8796 17 11.9169 16.8986 11.9915 16.8197C12.0662 16.7408 12.1568 16.7014 12.2635 16.7014H13.8153C13.9326 16.7014 14.0286 16.7408 14.1032 16.8197C14.1779 16.8986 14.2152 17 14.2152 17.1239V18.5944C14.2152 18.707 14.1779 18.8028 14.1032 18.8817C14.0286 18.9606 13.9326 19 13.8153 19H12.2635Z")
+          span.tabs__label Калибровка/реКалибровка
+        button.tabs__close.icon-button.button(aria-label="Закрыть список табов")
+          svg(width="10" height="6" viewBox="0 0 10 6" fill="none")
+            path(d="M1 1L5 5L9 1" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      li.tabs__item(class=currentTab === "boostDecency" && "tabs__item--current")
+        a.tabs__link(href="=0")
+          .border-clip-left-top
+          .border-clip-right-bottom
+          .tabs__icon
+            .border-clip-left-top
+            .border-clip-right-bottom
+            svg(width="26" height="26" viewBox="0 0 26 26" fill="none")
+              circle(cx="13" cy="13" r="12" stroke-width="2")
+              path(d="M10.4738 10.7895C10.4738 9.56867 9.4841 8.57898 8.26326 8.57898C7.04242 8.57898 6.05273 9.56867 6.05273 10.7895" stroke-width="2" stroke-linecap="round")
+              path(d="M12.9998 19C14.7439 19 16.1577 17.5862 16.1577 15.8421H9.84193C9.84193 17.5862 11.2558 19 12.9998 19Z" stroke-width="2" stroke-linecap="round")
+              path(d="M19.9474 10.7895C19.9474 9.56867 18.9577 8.57898 17.7369 8.57898C16.5161 8.57898 15.5264 9.56867 15.5264 10.7895" stroke-width="2" stroke-linecap="round")
+          span.tabs__label Буст Порядочности
+        button.tabs__close.icon-button.button(aria-label="Закрыть список табов")
+          svg(width="10" height="6" viewBox="0 0 10 6" fill="none")
+            path(d="M1 1L5 5L9 1" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      li.tabs__item(class=currentTab === "LP washout" && "tabs__item--current")
+        a.tabs__link(href="=0")
+          .border-clip-left-top
+          .border-clip-right-bottom
+          .tabs__icon
+            .border-clip-left-top
+            .border-clip-right-bottom
+            svg(width="32" height="32" viewBox="0 0 32 32" fill="none")
+              path(d="M4 4V28H14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M18 28V21M18 21V4H28V15L18 21Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M7 16V25H12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+            path(d="M21 15.5V7H25V13L21 15.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          span.tabs__label Отмыв ЛП
+        button.tabs__close.icon-button.button(aria-label="Закрыть список табов")
+          svg(width="10" height="6" viewBox="0 0 10 6" fill="none")
+            path(d="M1 1L5 5L9 1" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      li.tabs__item(class=currentTab === "winningTheBattleCup" && "tabs__item--current")
+        a.tabs__link(href="=0")
+          .border-clip-left-top
+          .border-clip-right-bottom
+          .tabs__icon
+            .border-clip-left-top
+            .border-clip-right-bottom
+            svg(width="26" height="26" viewBox="0 0 26 26" fill="none")
+              path(d="M20 13L25 9V4H20V1M20 13V1M20 13L13 18.4545M20 1H13H6V4M13 18.4545V25M13 18.4545L6 13M13 25H19.5455M13 25H6.45455M6 13L1 9V4H6M6 13V4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M9.80005 4.7998L16.2001 11.1998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M14 4L17 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M9 9L12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          span.tabs__label Победа в боевом кубке
+        button.tabs__close.icon-button.button(aria-label="Закрыть список табов")
+          svg(width="10" height="6" viewBox="0 0 10 6" fill="none")
+            path(d="M1 1L5 5L9 1" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      li.tabs__item(class=currentTab === "training" && "tabs__item--current")
+        a.tabs__link(href="=0")
+          .border-clip-left-top
+          .border-clip-right-bottom
+          .tabs__icon
+            .border-clip-left-top
+            .border-clip-right-bottom
+            svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+              path(d="M1 0.999816L12 11.9998L1 22.9998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M1 5.99982L7 11.9998L1 17.9998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M23 5.99982L17 11.9998L23 17.9998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M18 0.999878L12 6.99988L6 0.999877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M18 22.9998L12 16.9998L6 22.9998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M23 0.999816L12 11.9998L23 22.9998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          span.tabs__label Тренировка
+        button.tabs__close.icon-button.button(aria-label="Закрыть список табов")
+          svg(width="10" height="6" viewBox="0 0 10 6" fill="none")
+            path(d="M1 1L5 5L9 1" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      li.tabs__item(class=currentTab === "regularGames" && "tabs__item--current")
+        a.tabs__link(href="=0")
+          .border-clip-left-top
+          .border-clip-right-bottom
+          .tabs__icon
+            .border-clip-left-top
+            .border-clip-right-bottom
+            svg(width="24" height="24" viewBox="0 0 24 24" fill="none")
+              path(d="M1 6.13333V1H6.13333L23 17.8667V23H17.8667L1 6.13333Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M1 12V19.3333L4.66667 23H12L1 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M23 12V4.66667L19.3333 1H12L23 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          span.tabs__label Обычные игры/Turbo
+        button.tabs__close.icon-button.button(aria-label="Закрыть список табов")
+          svg(width="10" height="6" viewBox="0 0 10 6" fill="none")
+            path(d="M1 1L5 5L9 1" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      li.tabs__item(class=currentTab === "girlGames" && "tabs__item--current")
+        a.tabs__link(href="=0")
+          .border-clip-left-top
+          .border-clip-right-bottom
+          .tabs__icon
+            .border-clip-left-top
+            .border-clip-right-bottom
+            svg(width="14" height="24" viewBox="0 0 14 24" fill="none")
+              path(d="M5 23V19H9V23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M12 19H2L7 7L12 19Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              circle(cx="7" cy="3" r="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M4 7L1 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M10 7L13 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          span.tabs__label игры с девочкой
+        button.tabs__close.icon-button.button(aria-label="Закрыть список табов")
+          svg(width="10" height="6" viewBox="0 0 10 6" fill="none")
+            path(d="M1 1L5 5L9 1" stroke="#3E25D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
 mixin aside(status)
-  .aside.border-clip-2
+  .aside
     if status === "showPromo"
       button.button Продолжить
       .aside__promo
@@ -157,14 +225,19 @@ html(lang="ru")
         .service-catalog__body.container.container-custom
           .service-catalog__steps
             block steps
-          .service-catalog__content-layout.border-clip-2
+          .service-catalog__content-layout
+            .border-clip-left-top
+            .border-clip-right-bottom
             block tabsList
             .service-catalog__content
               block content
               hr
               block services
             aside.service-catalog__aside
+              .border-clip-left-top
+              .border-clip-right-bottom
               block aside
       block modals
     +footer
     script(src="scripts/main.js")
+    script(src="scripts/service-catalog-layout.js")
