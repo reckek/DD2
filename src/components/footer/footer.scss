@@ -3,11 +3,22 @@
 .footer {
   display: flex;
   align-items: center;
-  margin: 23px;
+  margin: 4px;
+  padding: 32px 11px 80px;
   overflow: hidden;
   border-radius: var(--border-radius);
   color: var(--white);
   background-color: var(--black);
+
+  @include md {
+    margin: 12px;
+    padding: 48px 27px;
+  }
+
+  @include lg {
+    margin: 32px;
+    padding: 56px 27px 80px;
+  }
 
   h3 {
     font-family: var(--font-primary);

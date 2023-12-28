@@ -1,12 +1,21 @@
 .section-header {
   display: flex;
   align-items: center;
-  margin: clamp(16px, 3vw, 39px);
-  padding: 36px clamp(16px, 3vw, 36px);
   min-height: clamp(248px, 20vw, 324px);
-  padding-top: calc(36px + 48px + 39px);
+  margin: 4px;
+  padding: 16px 11px;
   border-radius: var(--border-radius);
   color: var(--white);
   background: radial-gradient(243.79% 141.42% at 100% 100%, rgba(62, 37, 216, 0.50) 0%, rgba(37, 183, 216, 0.29) 53.13%, rgba(101, 61, 153, 0.50) 100%), #21212D;
   overflow: hidden;
+
+  @include md {
+    margin: 12px;
+    padding: 24px 27px;
+  }
+
+  @include lg {
+    margin: 32px;
+    padding: 36px 27px;
+  }
 }

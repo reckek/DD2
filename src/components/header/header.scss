@@ -1,12 +1,10 @@
 @import "../burgerMenu/burgerMenu.scss";
 
 .header {
-  &__orders {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--white);
-  }
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
 
   &__navigation {
     position: absolute;
@@ -18,56 +16,140 @@
     justify-content: space-between;
     align-items: center;
     height: min-content;
-    padding: 36px;
-    margin: 23px 23px 0 23px;
+    margin: 4px;
+    padding: 16px 11px;
 
-    > div {
-      display: flex;
-      align-items: center;
-      gap: 40px;
+    @include md {
+      margin: 12px;
+      padding: 24px 27px;
     }
 
-    & a.accent {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: nowrap;
-      font: var(--font-button);
-      padding: 8px 12px;
-      border: none;
-      border-radius: 45px;
-
-      text-wrap: nowrap;
-      text-decoration: none;
-
-      color: var(--primary);
-      background-color: var(--white);
-      transition: all 0.2s ease-out;
-      outline: solid 0px;
-
-      &:hover {
-        outline: solid 3px;
-      }
-    }
-
-    .navbar-toggler svg {
-      stroke: var(--white);
+    @include lg {
+      margin: 32px;
+      padding: 36px 27px;
     }
   }
 
-  &__auth-button {
-    gap: 12px;
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
-    path {
-      stroke: var(--primary);
-      transition: 0.2s ease-out;
-    }
-
-    &:hover {
+    #toggleButton {
       path {
         stroke: var(--white);
       }
     }
+
+    #switchTheme {
+      display: none;
+
+      @include xl {
+        display: block;
+      }
+    }
+
+    .setting-language {
+      display: none;
+
+      @include xl {
+        display: block;
+      }
+    }
+
+    .header__wrapper {
+      display: none;
+
+      @include md {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+      }
+    }
+  }
+
+  &__center {
+    display: none;
+
+    @include md {
+      position: absolute;
+      left: 50%;
+      display: block;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__notification {
+    display: none;
+
+    @include xl {
+      display: flex;
+    }
+  }
+
+  &__orders {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+
+    @include xl {
+      display: flex;
+    }
+  }
+
+  a.accent {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    font: var(--font-button);
+    padding: 8px 12px;
+    border: none;
+    border-radius: 45px;
+
+    text-wrap: nowrap;
+    text-decoration: none;
+
+    color: var(--primary);
+    background-color: var(--white);
+    transition: all 0.2s ease-out;
+    outline: solid 0px;
+
+    &:hover {
+      outline: solid 3px;
+    }
+
+    @include xl {
+      display: flex;
+    }
+  }
+}
+
+.badge {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    display: block;
+    border-radius: 100%;
+    width: 8px;
+    height: 8px;
+    background-color: var(--red);
   }
 }
 
@@ -112,7 +194,7 @@
     opacity: 0;
     pointer-events: none;
     transition: bottom 0.4s, opacity 0.2s;
-    z-index: 1;
+    z-index: 10;
 
     > ul {
       display: flex;
@@ -160,26 +242,6 @@
   }
 }
 
-.header__placeholder {
-  height: 40px;
-}
-
-.badge {
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 6px;
-    right: 8px;
-    display: block;
-    border-radius: 100%;
-    width: 8px;
-    height: 8px;
-    background-color: var(--red);
-  }
-}
-
 .profile {
   position: relative;
 
@@ -188,20 +250,40 @@
     align-items: center;
     gap: 12px;
 
-    font: var(--font-button);
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--white);
     transition: all 0.2s;
 
+    span {
+      display: none;
+      font-size: 15px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+
+      @include md {
+        display: block;
+      }
+    }
+
     > img {
-      display: inline-block;
+      display: none;
       width: 40px;
       height: 40px;
       border-radius: 100%;
       object-fit: cover;
       object-position: center;
       background-color: var(--white);
+
+      @include md {
+        display: inline-block;
+      }
+    }
+
+    &-icon {
+      display: block;
+
+      @include md {
+        display: none;
+      }
     }
   }
 
