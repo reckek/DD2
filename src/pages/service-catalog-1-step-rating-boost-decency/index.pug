@@ -30,7 +30,7 @@ block content
             path(d="M32 33C32 29.134 28.866 26 25 26C21.134 26 18 29.134 18 33" stroke="#21212D" stroke-width="4" stroke-linecap="round")
             path(d="M40 59C45.5228 59 50 54.5228 50 49H30C30 54.5228 34.4772 59 40 59Z" stroke="#21212D" stroke-width="4" stroke-linecap="round")
             path(d="M62 33C62 29.134 58.866 26 55 26C51.134 26 48 29.134 48 33" stroke="#21212D" stroke-width="4" stroke-linecap="round")
-        +input("Желаемый MMR")(type="number" value="1500")
+        +input("Желаемый MMR")(type="number", data-bind="range", data-bind-type="max")
 
 
 block services
@@ -39,5 +39,7 @@ block services
   +service(true, "Включить стрим с выполнением", 60)
   +service(true, "Не отключать Steam Guard", 60)
   +service(false, "Установить время для игры", 60, true)
-    input(type="date", name="date time to game")
-    input(type="time", name="time to game")
+    +input("Дата начала игры")
+      input(type="date")
+    +input("Время начала игры")
+      input(type="time")

@@ -17,10 +17,10 @@ block content
       .rating-boost__preview
         +imgWithLabel("@public/images/rank-1.png", "Herald II")
         +input("Ваш MMR")(type="number" value="0")
-      +range('range', 1500, 2500, 0, 0)
+      +range('range', 1500, 2500)
       .rating-boost__preview
         +imgWithLabel("@public/images/rank-1.png", "Immortal")
-        +input("Желаемый MMR")(type="number" value="1500")
+        +input("Желаемый MMR")(type="number", data-bind="range", data-bind-type="max")
 
 
 block services
@@ -30,8 +30,10 @@ block services
   +service(true, "Включить стрим с выполнением", 60)
   +service(true, "Не отключать Steam Guard", 60)
   +service(false, "Установить время для игры", 60, true)
-    input(type="date", name="date time to game")
-    input(type="time", name="time to game")
+    +input("Дата начала игры")
+      input(type="date")
+    +input("Время начала игры")
+      input(type="time")
   +service(true, "Играть моими героями", 60, true)
     +favoriteHeros(4, "#selectHeros")
   +service(true, "Забанить 5 героев", 60, true)
