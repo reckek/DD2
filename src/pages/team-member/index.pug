@@ -53,7 +53,9 @@ html(lang="ru")
                   img(src="@public/images/team-member/Meepo_icon.png", alt="Preview Meepo")
                   p Meepo
       section.team-member__history.container.container-custom
-        header.history.border-clip-2
+        header.history
+          .border-clip-left-top
+          .border-clip-right-bottom
           h1.history__title Последние игры
           +historyList
             +historyItem("DOOM", true, 25, 0, 13, "02:58:10", 25, false)

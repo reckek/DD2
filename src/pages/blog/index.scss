@@ -1,46 +1,86 @@
 @import "../../styles/helpers/_mixins.scss";
 @import "../../components/sectionHeader/sectionHeader.scss";
 
+.section-header {
+  overflow: unset;
+}
+
 .post-header {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 
   h1 {
-    font-family: var(--font-primary);
-    font-size: 27px;
-    font-style: italic;
-    font-weight: 600;
-    text-align: right;
+    font-size: 17px;
     color: var(--white);
   }
 
   img {
-    margin-bottom: -180px;
+    margin-bottom: -252px;
+    width: 100%;
+  }
+
+  @include lg {
+    flex-direction: row;
+
+    h1 {
+      font-size: 27px;
+      text-align: right;
+    }
+
+    img {
+      margin-bottom: -276px;
+      width: unset;
+    }
   }
 }
 
 .blog-info {
   max-width: 400px;
 
-  &__container {
-    margin-bottom: 86px;
-  }
   &__data {
     display: flex;
+    justify-content: start;
     width: 100%;
     gap: 23px;
-    justify-content: end;
+    color: var(--purple);
+
+    @include lg {
+      justify-content: end;
+    }
   }
+
   &__description {
     margin-top: 32px;
-    text-align: right;
+    text-align: left;
+    color: var(--purple);
+
+    @include lg {
+      text-align: right;
+    }
+  }
+}
+
+.posts {
+  margin-top: 170px;
+
+  @include md {
+    margin-top: 240px;
+  }
+
+  @include lg {
+    margin-top: unset;
   }
 }
 
 .post {
   width: 100%;
-  margin-top: 56px;
+  margin-top: 36px;
+
+  @include lg {
+    margin-top: 56px;
+  }
 
   &__bloc-hero {
     display: flex;

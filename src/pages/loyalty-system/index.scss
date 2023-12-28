@@ -4,9 +4,14 @@
 .discount {
   position: relative;
   width: 100%;
-  margin-top: -86px;
-  margin-bottom: -60px;
+  margin-top: -54px;
+  margin-bottom: -46px;
   padding: 40px;
+
+  @include lg {
+    margin-top: -86px;
+    margin-bottom: -60px;
+  }
 
   &__header {
     display: flex;

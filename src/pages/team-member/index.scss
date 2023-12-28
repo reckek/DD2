@@ -10,6 +10,11 @@
 
 .section-header {
   padding-bottom: 65px;
+  padding-top: 70px;
+
+  @include lg {
+    padding-top: unset;
+  }
 }
 
 .team-member {
@@ -163,6 +168,7 @@
 
   &__heros {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
   }
 
@@ -192,32 +198,6 @@
 }
 
 .history {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 40px;
-  margin: 0;
-
-  &__title {
-    font-family: var(--font-primary);
-    font-size: 27px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-style: italic;
-    color: var(--black);
-    // margin-bottom: 20px;
-  }
-
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  &__item {
-    display: flex;
-    gap: 16px;
-    padding: 16px 20px;
-  }
+  margin-bottom: 48px;
 }
 

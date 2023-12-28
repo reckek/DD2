@@ -4,6 +4,95 @@ include ../../components/sectionHeader/sectionHeader.pug
 include ../../components/teamPreview/teamPreview.pug
 include ../../components/footer/footer.pug
 
+mixin order
+  li.monitoring-orders__item.order
+    .order__rank
+      .order__rank-start
+        img(src="@public/images/rank-1.png", alt="{{ RANK NAME }}")
+        .stat
+          span СТАРТОВЫЙ ММР
+          p 2 500
+      svg(width="18" height="18" viewBox="0 0 18 18" fill="none")
+        path(d="M9 1L17 9L9 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      .order__rank-end
+        .stat
+          span ИТОГОВЫЙ ММР
+          p 12 500
+        img(src="@public/images/rank-1.png", alt="{{ RANK NAME }}")
+    .order__status
+      svg.order__status-active(
+        fill="none"
+        viewBox="0 0 24 24"
+        height="24"
+        width="24"
+        )
+        circle(
+          stroke-linecap="round"
+          stroke-width="2"
+          r="3"
+          cy="9"
+          cx="8"
+          )
+        path(
+          stroke-linecap="round"
+          stroke-width="2"
+          d="M8 14C4.81933 14 2.13414 16.1214 1.28208 19.0264C0.971198 20.0863 1.89543 21 3 21H13C14.1046 21 15.0288 20.0863 14.7179 19.0264C13.8659 16.1214 11.1807 14 8 14Z"
+          )
+        g(opacity="0.7")
+          circle(
+            stroke-linecap="round"
+            stroke-width="2"
+            r="2"
+            cy="5"
+            cx="18"
+            )
+          path(
+            stroke-linecap="round"
+            stroke-width="2"
+            d="M18 9C15.9294 9 14.1528 10.2586 13.3935 12.0525C12.9629 13.0697 13.8954 14 15 14H21C22.1046 14 23.0371 13.0697 22.6065 12.0525C21.8472 10.2586 20.0706 9 18 9Z"
+            )
+      svg(width="20" height="16" viewBox="0 0 20 16" fill="none")
+        path(d="M15 2.64706L19 1L17 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M5 1L3 15" stroke-width="2" stroke-linecap="round")
+        path(d="M10 1L8 15" stroke-width="2" stroke-linecap="round")
+        path(d="M2 5L12 5" stroke-width="2" stroke-linecap="round")
+        path(d="M1 11H11" stroke-width="2" stroke-linecap="round")
+      svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
+        path(d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19Z" stroke-width="2" stroke-miterlimit="10")
+        path(d="M5 5L4 4" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
+        path(d="M16 16L15 15" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
+        path(d="M10 3V1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
+        path(d="M10 19L10 17" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
+        path(d="M16 4L15 5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
+        path(d="M5 15L4 16" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
+        path(d="M3 10H1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
+        path(d="M19 10H17" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
+        path(d="M12.5 7.5L10 10V14" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+      svg(width="18" height="24" viewBox="0 0 18 24" fill="none")
+        path(d="M9 2L1 5.63636V11.0909C1 16.1364 4.41333 20.8545 9 22C13.5867 20.8545 17 16.1364 17 11.0909V5.63636L9 2Z" stroke-width="2" stroke-miterlimit="10")
+        path(d="M6 12L8 14L14 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      svg.order__status-active(width="22" height="16" viewBox="0 0 22 16" fill="none")
+        path(d="M4 5V11H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M8 5V11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M10 5L12 11L14 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M18 11H16V8M16 8V5H18M16 8H18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        rect(x="1" y="1" width="20" height="14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
+        circle(cx="10" cy="10" r="9" stroke-width="2" stroke-miterlimit="10")
+        path(d="M5 11.3333L7.49999 14L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+      svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
+        circle(cx="10" cy="10" r="9" stroke-width="2" stroke-miterlimit="10")
+        path(d="M6 6L14 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M6 14L14 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+    .order__price.stat
+      span ОПЛАТА
+      p 1 120 500 ₽
+    button.icon-button.order__button
+      svg(width="18" height="18" viewBox="0 0 18 18" fill="none")
+        path(d="M9 1L17 9L9 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
 doctype html
 html(lang="ru")
   +head('заказы')
@@ -30,354 +119,10 @@ html(lang="ru")
                 type="radio"
                 )
           ul.monitoring-orders__list
-            li.monitoring-orders__item.order
-              .order__rank
-                .order__rank-start
-                  img(src="@public/images/rank-1.png", alt="{{ RANK NAME }}")
-                  .stat
-                    span СТАРТОВЫЙ ММР
-                    p 2 500
-                svg(width="18" height="18" viewBox="0 0 18 18" fill="none")
-                  path(d="M9 1L17 9L9 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                .order__rank-end
-                  .stat
-                    span ИТОГОВЫЙ ММР
-                    p 12 500
-                  img(src="@public/images/rank-1.png", alt="{{ RANK NAME }}")
-              .order__status
-                svg.order__status-active(
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  height="24"
-                  width="24"
-                  )
-                  circle(
-                    stroke-linecap="round"
-                    stroke-width="2"
-                    r="3"
-                    cy="9"
-                    cx="8"
-                    )
-                  path(
-                    stroke-linecap="round"
-                    stroke-width="2"
-                    d="M8 14C4.81933 14 2.13414 16.1214 1.28208 19.0264C0.971198 20.0863 1.89543 21 3 21H13C14.1046 21 15.0288 20.0863 14.7179 19.0264C13.8659 16.1214 11.1807 14 8 14Z"
-                    )
-                  g(opacity="0.7")
-                    circle(
-                      stroke-linecap="round"
-                      stroke-width="2"
-                      r="2"
-                      cy="5"
-                      cx="18"
-                      )
-                    path(
-                      stroke-linecap="round"
-                      stroke-width="2"
-                      d="M18 9C15.9294 9 14.1528 10.2586 13.3935 12.0525C12.9629 13.0697 13.8954 14 15 14H21C22.1046 14 23.0371 13.0697 22.6065 12.0525C21.8472 10.2586 20.0706 9 18 9Z"
-                      )
-                svg(width="20" height="16" viewBox="0 0 20 16" fill="none")
-                  path(d="M15 2.64706L19 1L17 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M5 1L3 15" stroke-width="2" stroke-linecap="round")
-                  path(d="M10 1L8 15" stroke-width="2" stroke-linecap="round")
-                  path(d="M2 5L12 5" stroke-width="2" stroke-linecap="round")
-                  path(d="M1 11H11" stroke-width="2" stroke-linecap="round")
-                svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
-                  path(d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19Z" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M5 5L4 4" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M16 16L15 15" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M10 3V1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M10 19L10 17" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M16 4L15 5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M5 15L4 16" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M3 10H1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M19 10H17" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M12.5 7.5L10 10V14" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
-                svg(width="18" height="24" viewBox="0 0 18 24" fill="none")
-                  path(d="M9 2L1 5.63636V11.0909C1 16.1364 4.41333 20.8545 9 22C13.5867 20.8545 17 16.1364 17 11.0909V5.63636L9 2Z" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M6 12L8 14L14 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg.order__status-active(width="22" height="16" viewBox="0 0 22 16" fill="none")
-                  path(d="M4 5V11H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M8 5V11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M10 5L12 11L14 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M18 11H16V8M16 8V5H18M16 8H18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  rect(x="1" y="1" width="20" height="14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
-                  circle(cx="10" cy="10" r="9" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M5 11.3333L7.49999 14L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
-                  circle(cx="10" cy="10" r="9" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M6 6L14 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M6 14L14 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-              .order__price.stat
-                span ОПЛАТА
-                p 1 120 500 ₽
-              button.icon-button.order__button
-                svg(width="18" height="18" viewBox="0 0 18 18" fill="none")
-                  path(d="M9 1L17 9L9 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-            li.monitoring-orders__item.order
-              .order__rank
-                .order__rank-start
-                  img(src="@public/images/rank-1.png", alt="{{ RANK NAME }}")
-                  .stat
-                    span СТАРТОВЫЙ ММР
-                    p 2 500
-                svg(width="18" height="18" viewBox="0 0 18 18" fill="none")
-                  path(d="M9 1L17 9L9 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                .order__rank-end
-                  .stat
-                    span ИТОГОВЫЙ ММР
-                    p 12 500
-                  img(src="@public/images/rank-1.png", alt="{{ RANK NAME }}")
-              .order__status
-                svg.order__status-active(
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  height="24"
-                  width="24"
-                  )
-                  circle(
-                    stroke-linecap="round"
-                    stroke-width="2"
-                    r="3"
-                    cy="9"
-                    cx="8"
-                    )
-                  path(
-                    stroke-linecap="round"
-                    stroke-width="2"
-                    d="M8 14C4.81933 14 2.13414 16.1214 1.28208 19.0264C0.971198 20.0863 1.89543 21 3 21H13C14.1046 21 15.0288 20.0863 14.7179 19.0264C13.8659 16.1214 11.1807 14 8 14Z"
-                    )
-                  g(opacity="0.7")
-                    circle(
-                      stroke-linecap="round"
-                      stroke-width="2"
-                      r="2"
-                      cy="5"
-                      cx="18"
-                      )
-                    path(
-                      stroke-linecap="round"
-                      stroke-width="2"
-                      d="M18 9C15.9294 9 14.1528 10.2586 13.3935 12.0525C12.9629 13.0697 13.8954 14 15 14H21C22.1046 14 23.0371 13.0697 22.6065 12.0525C21.8472 10.2586 20.0706 9 18 9Z"
-                      )
-                svg(width="20" height="16" viewBox="0 0 20 16" fill="none")
-                  path(d="M15 2.64706L19 1L17 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M5 1L3 15" stroke-width="2" stroke-linecap="round")
-                  path(d="M10 1L8 15" stroke-width="2" stroke-linecap="round")
-                  path(d="M2 5L12 5" stroke-width="2" stroke-linecap="round")
-                  path(d="M1 11H11" stroke-width="2" stroke-linecap="round")
-                svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
-                  path(d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19Z" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M5 5L4 4" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M16 16L15 15" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M10 3V1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M10 19L10 17" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M16 4L15 5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M5 15L4 16" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M3 10H1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M19 10H17" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M12.5 7.5L10 10V14" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
-                svg(width="18" height="24" viewBox="0 0 18 24" fill="none")
-                  path(d="M9 2L1 5.63636V11.0909C1 16.1364 4.41333 20.8545 9 22C13.5867 20.8545 17 16.1364 17 11.0909V5.63636L9 2Z" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M6 12L8 14L14 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg.order__status-active(width="22" height="16" viewBox="0 0 22 16" fill="none")
-                  path(d="M4 5V11H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M8 5V11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M10 5L12 11L14 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M18 11H16V8M16 8V5H18M16 8H18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  rect(x="1" y="1" width="20" height="14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
-                  circle(cx="10" cy="10" r="9" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M5 11.3333L7.49999 14L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
-                  circle(cx="10" cy="10" r="9" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M6 6L14 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M6 14L14 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-              .order__price.stat
-                span ОПЛАТА
-                p 1 120 500 ₽
-              button.icon-button.order__button
-                svg(width="18" height="18" viewBox="0 0 18 18" fill="none")
-                  path(d="M9 1L17 9L9 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-            li.monitoring-orders__item.order
-              .order__rank
-                .order__rank-start
-                  img(src="@public/images/rank-1.png", alt="{{ RANK NAME }}")
-                  .stat
-                    span СТАРТОВЫЙ ММР
-                    p 2 500
-                svg(width="18" height="18" viewBox="0 0 18 18" fill="none")
-                  path(d="M9 1L17 9L9 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                .order__rank-end
-                  .stat
-                    span ИТОГОВЫЙ ММР
-                    p 12 500
-                  img(src="@public/images/rank-1.png", alt="{{ RANK NAME }}")
-              .order__status
-                svg.order__status-active(
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  height="24"
-                  width="24"
-                  )
-                  circle(
-                    stroke-linecap="round"
-                    stroke-width="2"
-                    r="3"
-                    cy="9"
-                    cx="8"
-                    )
-                  path(
-                    stroke-linecap="round"
-                    stroke-width="2"
-                    d="M8 14C4.81933 14 2.13414 16.1214 1.28208 19.0264C0.971198 20.0863 1.89543 21 3 21H13C14.1046 21 15.0288 20.0863 14.7179 19.0264C13.8659 16.1214 11.1807 14 8 14Z"
-                    )
-                  g(opacity="0.7")
-                    circle(
-                      stroke-linecap="round"
-                      stroke-width="2"
-                      r="2"
-                      cy="5"
-                      cx="18"
-                      )
-                    path(
-                      stroke-linecap="round"
-                      stroke-width="2"
-                      d="M18 9C15.9294 9 14.1528 10.2586 13.3935 12.0525C12.9629 13.0697 13.8954 14 15 14H21C22.1046 14 23.0371 13.0697 22.6065 12.0525C21.8472 10.2586 20.0706 9 18 9Z"
-                      )
-                svg(width="20" height="16" viewBox="0 0 20 16" fill="none")
-                  path(d="M15 2.64706L19 1L17 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M5 1L3 15" stroke-width="2" stroke-linecap="round")
-                  path(d="M10 1L8 15" stroke-width="2" stroke-linecap="round")
-                  path(d="M2 5L12 5" stroke-width="2" stroke-linecap="round")
-                  path(d="M1 11H11" stroke-width="2" stroke-linecap="round")
-                svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
-                  path(d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19Z" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M5 5L4 4" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M16 16L15 15" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M10 3V1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M10 19L10 17" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M16 4L15 5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M5 15L4 16" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M3 10H1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M19 10H17" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M12.5 7.5L10 10V14" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
-                svg(width="18" height="24" viewBox="0 0 18 24" fill="none")
-                  path(d="M9 2L1 5.63636V11.0909C1 16.1364 4.41333 20.8545 9 22C13.5867 20.8545 17 16.1364 17 11.0909V5.63636L9 2Z" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M6 12L8 14L14 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg.order__status-active(width="22" height="16" viewBox="0 0 22 16" fill="none")
-                  path(d="M4 5V11H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M8 5V11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M10 5L12 11L14 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M18 11H16V8M16 8V5H18M16 8H18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  rect(x="1" y="1" width="20" height="14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
-                  circle(cx="10" cy="10" r="9" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M5 11.3333L7.49999 14L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
-                  circle(cx="10" cy="10" r="9" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M6 6L14 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M6 14L14 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-              .order__price.stat
-                span ОПЛАТА
-                p 1 120 500 ₽
-              button.icon-button.order__button
-                svg(width="18" height="18" viewBox="0 0 18 18" fill="none")
-                  path(d="M9 1L17 9L9 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-            li.monitoring-orders__item.order
-              .order__rank
-                .order__rank-start
-                  img(src="@public/images/rank-1.png", alt="{{ RANK NAME }}")
-                  .stat
-                    span СТАРТОВЫЙ ММР
-                    p 2 500
-                svg(width="18" height="18" viewBox="0 0 18 18" fill="none")
-                  path(d="M9 1L17 9L9 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                .order__rank-end
-                  .stat
-                    span ИТОГОВЫЙ ММР
-                    p 12 500
-                  img(src="@public/images/rank-1.png", alt="{{ RANK NAME }}")
-              .order__status
-                svg.order__status-active(
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  height="24"
-                  width="24"
-                  )
-                  circle(
-                    stroke-linecap="round"
-                    stroke-width="2"
-                    r="3"
-                    cy="9"
-                    cx="8"
-                    )
-                  path(
-                    stroke-linecap="round"
-                    stroke-width="2"
-                    d="M8 14C4.81933 14 2.13414 16.1214 1.28208 19.0264C0.971198 20.0863 1.89543 21 3 21H13C14.1046 21 15.0288 20.0863 14.7179 19.0264C13.8659 16.1214 11.1807 14 8 14Z"
-                    )
-                  g(opacity="0.7")
-                    circle(
-                      stroke-linecap="round"
-                      stroke-width="2"
-                      r="2"
-                      cy="5"
-                      cx="18"
-                      )
-                    path(
-                      stroke-linecap="round"
-                      stroke-width="2"
-                      d="M18 9C15.9294 9 14.1528 10.2586 13.3935 12.0525C12.9629 13.0697 13.8954 14 15 14H21C22.1046 14 23.0371 13.0697 22.6065 12.0525C21.8472 10.2586 20.0706 9 18 9Z"
-                      )
-                svg(width="20" height="16" viewBox="0 0 20 16" fill="none")
-                  path(d="M15 2.64706L19 1L17 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M5 1L3 15" stroke-width="2" stroke-linecap="round")
-                  path(d="M10 1L8 15" stroke-width="2" stroke-linecap="round")
-                  path(d="M2 5L12 5" stroke-width="2" stroke-linecap="round")
-                  path(d="M1 11H11" stroke-width="2" stroke-linecap="round")
-                svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
-                  path(d="M10 19C14.9706 19 19 14.9706 19 10C19 5.02944 14.9706 1 10 1C5.02944 1 1 5.02944 1 10C1 14.9706 5.02944 19 10 19Z" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M5 5L4 4" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M16 16L15 15" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M10 3V1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M10 19L10 17" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M16 4L15 5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M5 15L4 16" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M3 10H1" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M19 10H17" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round")
-                  path(d="M12.5 7.5L10 10V14" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
-                svg(width="18" height="24" viewBox="0 0 18 24" fill="none")
-                  path(d="M9 2L1 5.63636V11.0909C1 16.1364 4.41333 20.8545 9 22C13.5867 20.8545 17 16.1364 17 11.0909V5.63636L9 2Z" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M6 12L8 14L14 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg.order__status-active(width="22" height="16" viewBox="0 0 22 16" fill="none")
-                  path(d="M4 5V11H6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M8 5V11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M10 5L12 11L14 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M18 11H16V8M16 8V5H18M16 8H18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  rect(x="1" y="1" width="20" height="14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
-                  circle(cx="10" cy="10" r="9" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M5 11.3333L7.49999 14L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg(width="20" height="20" viewBox="0 0 20 20" fill="none")
-                  circle(cx="10" cy="10" r="9" stroke-width="2" stroke-miterlimit="10")
-                  path(d="M6 6L14 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M6 14L14 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-              .order__price.stat
-                span ОПЛАТА
-                p 1 120 500 ₽
-              button.icon-button.order__button
-                svg(width="18" height="18" viewBox="0 0 18 18" fill="none")
-                  path(d="M9 1L17 9L9 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+            +order
+            +order
+            +order
+            +order
           p.monitoring-orders__max У вас может быть только два заказа
     +footer
     script(src="scripts/main.js")

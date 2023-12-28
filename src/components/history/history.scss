@@ -3,10 +3,25 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding: 24px 15px;
   background-color: var(--background-2);
+
+  .border-clip-left-top,
+  .border-clip-right-bottom {
+    --background-color: var(--background-2);
+  }
+
+  @include md {
+    padding: 32px 39px;
+  }
 
   @include lg {
     gap: 20px;
+
+    .border-clip-left-top,
+    .border-clip-right-bottom {
+      --background-color: var(--background);
+    }
   }
 
   &__title {

@@ -4,6 +4,7 @@
 
 
 .section-header {
+  align-items: end;
   padding-bottom: 0;
 }
 
@@ -22,11 +23,16 @@
   }
 
   &__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     column-gap: 30px;
     row-gap: 28px;
     padding: 0;
     margin: 0 0 80px;
+
+    @include xl {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }

@@ -7,15 +7,20 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
-  padding: 40px;
+  padding: 24px 15px;
   margin-top: clamp(-74px, 5vw, -84px);
+  margin-bottom: 32px;
 
   @include md {
     display: grid;
     grid-template-columns: 1fr 0.45fr;
     gap: 46px;
+    margin-top: 32px 39px;
   }
 
+  @include lg {
+    padding: 40px;
+  }
 
   &::after,
   &::before {
